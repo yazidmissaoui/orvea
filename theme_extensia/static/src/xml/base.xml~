@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<templates xml:space="preserve">
+	<t t-name="UserMenu">
+	    <li class="o_user_menu">
+		<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+		    <img class="img-circle oe_topbar_avatar" t-att-src="_s + '/web/static/src/img/user_menu_avatar.png'"/>
+	            <!--span class="oe_topbar_name"/-->
+		</a>
+		<ul class="dropdown-menu" role="menu">
+		    <t t-call="UserMenu.Actions"/>
+		</ul>
+	    </li>
+	</t>
+	<t t-name="UserMenu.Actions">
+	    <li><a href="#" data-menu="settings">Preferences</a></li>
+	    <li class="divider"/>
+	    <li><a href="#" data-menu="integrations">Intégrations</a></li>
+	    <li><a href="#" data-menu="edit_password">Modifier Mot de Passe</a></li>
+	    <li><a href="#" data-menu="mails">Enregistrement des e-mails</a></li>
+	    <li><a href="#" data-menu="integrations">Mes parrainages</a></li>
+	    <li><a href="#" data-menu="integrations">Information légale</a></li>
+	    <li class="divider"/>
+	    <li><a href="#" data-menu="logout">Log out</a></li>
+    </t>
+</templates>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="res_partner_activity_btp_1" model="res.partner.activity.btp">
+            <field name="name">Démolition</field>
+        </record>
+        <record id="res_partner_activity_btp_2" model="res.partner.activity.btp">
+            <field name="name">Terrassement</field>
+        </record>
+        <record id="res_partner_activity_btp_3" model="res.partner.activity.btp">
+            <field name="name">Gros Oeuvre</field>
+        </record>
+        <record id="res_partner_activity_btp_4" model="res.partner.activity.btp">
+            <field name="name">Chapes</field>
+        </record>
+        <record id="res_partner_activity_btp_5" model="res.partner.activity.btp">
+            <field name="name">Etanchéité</field>
+        </record>
+        <record id="res_partner_activity_btp_6" model="res.partner.activity.btp">
+            <field name="name">Electricité</field>
+        </record>
+        <record id="res_partner_activity_btp_7" model="res.partner.activity.btp">
+            <field name="name">Plomberie</field>
+        </record>
+        <record id="res_partner_activity_btp_8" model="res.partner.activity.btp">
+            <field name="name">Charpentier</field>
+        </record>
+        <record id="res_partner_activity_btp_9" model="res.partner.activity.btp">
+            <field name="name">Couvreur</field>
+        </record>
+        <record id="res_partner_activity_btp_10" model="res.partner.activity.btp">
+            <field name="name">Menuiserie Extérieur</field>
+        </record>
+        <record id="res_partner_activity_btp_11" model="res.partner.activity.btp">
+            <field name="name">Menuiserie Intérieur</field>
+        </record>
+        <record id="res_partner_activity_btp_12" model="res.partner.activity.btp">
+            <field name="name">Plâterie</field>
+        </record>
+        <record id="res_partner_activity_btp_13" model="res.partner.activity.btp">
+            <field name="name">Porte Garage</field>
+        </record>
+        <record id="res_partner_activity_btp_14" model="res.partner.activity.btp">
+            <field name="name">eubles Sdb</field>
+        </record>
+        <record id="res_partner_activity_btp_15" model="res.partner.activity.btp">
+            <field name="name">Sols Souples</field>
+        </record>
+        <record id="res_partner_activity_btp_16" model="res.partner.activity.btp">
+            <field name="name">Sols Durs</field>
+        </record>
+        <record id="res_partner_activity_btp_17" model="res.partner.activity.btp">
+            <field name="name">Peinture</field>
+        </record>
+        <record id="res_partner_activity_btp_18" model="res.partner.activity.btp">
+            <field name="name">Serrurie</field>
+        </record>
+        <record id="res_partner_activity_btp_19" model="res.partner.activity.btp">
+            <field name="name">Ravalements</field>
+        </record>
+        <record id="res_partner_activity_btp_20" model="res.partner.activity.btp">
+            <field name="name">Pierres</field>
+        </record>
+        <record id="res_partner_activity_btp_21" model="res.partner.activity.btp">
+            <field name="name">Bardage métallique</field>
+        </record>
+        <record id="res_partner_activity_btp_22" model="res.partner.activity.btp">
+            <field name="name">Ascenseurs</field>
+        </record>
+        <record id="res_partner_activity_btp_23" model="res.partner.activity.btp">
+            <field name="name">Espaces Verts/VRD</field>
+        </record>
+        <record id="res_partner_activity_btp_24" model="res.partner.activity.btp">
+            <field name="name">Spécialiste Bois</field>
+        </record>
+        <record id="res_partner_activity_btp_25" model="res.partner.activity.btp">
+            <field name="name">Décoration</field>
+        </record>
+        <record id="res_partner_activity_btp_26" model="res.partner.activity.btp">
+            <field name="name">Sécurité Incendie</field>
+        </record>
+        <record id="res_partner_activity_btp_27" model="res.partner.activity.btp">
+            <field name="name">Entrprise Générale</field>
+        </record>
+    </data>
+</odoo>

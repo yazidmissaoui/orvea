@@ -1,0 +1,186 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale
+# 
+# Translators:
+# Martin Trigaux, 2017
+# Abdelwahed Rihene <abdelwahed_rihene@yahoo.fr>, 2018
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Client"
+msgstr "Client"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Project"
+msgstr "Projet"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Opportunity"
+msgstr "Opportunité"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Step"
+msgstr "Étape"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Deadline"
+msgstr "Échéance"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Duration"
+msgstr "Durée"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Repeated"
+msgstr "Répéter..."
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "RECURRENCE"
+msgstr "RÉCURRENCE"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Repeat"
+msgstr "Répéter"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Repeated every"
+msgstr "Répéter chaque"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Day of Month"
+msgstr "Jour du mois"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Planned On"
+msgstr "Planifier à"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Date End"
+msgstr "Date de Fin"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Title"
+msgstr "Titre"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Affected To"
+msgstr "Affecté à"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Duration"
+msgstr "Durée"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "On"
+msgstr "à"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Project"
+msgstr "Projet"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Opportunity"
+msgstr "Opportunité"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Project"
+msgstr "Projet"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Company"
+msgstr "Choisissez une entreprise"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Attributed To"
+msgstr "Attribué à"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_form
+msgid "Title"
+msgstr "Titre"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_orvea_call_popup_form
+msgid "Called On"
+msgstr "Appeler le"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_orvea_call_popup_form
+msgid "Project"
+msgstr "Projet"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_orvea_call_popup_form
+msgid "Arround"
+msgstr "Autour de"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_tree
+msgid "Step"
+msgstr "Étape"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_tree
+msgid "Deadline"
+msgstr "Échéance"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_task_popup_tree
+msgid "Planned"
+msgstr "Planning"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_meeting_popup_tree
+msgid "Title"
+msgstr "Titre"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_meeting_popup_tree
+msgid "Duration"
+msgstr "Durée"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_call_popup_tree
+msgid "Called On"
+msgstr "Date"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_call_popup_tree
+msgid "Arround"
+msgstr "Heure"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_call_popup_tree
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: orvea_dashboard
+#: model:ir.model.fields,field_description:orvea_dashboard.view_project_call_popup_tree
+msgid "Creator"
+msgstr "Créateur"

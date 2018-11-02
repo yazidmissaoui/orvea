@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Partner Form View -->
+        <record id="view_contact_list_form" model="ir.ui.view">
+            <field name="name">res.partner.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Partners">
+                <sheet>
+                    <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                    <div class="oe_title">
+                        <field name="is_company" invisible="1"/>
+                        <field name="commercial_partner_id" invisible="1"/>
+                        <field name="company_type" widget="radio" invisible="1"
+                            class="oe_edit_only"
+                            options="{'horizontal': true}"/>
+                        <h1>
+                            <field name="name" string="Name" default_focus="1" placeholder="Name" invisible="1"/>
+		            <field name="email" placeholder="E-mail" required="1" widget="email" context="{'gravatar_image': True}" string="E-mail"/>
+                        </h1>
+                    </div>
+
+                    <group>
+		                <group>
+                    		    <field name="flag" invisible="1"/>
+                    		    <field name="lead_state" invisible="1" string="Lead State"/>
+		                    <field name="surname_contact" string="Surname" required="1" placeholder="Surname"/>
+		                    <field name="function" placeholder="e.g. Sales Director" string="Function"/>
+		                    <field name="mobile" widget="phone" string="Mobile Number" placeholder="Mobile Number"/>
+		                    <field name="city" string="City" placeholder="City" class="o_address_city"/>
+		                    <field name="company_name" string="Company Name" placeholder="Company Name"/>
+		                    <field name="type_contact" string="Type"/>
+		                </group>
+		                <group>
+		                    <field name="email" invisible="1" widget="email" context="{'gravatar_image': True}"/>
+		                    <field name="name_contact" string="Name" required="1" placeholder="Name"/>
+		                    <field name="phone" widget="phone" string="Phone Number" placeholder="Phone Number"/>
+		                    <field name="second_mobile" widget="phone" string="Mobile Number 2" placeholder="Mobile Number 2"/>
+		                    <field name="contact_owner" string="Contact Owner" placeholder="Contact Owner"/>
+		                    <field name="activity_sector" string="Activity Sector" placeholder="Activity Sector"/>
+		                    <field name="type_partner_contact" string="Type Partenaire" attrs="{'invisible': [('type_contact', '!=', 'Partenaire')]}"/>
+		                </group>
+                    </group>
+                    <group>
+		                <group>
+		                    <field name="contact_activity" string="Activité" placeholder="Activité"/>
+		                </group>
+		                <group>
+                    		    <field name="flag_btp" invisible="1"/>
+		                    <field name="contact_activity_btp" nolabel="1" colspan="2" attrs="{'invisible': [('flag_btp', '!=', True)]}"/>
+                    		    <field name="flag_service" invisible="1"/>
+		                    <field name="contact_activity_service" nolabel="1" colspan="2" attrs="{'invisible': [('flag_service', '!=', True)]}"/>
+		                </group>
+                    </group>
+                </sheet>
+                    <div class="oe_chatter" attrs="{'invisible': [('flag', '==', False)]}">>
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Partner Tree View -->
+        <record id="view_contact_list_tree" model="ir.ui.view">
+            <field name="name">res.partner.view.tree</field>
+            <field name="model">res.partner</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Contacts">
+                    <field name="image" string="Logo" widget="image" width="30px"/>
+                    <field name="name" string="NOM"/>
+                    <button name="open_contact_details" type="object" string="Aperçu" class="oe_link"/>
+		    <field name="function" string="FUNCTION"/>
+                    <field name="phone" string="PHONE NUMBER"/>
+		    <field name="mobile" widget="phone" string="MOBILE PHONE"/>
+		    <field name="second_mobile" widget="phone" string="MOBILE PHONE 2"/>
+                    <field name="email" string="E-MAIL"/>
+		    <field name="city" string="CITY" class="o_address_city"/>
+		    <field name="contact_owner" string="ACCOUNT OWNER"/>
+		    <field name="company_name" string="COMPANY NAME"/>
+		    <field name="activity_sector" string="ACTIVITY SECTOR" invisible="1"/>
+                    <field name="type_contact" string="TYPE"/>
+		    <field name="contact_activity" string="Activité"/>
+                    <field name="lead_state" string="STATUT DU LEAD" invisible="1"/>
+                    <field name="create_date" string="CREATION DATE" invisible="1"/>
+                    <field name="function" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="country_id" invisible="1"/>
+                    <field name="parent_id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_contact_list_filter" model="ir.ui.view">
+            <field name="name">res.partner.search</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Contacts">
+                    <field name="display_name" string="NOM"/>
+                    <field name="email" string="E-MAIL"/>
+                    <field name="phone" string="NUMÉRO DE TÉLÉPHONE"/>
+                    <field name="lead_state" string="STATUT DU LEAD"/>
+                    <field name="create_date" string="Date DE CRÉATION"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_name" string="NOM" domain="[]" context="{'group_by':'display_name'}"/>
+                        <filter name="group_mail" string="E-MAIL" domain="[]" context="{'group_by':'email'}"/>
+                        <filter name="group_telephone" string="NUMÉRO DE TÉLÉPHONE" domain="[]" context="{'group_by':'phone'}"/>
+                        <filter name="group_lead" string="STATUT DU LEAD" domain="[]" context="{'group_by':'lead_state'}"/>
+                        <filter name="group_date" string="DATE DE CRÉATION" domain="[]" context="{'group_by':'create_date'}"/>
+                    </group>
+                </search>
+             </field>
+         </record>
+
+
+
+        <!-- Contact Menu -->
+        <record model="ir.actions.act_window" id="orvea_contact_list_action">
+            <field name="name">Contacts</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"default_is_company": False,"default_flag": True,"company_type": 'person'}</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('view_contact_list_tree')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('view_contact_list_form')}),
+		]"/>
+            <field name="domain">[('is_company','=',False)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+              </p><p>
+                Odoo helps you easily track all activities related to
+                a contact: discussions, history of business opportunities,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+
+
+        <menuitem id="orvea_contact_main_menu"
+            name="Contacts"
+            web_icon="orvea_contact,static/description/contact.png"
+	    action="orvea_contact_list_action"
+            sequence="7"/>
+
+
+
+
+    </data>
+</odoo>

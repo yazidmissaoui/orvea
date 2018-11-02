@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="orvea_dashboard.dashboard">
+        <!--View-->
+        <!--div id="page-wrapper" class="gray-bg">
+                <div class="user-action">
+			<nav class="nav navbar-top-links navbar-right oe_user_menu_placeholder oe_systray" role="navigation" style="margin-bottom: 0">
+		                <div class="navbar-header col-lg-12">
+		                    	<a class="navbar-minimalize minimalize-styl-2 btn btn-primary" style="float: left; !important">
+						<i class="fa fa-plus"></i> 
+					</a>
+		                </div>
+		        </nav>
+		</div>
+	</div-->
+
+	<header class="_1AIsY _2Vda4"><h1 class="_1AIsY yyPQr _1JaAT ryAcP _2GdFo" data-teamleader-ui="heading">Bonjour ! </h1><h3 class="_1AIsY _1JaAT _17Gn1 _2pQkm _2Cm4t" data-teamleader-ui="heading">Voici ce qui est prévu pour aujourd'hui</h3></header>
+        <div class="hr_dash col-xs-12 col-md-12 col-lg-12">
+
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="dash-box dash-box-color-1" style="background: white !important;border:1px solid black !important;">
+                                <div class="dash-box-icon">
+                                    <i class="fa fa-fw fa-tasks"/>
+                                </div>
+                                <div class="dash-box-body">
+				    <t t-if="widget.project_data.project_tasks_count == 0">
+					<p class="dash-box-title" style="color:black" data-teamleader-ui="text"><strong>Fini pour aujourd'hui ?</strong></p>
+					<p class="dash-box-title" style="color:black" data-teamleader-ui="text">Beau travail ! Pourquoi ne pas anticiper et planifier le reste de votre semaine ?</p>
+				    </t>
+				    <t t-if="widget.project_data.project_tasks_count != 0">
+                                    	<span class="dash-box-count"><t t-esc="widget.project_data.project_tasks_count"/></span>
+                                    	<span class="dash-box-title project_task_list_today"><button style="background-color:rgb(255, 86, 65)">Tâches</button></span>
+				    </t>
+                                </div>
+                                <div class="dash-box-action project_task_new">
+                                    <button style="border: 2px solid #31B9EC !important;"><i class="fa fa-plus"></i></button>
+                                </div>
+                                <div class="dash-box-two-action project_task_list">
+                                    <button style="border: 2px solid #31B9EC !important;"><i class="fa fa-list"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dash-box dash-box-color-2">
+                                <div class="dash-box-icon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <div class="dash-box-body">
+				    <t t-if="widget.project_data.project_meetings_count == 0">
+					<p class="dash-box-title" style="color:black" data-teamleader-ui="text"><strong>Pas de réunion aujourd'hui ?</strong></p>
+					<p class="dash-box-title" style="color:black" data-teamleader-ui="text">Parfait pour la productivité ! Mais si vous ne voulez pas être seul, invitez quelqu'un.</p>
+				    </t>
+				    <t t-if="widget.project_data.project_meetings_count != 0">
+                                    	<span class="dash-box-count"><t t-esc="widget.project_data.project_meetings_count"/></span>
+                                    	<span class="dash-box-title project_meeting_list_today"><button style="background-color:rgb(252, 190, 27)">Réunions</button></span>
+				    </t>
+                                </div>
+                                <div class="dash-box-action project_meeting_new">
+                                    <button style="border: 2px solid #31B9EC !important;"><i class="fa fa-plus"></i></button>
+                                </div>
+                                <div class="dash-box-two-action project_meeting_list">
+                                    <button style="border: 2px solid #31B9EC !important;"><i class="fa fa-list"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dash-box dash-box-color-3">
+                                <div class="dash-box-icon">
+                                    <i class="fa fa-phone-square"></i>
+                                </div>
+                                <div class="dash-box-body">
+				    <t t-if="widget.project_data.project_meetings_count == 0">
+					<p class="dash-box-title" style="color:black" data-teamleader-ui="text"><strong>Pas d'appels planifiés pour aujourd'hui</strong></p>
+					<p class="dash-box-title" style="color:black" data-teamleader-ui="text">Ce pourrait être le moment idéal pour appeler quelqu'un.</p>
+
+				    </t>
+				    <t t-if="widget.project_data.project_meetings_count != 0">
+                                    	<span class="dash-box-count"><t t-esc="widget.project_data.project_calls_count"/></span>
+                                   	<span class="dash-box-title project_call_list_today"><button style="background-color:rgb(183,71,247)">Appels</button></span>
+				    </t>
+                                </div>
+
+                                <div class="dash-box-action project_call_new">
+                                    <button style="border: 2px solid #31B9EC !important;"><i class="fa fa-plus"></i></button>
+                                </div>
+                                <div class="dash-box-two-action project_call_list">
+                                    <button style="border: 2px solid #31B9EC !important;"><i class="fa fa-list"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </t>
+</templates>

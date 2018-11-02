@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale
+# 
+# Translators:
+# Martin Trigaux, 2017
+# Abdelwahed Rihene <abdelwahed_rihene@yahoo.fr>, 2018
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_form
+msgid "Phone"
+msgstr "N° Téléphone"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_form
+msgid "Activity Sector"
+msgstr "Secteur d'activité"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_form
+msgid "Company Owner"
+msgstr "Propriétaire de l'entreprise"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "Name"
+msgstr "NOM"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "POST STREET"
+msgstr "ADRESSE POSTALE"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "POST STREET2"
+msgstr "ADRESSE POSTALE2"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "ZIP"
+msgstr "CODE POSTAL"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "Country"
+msgstr "VILLE"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "PHONE NUMBER"
+msgstr "N° TÉLÉPHONE"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "CONTACTS"
+msgstr "CONTACTS ASSOCIÉS"
+
+#. module: orvea_company
+#: model:ir.ui.view,arch_db:orvea_company.view_company_list_tree
+msgid "ACTIVITY SECTOR"
+msgstr "SECTEUR D'ACTIVITÉ"

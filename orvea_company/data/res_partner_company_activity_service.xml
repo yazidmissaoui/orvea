@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="res_partner_company_activity_service_1" model="res.partner.company.activity.service">
+            <field name="name">Logistique de Chantier</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_2" model="res.partner.company.activity.service">
+            <field name="name">Produit d'entretien</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_3" model="res.partner.company.activity.service">
+            <field name="name">Équipement EPI</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_4" model="res.partner.company.activity.service">
+            <field name="name">Gestion de déchets</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_5" model="res.partner.company.activity.service">
+            <field name="name">Nettoyage de Chantier</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_6" model="res.partner.company.activity.service">
+            <field name="name">Sécurité</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_7" model="res.partner.company.activity.service">
+            <field name="name">Télésurveillance</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_8" model="res.partner.company.activity.service">
+            <field name="name">Nettoyage Parking</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_9" model="res.partner.company.activity.service">
+            <field name="name">Préchauffage Chantier</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_10" model="res.partner.company.activity.service">
+            <field name="name">Clôture Chantier</field>
+        </record>
+
+        <record id="res_partner_company_activity_service_11" model="res.partner.company.activity.service">
+            <field name="name">Curage Réseau</field>
+        </record>
+
+    </data>
+</odoo>

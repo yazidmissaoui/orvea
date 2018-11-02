@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+        	<record id="view_project_task_popup_form" model="ir.ui.view">
+            		<field name="name">project.task.popup.form</field>
+            		<field name="model">project.task</field>
+            		<field name="arch" type="xml">
+                		<form string="Ajouter Tâche">
+                			<sheet>
+                            			<group string="CLIENT">
+                            				<group>
+		                            			<field name="partner_id" string="Client"/>
+		                            			<field name="project_id" string="Project"/>
+
+                                			</group>
+                                			<group>
+		                            			<field name="opportunity" string="Opportunity"/>
+                                			</group>
+                                		</group>
+                            			<group string="TASK DESCRIPTION">
+                            				<group>
+		                            			<field name="type_task" string="Type"/>
+		                            			<field name="description" string="Description" colspan="2"/>
+		                            			<field name="deadline" string="Deadline"/>
+		                            			<field name="priority_task" string="Priority"/>
+		                            			<field name="repeated_task" string="Repeated"/>
+                                			</group>
+                                			<group>
+		                            			<field name="user_id" string="Responsable"/>
+                                			</group>
+                                		</group>
+                            			<group string="RECURRENCE" attrs="{'invisible': [('repeated_task', '==', False)]}">
+                            				<group>
+		                            			<field name="mode_repetition" string="Repeat"/>
+		                            			<field name="repeated_every" string="Repeated every"/>
+                                			</group>
+                                			<group>
+		                            			<field name="planned_on" string="Planned On"/>
+		                            			<field name="date_end" string="Date End"/>
+                                			</group>
+                                		</group>
+                    			</sheet>
+                		</form>
+            		</field>
+        	</record>
+
+		<act_window id="dashboard_list_project_tasks_id"
+			    name="Tâches"
+			    res_model="project.task"
+			    view_mode="tree"
+			    target="new"
+			    key2="client_action_multi"/>
+
+		<act_window id="dashboard_new_project_task_id"
+			    name="Tâches"
+			    res_model="project.task"
+			    view_mode="form"
+			    target="new"
+			    key2="client_action_multi"/>
+
+		<record id="channel_dashboard_kanban_view" model="ir.ui.view">
+		    <field name="name">orvea.project.dashboard.view</field>
+		    <field name="model">project.task</field>
+		    <field name="arch" type="xml">
+			<kanban class="oe_background_grey o_kanban_dashboard o_salesteam_kanban o_project_kanban " create="0">
+			    <field name="tasks_done_count" invisible="1"/>
+			    <field name="color"/>
+			    <templates>
+				<t t-name="kanban-box">
+				    <h1>Bonjour ! </h1>
+				    <h3>Voici ce qui est prévu pour aujourd'hui</h3>
+
+				</t>
+			    </templates>
+			</kanban>
+		    </field>
+		</record>
+
+
+		<record id="orvea_dashboard_action" model="ir.actions.act_window">
+		    <field name="name">Dashboard</field>
+		    <field name="res_model">project.task</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="view_type">form</field>
+		    <field name="context">{}</field>
+		    <field name="view_mode">kanban</field>
+		</record>
+
+		<menuitem name="Dashboard" id="webkul_employees_main_menu"/>
+    		<menuitem  id="employees_dashboard_menu" parent="webkul_employees_main_menu" sequence="0" name="Dashboard" action="orvea_dashboard_action"/>
+
+
+
+
+
+        	<record id="view_orvea_meeting_popup_form" model="ir.ui.view">
+            		<field name="name">orvea.meeting.popup.form</field>
+            		<field name="model">orvea.meeting</field>
+            		<field name="arch" type="xml">
+                		<form string="Ajouter rendez-vous">
+                			<sheet>
+                            			<group>
+                            				<group>
+		                            			<field name="name" string="Title"/>
+		                            			<field name="date" string="Date"/>
+		                            			<field name="duration" string="Duration"/>
+		                            			<field name="description" string="Description" widget="html" colspan="2"/>
+		                            			<field name="localisation" string="Localisation"/>
+		                            			<field name="project" string="Project"/>
+		                            			<field name="opportunity" string="Opportunity"/>
+
+                                			</group>
+                                			<group>
+		                            			<field name="affected_to" string="Affected To"/>
+		                            			<field name="company" string="Company"/>
+                                			</group>
+                                		</group>
+                    			</sheet>
+                		</form>
+            		</field>
+        	</record>
+
+		<record id="purchase_pm_po_need_approval" model="ir.actions.act_window">
+		    <field name="name">Project Task</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">project.task</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">kanban,tree,form</field>
+		    <field name="domain"></field>
+		    <field name="context"></field>
+		</record>
+
+
+		<record id="board_orvea_welcome_view" model="ir.ui.view">
+		    <field name="name">board.orvea.welcome.view</field>
+		    <field name="model">board.board</field>
+		    <field name="arch" type="xml">
+		        <form string="Orvea Dashboard">
+		            <board style="1-1">					
+		                <column>
+		                    <action name="%(purchase_pm_po_need_approval)d" string="PM : Purchases Orders need approval"/>
+		                </column>						
+		            </board>
+		        </form>
+		    </field>
+		</record>
+
+	</data>
+</odoo>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Default View for Orvea Dashboard, which is extended to make Dashboard View -->
+        <record model="ir.ui.view" id="orvea_dashboard_view">
+            <field name="name">Orvea Dashboard</field>
+            <field name="model">orvea.dashboard</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!--<field name="name"/>-->
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Client Action For Menu Dashboard -->
+        <record id="action_orvea_dashboards" model="ir.actions.client">
+            <field name="name">Dashboard</field>
+            <field name="tag">orvea_dashboard.dashboard</field>
+        </record>
+
+        <!-- Menu Dashbaord -->
+        <menuitem id="menu_orvea_dashboard"
+                  name="Dashboards"
+                  action="action_orvea_dashboards"
+                  sequence="1"/>
+
+
+        	<record id="view_project_task_openpopup_form" model="ir.ui.view">
+            		<field name="name">project.task.popup.form</field>
+            		<field name="model">project.task</field>
+            		<field name="arch" type="xml">
+		        		<form string="Ajouter Tâche">
+		        			<sheet>
+		                    			<group>
+		                    				<group>
+            								<label for="title" string="Titre" style="font-family: Arial,sans-serif; !important"/>
+									<field name="title" nolabel="1"/>
+            								<label for="project_id" string="Projet" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="project_id" string="Projet" nolabel="1"/>
+
+		                        			</group>
+		                        			<group>
+            								<label for="opportunity" string="Opportunité" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="opportunity" nolabel="1"/>
+            								<label for="partner_id" string="Client" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="partner_id" string="Client" nolabel="1"/>
+            								<label for="step_project" string="Étape" style="font-family: Arial,sans-serif; !important" attrs="{'invisible': [('project_id', '==', False)]}"/>
+				                    			<field name="step_project" string="Step" attrs="{'invisible': [('project_id', '==', False)]}" nolabel="1"/>
+		                        			</group>
+		                        		</group>
+		                    			<group string="DESCRIPTION DE LA TÂCHE" style="font-family: Arial,sans-serif; !important">
+		                    				<group>
+            								<label for="types_task" string="Type" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="types_task" string="Type" nolabel="1"/>
+		                        			</group>
+		                        			<group>
+            								<label for="user_id" string="Attribué à" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="user_id" string="Attribué à" nolabel="1"/>
+		                        			</group>
+		                        		</group>
+		                        		<group>
+            								<label for="description" string="Description" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="description" string="Description" nolabel="1"/>
+		                        		</group>
+		                        		<group>
+		                        			<group>
+            								<label for="deadline" string="Échéance" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="deadline" string="Échéance" nolabel="1"/>
+            								<label for="priority_task" string="Priorité" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="priority_task" string="Priorité" nolabel="1"/>
+            								<label for="repeated_task" string="Répéter ..." style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="repeated_task" string="Répéter ..." nolabel="1"/>
+		                        			</group>
+		                        			<group>
+            								<label for="duration" string="Durée" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="duration" string="Durée" nolabel="1"/>
+		                        			</group>
+		                        		</group>
+		                    			<group string="RÉCURRENCE" attrs="{'invisible': [('repeated_task', '==', False)]}">
+		                    				<group>
+            								<label for="mode_repetition" string="Répéter" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="mode_repetition" string="Répéter" nolabel="1"/>
+            								<label for="repeated_every_day" string="Répéter chaque" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="repeated_every_day" string="Répéter chaque" attrs="{'invisible': [('mode_repetition', '!=', 'daily')]}" nolabel="1"/>
+            								<label for="repeated_every_business_day" string="Répéter chaque" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="repeated_every_business_day" string="Répéter chaque" attrs="{'invisible': [('mode_repetition', '!=', 'every_day')]}" nolabel="1"/>
+            								<label for="repeated_every_week" string="Répéter chaque" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="repeated_every_week" string="Répéter chaque" attrs="{'invisible': [('mode_repetition', '!=', 'weekly')]}" nolabel="1"/>
+            								<label for="repeated_every_month" string="Répéter chaque" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="repeated_every_month" string="Répéter chaque" attrs="{'invisible': [('mode_repetition', '!=', 'monthly')]}" nolabel="1"/>
+            								<label for="day_month" string="Jour du Mois" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="day_month" string="Jour du Mois" attrs="{'invisible': [('mode_repetition', '!=', 'monthly')]}" nolabel="1"/>
+            								<label for="repeated_every_year" string="Répéter chaque" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="repeated_every_year" string="Répéter chaque" attrs="{'invisible': [('mode_repetition', '!=', 'annually')]}" nolabel="1"/>
+		                        			</group>
+		                        			<group>
+            								<label for="planned_on" string="Plannifier à" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="planned_on" string="Plannifier à" nolabel="1"/>
+            								<label for="date_end" string="Date de Fin" style="font-family: Arial,sans-serif; !important"/>
+				                    			<field name="date_end" string="Date de Fin" nolabel="1"/>
+		                        			</group>
+		                        		</group>
+				                	<field name="planned" string="Planned" invisible="1"/>
+		            			</sheet>
+		        		</form>
+            		</field>
+        	</record>
+
+        	<record id="view_project_task_popup_tree" model="ir.ui.view">
+            		<field name="name">project.task.popup.tree</field>
+            		<field name="model">project.task</field>
+            		<field name="arch" type="xml">
+                		<tree string="Tâches" editable="bottom">
+		                	<field name="priority_task" string="P"/>
+		                        <field name="project_id" string="Projet"/>
+		                        <field name="partner_id" string="Client"/>
+		                        <field name="description" string="Description"/>
+		                        <field name="types_task" string="Type"/>
+		                        <field name="step_project" string="Étape"/>
+		                        <field name="deadline" string="Échéance"/>
+		                        <field name="planned" string="Planning"/>
+					<button type="object" class="fa fa-check" name="delete_task"/>
+                		</tree>
+            		</field>
+        	</record>
+
+
+        	<record id="view_orvea_meeting_popup_form" model="ir.ui.view">
+            		<field name="name">project.meeting.popup.form</field>
+            		<field name="model">project.task</field>
+            		<field name="arch" type="xml">
+                		<form string="Ajouter rendez-vous">
+                			<sheet>
+                            			<group>
+                            				<group>
+		                            			<field name="name" string="Titre"/>
+		                            			<field name="deadline" string="Date"/>
+		                            			<field name="duration" string="Durée"/>
+                                			</group>
+                            				<group>
+		                            			<field name="affected_to" string="Affecté à"/>
+		                            			<field name="started_on" string="À"/>
+                                			</group>
+                            			</group>
+                            			<group>
+		                            		<field name="description" string="Description"/>
+                            			</group>
+                            			<group>
+                            				<group>
+		                            			<field name="localisation" string="Localisation"/>
+		                            			<field name="project" string="Projet"/>
+		                            			<field name="opportunity" string="Opportunité"/>
+
+                                			</group>
+                                			<group>
+
+		                            			<field name="company" string="Choisissez une enreprise"/>
+                                			</group>
+                                		</group>
+                    			</sheet>
+                		</form>
+            		</field>
+        	</record>
+
+        	<record id="view_project_meeting_popup_tree" model="ir.ui.view">
+            		<field name="name">project.meeting.popup.tree</field>
+            		<field name="model">project.task</field>
+            		<field name="arch" type="xml">
+                		<tree string="Rendez-vous">
+		                	<field name="name" string="Titre"/>
+		                        <field name="deadline" string="Date"/>
+		                        <field name="duration" string="Durée"/>
+                		</tree>
+            		</field>
+        	</record>
+
+
+        	<record id="view_orvea_call_popup_form" model="ir.ui.view">
+            		<field name="name">project.call.popup.form</field>
+            		<field name="model">project.task</field>
+            		<field name="arch" type="xml">
+                		<form string="Ajouter appel">
+                			<sheet>
+                            			<group>
+                            				<group>
+		                            			<field name="partner_id" string="Client"/>
+                                			</group>
+                            				<group>
+		                            			<field name="user_id" string="Responsable"/>
+                                			</group>
+                            			</group>
+                            			<group>
+		                            		<field name="description" string="Description"/>
+                            			</group>
+                            			<group>
+                            				<group>
+		                            			<field name="called_on" string="Appelé le"/>
+		                            			<field name="project" string="Projet"/>
+                                			</group>
+                                			<group>
+
+		                            			<field name="duration" string="Autour de"/>
+                                			</group>
+                                		</group>
+                    			</sheet>
+                		</form>
+            		</field>
+        	</record>
+
+        	<record id="view_project_call_popup_tree" model="ir.ui.view">
+            		<field name="name">project.call.popup.tree</field>
+            		<field name="model">project.task</field>
+            		<field name="arch" type="xml">
+                		<tree string="Rendez-vous">
+		                        <field name="partner_id" string="Client"/>
+		                        <field name="called_on" string="Appelé le"/>
+		                        <field name="duration" string="Autour"/>
+		                        <field name="partner_phone" string="Téléphone"/>
+		                        <field name="user_id" string="Responsable"/>
+		                        <field name="call_creator" string="Créateur"/>
+                		</tree>
+            		</field>
+        	</record>
+
+
+        <!--  Dashboard Assests. We are making changes on assets backend -->
+        <template id="assets_backend" name="Orvea assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/orvea_dashboard/static/src/js/orvea_dashboard.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/charts/Chart.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/charts/Chart.bundle.min.js"/>
+                <!-- Datatable scripts -->
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/datatables.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/dataTables.buttons.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/buttons.flash.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/buttons.html5.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/buttons.print.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/pdfmake.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/vfs_fonts.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/jszip.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/buttons.bootstrap.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/buttons.bootstrap4.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/dataTables/buttons.colVis.min.js"/>
+                <!-- Scripts to export html to pdf -->
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/jsPdf/jspdf.min.js"/>
+                <script type="text/javascript" src="/orvea_dashboard/static/lib/jsPdf/jspdf.debug.js"/>
+                <!-- Css scripts for dashboard view and table -->
+                <link rel="stylesheet" href="/orvea_dashboard/static/src/css/dashboard.css"/>
+                <link rel="stylesheet" href="/orvea_dashboard/static/lib/dataTables/datatables.min.css"/>
+                <link rel="stylesheet" href="/orvea_dashboard/static/lib/dataTables/buttons.dataTables.min.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

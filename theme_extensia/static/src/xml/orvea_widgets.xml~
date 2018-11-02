@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+	<t t-name="orvea_widgets_menu">
+		<ul class="nav navbar-top-links navbar-left oe_user_menu_placeholder oe_systray" style="margin-top:37px !important">
+			<li class="o_mail_navbar_item_2">
+				<div class="o_searchview">
+				    	<span class="o_searchview_more fa fa-search-minus" title="Recherche avancée..."></span>
+					<ul class="dropdown-menu o_searchview_autocomplete" role="menu" style="display: none;"></ul>
+					<input class="o_searchview_input" placeholder="Recherche…" type="text"/>
+				</div>
+			</li>
+			<li class="o_mail_navbar_item_1">
+			    <li class="o_user_menu">
+				<div >
+				    <button class="btn btn-primary fa fa-plus" type="button" data-toggle="dropdown">
+				    <span class=""></span></button>
+					<ul class="dropdown-menu" role="menu" style="width:248px;height:340px;background-color: #31B9EC; color:white;border: 1px solid black; !important">
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-tasks"><a style="padding-left:10px !important" href="#" data-menu="tasks"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Tâche</span></a></li></span>
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-calendar-o"><a style="padding-left:10px !important" href="#" data-menu="meetings"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Rendez-vous</span></a></li></span>
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-phone"><a style="padding-left:10px !important" href="#" data-menu="calls"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Appel</span></a></li></span>
+					    <li style="border: 0.5px solid black; !important" class="divider"/>
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-briefcase"><a style="padding-left:10px !important" href="#" data-menu="companies"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Entreprise</span></a></li></span>
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-user-o"><a style="padding-left:10px !important" href="#" data-menu="contacts"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Contact</span></a></li></span>
+					    <li style="border: 0.5px solid black; !important" class="divider"/>
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-check-circle-o"><a style="padding-left:10px !important" href="#" data-menu="opportunities"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Opportunité</span></a></li></span>
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-align-right"><a style="padding-left:10px !important" href="#" data-menu="projects"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Projet</span></a></li></span>
+					    <span style="display:block; !important"><li style="margin: 15px 0;padding-left: 25px;font-size:20px !important" class="fa fa-money"><a style="padding-left:10px !important" href="#" data-menu="invoices"><span style="font-size:15px;font-family: Arial, Helvetica, sans-serif;color:white
+ !important">Facture</span></a></li></span>
+
+					<!--div style="display: block; transition-duration: 0s; opacity: 1; visibility: visible; right: 10px; width: 300px;" class="bigbuttonsholder addbuttons header_dropdown" id="addmenuholder">	
+
+						<div class="col-sm-4">
+							<a class="add_company">
+								<i class="fa fa-briefcase"></i>
+								<br/>		
+								<i></i>AJOUTER <br/>ENTREPRISE		
+							</a>
+						</div>
+
+						<div class="col-sm-4 button_orvea" style="text-align:center;border-right: 1px solid black;border-bottom: 1px solid black; !important">
+							<a class="add_contact" id="add_quick_contact">
+								<i class="fa fa-user-o"></i>
+								<br/>		
+								<i></i>AJOUTER <br/>CONTACT		
+							</a>
+						</div>
+
+
+						<div class="col-sm-4 button_orvea" style="text-align:center; !important">
+							<a class="add_contact" id="add_quick_contact">
+								<i class="fa fa-calendar-o"></i>
+								<br/>		
+								<i></i>AJOUTER <br/>TÂCHE		
+							</a>
+						</div>
+						<br/>
+						<div class="col-sm-4 button_orvea" style="text-align:center;border-right: 1px solid black; !important">
+							<a class="add_company">
+								<i class="fa fa-phone"></i>
+								<br/>		
+								<i></i>AJOUTER <br/>CONTACT		
+							</a>
+						</div>
+
+						<div class="col-sm-4 button_orvea" style="text-align:center;border-right: 1px solid black; !important">
+							<a class="add_contact" id="add_quick_contact">
+								<i class="fa fa-users"></i>
+								<br/>		
+								<i></i>AJOUTER <br/>RENDEZ-VOUS		
+							</a>
+						</div>
+
+
+						<div class="col-sm-4 button_orvea" style="text-align:center; !important">
+							<a class="add_contact" id="add_quick_contact">
+							</a>
+						</div>
+						<a class="add_todo">
+							<i></i>Ajouter <br/>Tâche	
+						</a>
+						<a class="add_callback">
+							<i></i>
+							Ajouter <br/>Appel	
+						</a>
+						<a class="add_meeting">
+							<i></i>
+							Ajouter <br/>Rendez-vous	
+						</a>
+
+	
+					</div-->
+				</ul>
+				  </div>
+			    </li>
+
+			</li>
+		</ul>
+	</t>
+
+	<t t-name="orvea_widgets_menu_list" t-extend="UserMenu">
+
+	</t>
+
+</templates>
+
