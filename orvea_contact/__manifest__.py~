@@ -5,7 +5,7 @@
     'name': 'Contact',
     'version': '1.1',
     'category': 'Human Resources',
-    "author": "Abdelwahed Rihene",
+    "author": "Abdelwahed rihene",
     'sequence': 75,
     'summary': 'Contact Details',
     'description': "",
