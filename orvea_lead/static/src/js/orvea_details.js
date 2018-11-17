@@ -1,0 +1,74 @@
+odoo.define('orvea_lead.details', function (require) {
+"use strict";
+
+var core = require('web.core');
+var session = require('web.session');
+var ajax = require('web.ajax');
+var ActionManager = require('web.ActionManager');
+var view_registry = require('web.view_registry');
+var Widget = require('web.Widget');
+var ControlPanelMixin = require('web.ControlPanelMixin');
+
+var AbstractRenderer = require('web.AbstractRenderer');
+var config = require('web.config');
+var dom = require('web.dom');
+var widgetRegistry = require('web.widget_registry');
+
+var QWeb = core.qweb;
+
+var _t = core._t;
+var _lt = core._lt;
+
+var OrveaDetailsView = Widget.extend(ControlPanelMixin, {
+
+
+	events: _.extend({}, Widget.prototype.events, {
+        	'click .lead_detail': 'action_lead_detail',
+	}),
+
+    init: function(parent, context) {
+        console.log('--------------------init---------------------');
+        console.log(context.data['flag_detail']);
+        var self = this;
+        this._super(parent, context);
+        self.render();
+        self.href = window.location.href;
+    },
+
+    willStart: function() {
+        return $.when(ajax.loadLibs(this), this._super());
+    },
+    start: function() {
+        console.log('------------------start-----------------------');
+        var self = this;
+        this._super();
+	return self.$el.html(QWeb.render("orvea_lead.details", {widget: self}));
+    },
+    render: function() {
+        console.log('---------------------render--------------------');
+        var super_render = this._super;
+        var self = this;
+	return self.$el.html(QWeb.render("orvea_lead.details", {widget: self}));
+    },
+    reload: function () {
+        console.log('---------------------reload--------------------');
+        window.location.href = this.href;
+    },
+    action_lead_detail : function(event) {
+        console.log('--------------------- action_lead_detail -----------------');
+        var self = this;
+        var element = document.getElementsByClassName("o_group");
+	var element_classes = element[0].classList['value'];
+	if (element_classes.includes("invisible_data") == true) {
+                element[0].classList = ["o_group data_visible"];
+	}
+	if (element_classes.includes("data_visible") == true) {
+                element[0].classList = ["o_group invisible_data"];
+	}
+        event.stopPropagation();
+        event.preventDefault();
+    },
+});
+widgetRegistry.add('orvea_lead.details', OrveaDetailsView);
+return OrveaDetailsView
+});

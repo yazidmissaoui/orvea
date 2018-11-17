@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="orvea_lead.dashboard">
+	<div class="flex-parent" style="border: 1px solid black;">
+		<div class="lead_details">
+			<div class="input-flex-container">
+				<div class="input lead_coming">
+					<span class="span coming" id="coming" t-att-data-year="state_transaction" data-info="">
+						<span class="text" t-att-data-year="state_transaction" style="white-space: nowrap;"></span>
+					</span>
+				</div>
+				<div class="input lead_new">
+					<span class="span new" id="new" data-year="" data-info="">
+						<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+					</span>
+				</div>
+				<div class="input lead_contacted">
+					<span class="span contacted" id="contacted" data-year="Contacté" data-info="">
+						<span class="text" style="white-space: nowrap;">Contacté</span>						
+					</span>
+				</div>
+				<div class="input lead_rdv">
+					<span class="span rdv" id="rdv" data-year="" data-info="RDV Présentation">
+						<span class="text" style="white-space: nowrap;">RDV Présentation</span>						
+					</span>
+				</div>
+				<div class="input lead_dce">
+					<span class="span dce" id="waiting_dce" data-year="En attente DCE" data-info="">
+						<span class="text" style="white-space: nowrap;">En attente DCE</span>						
+					</span>
+				</div>
+				<div class="input lead_quotation_creation">
+					<span class="span quotation_creation" id="quotation_creation" data-year="" data-info="Création Devis">
+						<span class="text" style="white-space: nowrap;">Création Devis</span>						
+					</span>
+				</div>
+				<div class="input lead_quotation_sent">
+					<span class="span quotation_sent" id="quotation_sent" data-year="Devis Envoyé" data-info="">
+						<span class="text" style="white-space: nowrap;">Devis Envoyé</span>						
+					</span>
+				</div>
+				<div class="input lead_meeting_sale">
+					<span class="span meeting_sale" id="meeting_sale" data-year="" data-info="RDV Vente, Recalage Devis">
+						<span class="text" style="white-space: nowrap;">RDV Vente, Recalage Devis</span>						
+					</span>
+				</div>
+				<div class="input lead_agreement">
+					<span class="span agreement" id="agreement" data-year="Accord de principe" data-info="">
+						<span class="text" style="white-space: nowrap;">Accord de principe</span>						
+					</span>
+				</div>
+				<div class="input lead_signature">
+					<span class="span signature" id="signature" data-year="" data-info="Suivi signature">
+						<span class="text" style="white-space: nowrap;">Suivi signature</span>						
+					</span>
+				</div>
+				<div class="input lead_quotation_signed">
+					<span class="span quotation_signed" id="quotation_signed" data-year="Devis Signé" data-info="">
+						<span class="text" style="white-space: nowrap;">Devis Signé</span>						
+					</span>
+				</div>
+				<div class="input lead_preparation_site">
+					<span class="span preparation_site" id="preparation_site" data-year="" data-info="Préparation chantier">
+						<span class="text" style="white-space: nowrap;">Préparation chantier</span>						
+		
+				</span>
+				</div>
+				<div class="input lead_production_site">
+					<span class="span production_site" id="production_site" data-year="Production chantier" data-info="">
+						<span class="text" style="white-space: nowrap;">Production chantier</span>						
+					</span>
+				</div>
+				<div class="input lead_fenced">
+					<span class="span fenced" id="fenced" data-year="" data-info="Clôture">
+						<span class="text" style="white-space: nowrap;">Clôture</span>						
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+    </t>
+</templates>

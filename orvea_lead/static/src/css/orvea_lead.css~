@@ -1,0 +1,228 @@
+20: 20
+0.8: 0.8
+80: 80
+1000px: 1000px
+$dotWidth: 25px
+$dotWidthSm: 27px
+#D8D8D8: #D8D8D8
+#AEB6BF: #AEB6BF
+
+.h1{
+	text-align: center !important;
+	height: 38px !important;
+	margin: 60px 0 !important;
+}
+.flex-parent{
+   	min-height: 250px !important;
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+	align-items: center !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+.visible_data{
+      visibility:visible;
+}
+.invisible_data{
+      visibility:hidden;
+}
+.visible_child_ids{
+      visibility:visible;
+}
+.invisible_child_ids{
+      visibility:hidden;
+}
+.fa-chevron-right:before{
+	color:blue;
+}
+.fa-chevron-down:before{
+	color:blue;
+}
+.bouton{
+	border: none !important;
+	background-color: inherit !important;
+	padding: 14px 28px !important;
+	font-size: 16px !important;
+	cursor: pointer !important;
+	display: inline-block !important;
+}
+.bouton:hover{
+     	background: white !important;
+}
+.default{
+	color: black !important;
+}
+
+.input-flex-container{
+	display: flex !important;
+	justify-content: space-around !important;
+	align-items: center !important;
+	width: 80 !important;
+	height: 100px !important;
+	max-width: 1000px !important;
+	position: relative !important;
+	z-index: 0 !important;
+}
+.input::before{
+		content: '' !important;
+		display: block !important;
+		position: absolute !important;
+		z-index: -1 !important;
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+		background-color: #D8D8D8 !important;
+		width: 40px !important;
+		height: 5px !important;
+		max-width: 500px !important;
+		content: attr(data-year)  !important;
+		left: 15px !important;
+		background-color: #D8D8D8 !important;
+}
+.input::after{
+		content: '' !important;
+		display: block !important;
+		position: absolute !important;
+		z-index: -1 !important;
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+		content: attr(data-year)  !important;
+		background-color: #D8D8D8 !important;
+		width: 40px !important;
+		height: 5px !important;
+		max-width: 500px !important;
+		right: 8.5px !important;
+		background-color: #AEB6BF !important;
+}
+.input .text{
+		    visibility: hidden;
+		    color: #0B95D5;
+		    text-align: center;
+		    padding: 10px 0;
+		    position: absolute;
+   		    margin-top:20px; 
+		    z-index: 1;
+}
+.input::active{
+		cursor: pointer !important;
+}
+.input::hover{
+		cursor: pointer !important;
+}
+.input:hover .text{
+    		visibility: visible;
+}
+.input .span{
+			font-weight: 700px !important;
+}
+.input{
+	width: 25px !important;
+	height: 25px !important;
+	background-color: #D8D8D8 !important;
+	position: relative !important;
+    margin-right: 20px !important;
+	border-radius: 50% !important;
+
+		span{
+			font-weight: 700 !important;
+			}
+}
+.input2{
+	color: white !important;
+	background-color: #00347F !important;
+    visibility: visible !important;
+    font-size: 10px !important;
+}
+.input2:after{
+		background-color: #00347F !important;
+}
+.input2:hover .text{
+    		visibility: visible;
+}
+.coming_style:before{
+	margin-left: 3px !important;
+			content: attr(data-info)  !important;
+}
+.new_style:before{
+			visibility: visible !important;
+			position: absolute !important;
+			left: 50% !important;
+			content: attr(data-info) !important;
+			top: -45px !important;
+			width: 70px !important;
+			transform: translateX(-50%) !important;
+			font-size: 10px !important;
+			text-indent: -10px !important;
+			color: #00347F !important;
+}
+.coming_style:after{
+			visibility: visible !important;
+			position: absolute !important;
+			left: 50% !important;
+			color: #0B95D5 !important;
+			font-size: 10px !important;
+			content: attr(data-year)  !important;
+			top: 25px !important;
+			transform: translateX(-50%) !important;
+}
+.span{
+		width: 1px !important;
+		height: 1px !important;
+		position: absolute !important;
+		font-size: 10px !important;
+		top: 50% !important;
+		left: 50% !important;
+		transform: translate(-50%, -50%) !important;
+		visibility: hidden !important;
+}
+.span::before{
+			visibility: visible !important;
+			position: absolute !important;
+			left: 50% !important;
+			top: -65px !important;
+			width: 70px !important;
+			transform: translateX(-5px) rotateZ(-45deg) !important;
+			font-size: 10px !important;
+			text-indent: -10px !important;
+}
+.span::after{
+			visibility: visible !important;
+			position: absolute !important;
+			left: 50% !important;
+			font-size: 10px !important;
+			top: 25px !important;
+			transform: translateX(-50%) !important;
+}
+.quotation_details{
+    min-height: 45px !important;
+    background-color: white !important;
+    padding: 5px 0 3px 19px !important;
+}
+.lead_details{
+    min-height: 45px !important;
+    background-color: white !important;
+    padding: 5px 0 3px 19px !important;
+}
+.ppl_files{
+    min-height: 34px !important;
+    background-color: #f4f4f4 !important;
+    padding: 5px 0 3px 19px !important;
+}
+@media (min-width: 1000px / 0.8)
+	.input::before
+		left: #{-(1000px / 20) + (25px / 2)}
+	.input::after
+		right: #{-(1000px / 20) + (25px / 2)}
+@media (max-width: 850px)
+	.input
+		width: 27px
+		height: 27px
+		&::before, &::after
+			height: 3px
+		&::before
+			left: calc(#{-80 / 20} + #{27px / 2})
+		&::after
+			right: calc(#{-80 / 20} + #{27px / 2})
+
+
+
