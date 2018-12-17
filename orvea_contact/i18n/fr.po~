@@ -1,0 +1,121 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale
+# 
+# Translators:
+# Martin Trigaux, 2017
+# Abdelwahed Rihene <abdelwahed_rihene@yahoo.fr>, 2018
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Lead Form"
+msgstr "STATUT DU LEAD"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Function"
+msgstr "Poste"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Mobile Number"
+msgstr "N° mobile"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "City"
+msgstr "Ville"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Company Name"
+msgstr "Nom de l'entreprise"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Surname"
+msgstr "Prénom"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Phone Number"
+msgstr "N° Téléphone"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Mobile Number 2"
+msgstr "N° mobile 2"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Activity Sector"
+msgstr "Secteur d'activité"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_form
+msgid "Contact Owner"
+msgstr "Propiétaire"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "	Name"
+msgstr "NOM"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "	E-mail"
+msgstr "E-MAIL"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "Lead State"
+msgstr "STATUT DU LEAD"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "Creation Date"
+msgstr "DATE DE CRÉATION"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "FUNCTION"
+msgstr "INTITULÉ DU POSTE"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "PHONE NUMBER"
+msgstr "N° TÉL"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "MOBILE PHONE"
+msgstr "N° TÉL MOBILE"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "MOBILE PHONE 2"
+msgstr "N° TÉL MOBILE 2"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "CITY"
+msgstr "VILLE"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "ACCOUNT OWNER"
+msgstr "PROPRIÉTAIRE DU COMPTE"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "COMPANY NAME"
+msgstr "NOM DE L'ENTRPRISE"
+
+#. module: orvea_contact
+#: model:ir.ui.view,arch_db:orvea_contact.view_contact_list_tree
+msgid "ACTIVTY SECTOR"
+msgstr "SECTEUR D'ACTIVITÉ"

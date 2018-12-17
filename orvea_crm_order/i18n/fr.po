@@ -1,0 +1,146 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale
+# 
+# Translators:
+# Martin Trigaux, 2017
+# Abdelwahed Rihene <abdelwahed_rihene@yahoo.fr>, 2018
+#. module: orvea_lead
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "State CRM"
+msgstr "Phase"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Client Account"
+msgstr "Compte Client"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Transaction Type"
+msgstr "Type"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Amount"
+msgstr "Montant"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Housing Number"
+msgstr "Nombre de logement"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Quotation Number"
+msgstr "N° Devis"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Delay CES"
+msgstr "Délai"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Forecast Start"
+msgstr "Prévisionnel CES"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Forecast Real"
+msgstr "Date de Démarrage"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Transaction Owner"
+msgstr "Propriétaire"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Date Creation"
+msgstr "Date de Création"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Contact Transaction"
+msgstr "Contact"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Company"
+msgstr "Entreprise"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_form
+msgid "Source Origine"
+msgstr "Source d'origne"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Name"
+msgstr "NOM DE LA TRANSACTION"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Client Account"
+msgstr "COMPTE CLIENT"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Transaction Type"
+msgstr "TYPE DE TRANSACTION"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "State CRM"
+msgstr "PHASE DE LA TRANSACTION"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Amount"
+msgstr "MONTANT"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Housing Number"
+msgstr "NOMBRE DE LOGEMENT"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Quotation Number"
+msgstr "N° DEVIS"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Delay CES"
+msgstr "DÉLAI CES"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Forecast Start"
+msgstr "DÉMARRAGE PRÉVISIONNEL CES"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Forecast Real"
+msgstr "DATE DE DÉMARRAGE RÉEL"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Transaction Owner"
+msgstr "PROPRIÉTAIRE DE LA TRANSACTION"
+
+#. module: orvea_crm
+#: model:ir.ui.view,arch_db:orvea_lead.orvea_crm_lead_tree
+msgid "Company"
+msgstr "ASSOCIÉ À"
+
+#. module: orvea_crm
+#: model:ir.actions.act_window,name:orvea_lead.action_orvea_crm_lead
+msgid "Opportunities"
+msgstr "Créer une transaction"

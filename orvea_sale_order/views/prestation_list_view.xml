@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <!-- Prestation Form View -->
+        <record id="orvea_prestation_list_form_view" model="ir.ui.view">
+        	<field name="name">orvea.prestation.list.form</field>
+        	<field name="model">prestation.list</field>
+        	<field name="arch" type="xml">
+            		<form string="Prestation">
+				<group>
+                    			<field name="name" string="Prestation"/>
+                    			<field name="description" string="Description"/>
+				</group>	
+                    		<field name="list_price" string="Prix" invisible="1"/>
+                	</form>
+            	</field>
+        </record>
+
+
+
+        <!-- Prestation Tree View -->
+        <record id="orvea_prestation_list_tree_view" model="ir.ui.view">
+        	<field name="name">orvea.prestation.list.tree</field>
+        	<field name="model">prestation.list</field>
+            	<field name="arch" type="xml">
+		        <tree string="Prestation">
+                    		<field name="name" string="Prestation"/>
+                    		<field name="description" string="Description"/>
+                    		<field name="list_price" string="Prix" invisible="1"/>
+		        </tree>
+            	</field>
+        </record>
+
+
+
+        <!-- Prestation Action -->
+        <record model="ir.actions.act_window" id="action_orvea_prestation_list">
+            <field name="name">Prestation</field>
+            <field name="res_model">prestation.list</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_prestation_list_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_prestation_list_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Prestations.
+                </p>
+            </field>
+        </record>
+
+        <!-- Prestation Form View -->
+        <record id="orvea_prestation_list_line_form_view" model="ir.ui.view">
+        	<field name="name">orvea.prestation.list.line.form</field>
+        	<field name="model">prestation.list.line</field>
+        	<field name="arch" type="xml">
+            		<form string="Prestation">
+				<group>
+					<group>
+                    				<field name="prestation_id" string="Prestation"/>
+                    				<field name="activate" string="Choix"/>
+                    				<field name="delay_product" string="Delay"/>
+					</group>
+					<group>
+                    				<field name="unit_product" string="Unit"/>
+                    				<field name="list_price" string="List Price"/>
+                    				<field name="total_price" string="Total"/>
+					</group>
+				</group>	
+                    		<field name="prestation_type" string="Type" invisible="1"/>		
+                	</form>
+            	</field>
+        </record>
+
+        <!-- Prestation Tree View -->
+        <record id="orvea_prestation_list_line_tree_view" model="ir.ui.view">
+        	<field name="name">orvea.prestation.list.line.tree</field>
+        	<field name="model">prestation.list.line</field>
+            	<field name="arch" type="xml">
+		        <tree string="Prestation">
+                    		<field name="prestation_id" string="Prestation"/>
+                    		<field name="activate" string="Choix"/>
+                    		<field name="delay_product" string="Delay"/>
+                    		<field name="unit_product" string="Unit"/>
+                    		<field name="list_price" string="List Price"/>
+                    		<field name="total_price" string="Total"/>
+		        </tree>
+            	</field>
+        </record>
+
+        <!-- Prestation Action -->
+        <record model="ir.actions.act_window" id="action_orvea_prestation_list_line">
+            <field name="name">Prestation</field>
+            <field name="res_model">prestation.list.line</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_prestation_list_line_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_prestation_list_line_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Prestations.
+                </p>
+            </field>
+        </record>
+
+        <!-- Prestation Action -->
+        <menuitem id="orvea_prestation_configuration_root" name="Configuration" parent="orvea_crm_order.orvea_crm_lead_menu_root"/>
+        <menuitem id="orvea_prestation_line_list_menu" name="Prestations" parent="orvea_prestation_configuration_root" action="action_orvea_prestation_list"/>
+        <menuitem id="orvea_prestation_list_menu" name="Liste des Prestations" parent="orvea_prestation_configuration_root" action="action_orvea_prestation_list_line"/>
+
+</odoo>

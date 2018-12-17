@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<template id="orvea_sale_order_external_layout_header">
+			<div class="header" style="height: 20px;width: 10px !important;">
+			</div>
+			<div class="footer">
+				<hr style="background-color: blue; height: 1px; border: 0;"/>
+				<div>
+					<div style="color:grey;display:inline-block">
+						<h5> CONTRAT DE PRESTATION-LOGISTICIEN DE CHANTIER</h5>
+					</div>
+					<div style="color:grey;display:inline-block; float:right">
+						<h5> <span class="page"/></h5>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<template id="report_contract_document_template">
+		    <t t-call="orvea_sale_order.orvea_sale_order_external_layout_header"/>
+		    <t t-call="web.external_layout">
+			<t t-foreach="docs" t-as="o">
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h1>CONTRAT DE PRESTATION</h1>
+					<h3>Lot LOGISTICIEN DE CHANTIER</h3>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h3>CONSTRUCTION D'IN ENSEMBLE IMMOBILIER DE <t t-esc="o.housings_count"/> LOGEMENTS</h3>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h3><b>Résidence "<t t-esc="o.partner_id.name"/>" située à</b></h3>
+			    	</div>	 
+				<div style="text-align: center;">
+					<h4><t t-esc="o.street_construction"/>-<t t-esc="o.city_construction"/> <t t-esc="o.zip_construction"/></h4>
+			    	</div>
+				<div style="text-align: center;">
+					<h4><t t-esc="o.housings_count"/> logements</h4>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h3><b>SAS ORVEEA</b></h3>
+			    	</div>
+				<div style="text-align: center;">
+					<h4><b>145, Avenue de Malakoff 75 016 PARIS</b></h4>
+			    	</div>
+				<div style="text-align: center;">
+					<h4><b>RCS: 790 151 831</b></h4>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<h4><b>Le maitre d'ouvrage</b> est un promoteur reconnu sur le plan national  et qui fait réaliser des ensembles immobiliers, à usage de logements, divisés en lots, ci-aprés "<t t-esc="o.partner_id.name"/>" à <t t-esc="o.city_construction"/> <t t-esc="o.zip_construction"/>, sur l'ensemble du territoire national.</h4>
+				<br/>
+				<h4><b>Soucieux de renforcer :</b></h4>
+				<h4>- la bonne tenue des chantiers;</h4>
+				<h4>- la sécurité de chacun des Projets;</h4>
+				<br/>
+				<h4>et afin de limiter la difficulté de gestion d'un compte prorata établi entre les différentes entreprises dans le cadre d'une dévolution des travaux en lots séparés, le Maître d'ouvrage a souhaité confier à un prestataire, ci-après « le Prestataire », la gestion et le suivi de dépenses liées à la réalisation du Projet, généralement incluses dans un compte dit prorata pris en charge par les différents entreprises intervenant sur le Projet.</h4>
+				<br/>
+				<h4>Le Maître d'ouvrage et le Prestataire seront ci-après désignés ensemble "les Parties".</h4>
+				<br/>
+				<h4>Le contrat conclu avec le Prestataire qui sera désigné par le Maître d'ouvrage est composé des présentes conditions générales et de conditions particulières qui préciseront :</h4>
+				<br/>
+				<h4>- la localisation du Projet, ci-après "Nom commercial" à adresse du chantier ;</h4>
+				<h4>- l'identité des parties contractantes (maitre d'ouvrage et prestataire) ;</h4>
+				<h4>- les caractéristiques du Projet ;</h4>
+				<h4>- la liste des intervenants au Projet ;</h4>
+				<h4>- la rémunération du Prestataire ;</h4>
+				<h4>- le délai de sa prestation.</h4>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>1-OBJET DU CONTRAT</b></h4>
+			    	</div>
+				<br/>
+				<h4>Le Maître d'ouvrage confie au Prestataire, SAS ORVEA situé 145, Avenue de Malakoff, 75 016 Paris, qui l'accepte, la mission de réaliser les prestations listées ci-après :</h4>
+				<div style="text-align: left;">
+					<h5><b>Article 1 :</b></h5>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>2-DUREE</b></h4>
+			    	</div>
+				<br/>
+				<h4>Le présent contrat entrera en vigueur à la signature des conditions particulières et cessera de produire ses effets deux mois après la réception du Projet.</h4>
+				<br/>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>3-CONDITIONS FINANCIERES</b></h4>
+			    	</div>
+				<br/>
+				<h4>La rémunération qui sera versée au Prestataire est d'un montant global et forfaitaire, à l'exception des prestations optionnelles qui s'ajouteront à la rémunération de base et sera précisée dans les conditions particulières. Elle inclut l'ensemble des frais et dépenses que le Prestataire pourra engager dans le cadre de l'exécution de ses missions.</h4>
+				<br/>
+				<h4>Elle ne sera pas révisable.</h4>
+				<br/>
+				<h4>Son montant ainsi que l'échéancier de versement seront précisés dans les conditions particulières. Le Maître d'ouvrage sera tenu de s'acquitter des échéances de cette rémunération dans les 45 jours calendaires suivant l'envoi par le Prestataire d'une facture correspondante.</h4>
+				<br/>
+				<h4>A défaut de recevoir la facture correspondante, le Maître d'ouvrage ne sera pas tenu de s'acquitter de l'échéance.</h4>
+				<br/>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>4-OBLGATIONS DU PRESTATAIRE</b></h4>
+			    	</div>
+				<br/>
+				<h4>Le prestataire n'est pas un locateur d'ouvrage. Toutefois, il est tenu d'une obligation de résultat dans les tâches qu'il effectue. Il devra également signaler tout événement, fait, comportement de l'un des intervenants au Projet, qu'il aurait constaté dans l'exécution de ses missions et qui serait susceptible de remettre en cause le bon avancement du Projet et le délai contractuel de réalisation du Projet tel qu'il sera indiqué dans les conditions particulières.</h4>
+				<br/>
+				<h4>Il devra garantir le maître d'ouvrage contre toutes réclamations, injonctions…des autorités administratives ou du coordonnateur SPS qui dénonceraient un manquement ayant pour origine la mauvaise exécution de l'une de ses prestations.</h4>
+				<br/>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>5-CONDITIONS D'INTERVENTION</b></h4>
+			    	</div>
+				<br/>
+				<h4>Le Prestataire réalisera sa mission sur le Site avec ses propres équipements et matériels. Il devra signaler au Maître d'ouvrage sans délai toute difficulté qu'il rencontrerait dans la réalisation de ses missions.</h4>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>6-SOUS-TRAITÉ ET APPORTS</b></h4>
+			    	</div>
+				<br/>
+				<h4><b>6.1. </b>L'Entrepreneur devra réaliser, personnellement, et sans le sous-traiter, au moins 30 % de la valeur totale du Marché. Pour déroger à cette règle, il devra obtenir le consentement exprès du Maître d'ouvrage.</h4>
+				<br/>
+				<h4>En tout état de cause, l'Entrepreneur ne peut sous-traiter sans avoir fait accepter ses sous-traitants et fait agréer les conditions de paiement de chaque contrat de sous-traitance par le Maître d'ouvrage.</h4>
+				<br/>
+				<h4><b>6.2. </b>L'Entrepreneur est responsable de son sous-traitant vis-à-vis du Maître d'ouvrage. Il reconnaît avoir vérifié préalablement que le personnel de son sous-traitant est en situation régulière et a fait l'objet des déclarations nécessaires auprès des administrations concernées, afin que le Maître d'ouvrage ne puisse être recherché sur ce point. Si tel était le cas, l'Entrepreneur devra garantir le Maître d'ouvrage de toute condamnation prononcée contre lui.</h4>
+				<br/>
+				<h4><b>6.3. </b>Pour l'application du présent article, l'apport par l'Entrepreneur de son marché à une société ou à un groupement est assimilé à un sous-traité.</h4>
+				<br/>
+				<h4><b>6.4. </b>La demande d'acceptation du sous-traitant est remise concomitamment contre reçu au Maître d'œuvre et au Maître d'ouvrage. Elle devra être présentée bien avant l'intervention effective du sous-traitant sur le chantier et en tout état de cause suffisamment tôt pour permettre au maître d'ouvrage d'étudier le dossier de présentation, de l'accepter le cas échéant et d'agréer ses conditions de paiement. Toute présentation tardive pourrait autoriser le Maître d'ouvrage, par ce seul fait, à refuser l'intervention du sous-traitant, en plus des pénalités prévues ci-dessus. De surcroît, dans ce cas, l'Entrepreneur devra garantir le Maître d'ouvrage de toute condamnation qui serait prononcée contre lui soit sur le fondement de la loi du 31 décembre 1975.</h4>
+				<br/>
+				<h4>La demande d'acceptation devra faire mention de la nature des prestations du marché principal faisant l'objet d'un contrat de sous-traitance, du montant dans le marché principal des prestations sous-traitées et des modalités de paiement du sous-traitant.</h4>
+				<h4>La demande d'acceptation du sous-traitant comprendra également les pièces suivantes :</h4>
+				<br/>
+				<h4>-  Une demande d'acceptation du sous-traitant et d'agrément des conditions de paiement établie sous la forme du modèle joint en annexe n° 5, visée par le sous-traitant préalablement à sa remise au Maître d'œuvre.</h4>
+				<br/>
+				<h4>-  La copie du contrat de sous-traitance.</h4>
+				<br/>
+				<h4>-  La justification que le sous-traitant dispose de la qualification nécessaire pour exécuter les travaux sous-traités.</h4>
+				<br/>
+				<h4>-  La production d'une attestation nominative, pour le chantier considéré, d'une compagnie d'assurance notoirement solvable, ayant un établissement stable en France, garantissant le sous-traitant au titre de responsabilité civile et de la garantie décennale, en vigueur au jour de la DROC et au jour de la signature du sous-traité ainsi que, le cas échéant, la justification du paiement des primes correspondantes.</h4>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<h4>Il est précisé que la délégation de paiement n'est pas autorisée, sauf accord exprès du Maître d'ouvrage. Elle ne pourra excéder le montant des travaux sous-traités tel qu'il est prévu au marché principal et devra se traduire par la signature d'une convention de délégation conforme au modèle jointe en annexe 7. De surcroît, elle sera nécessairement imparfaite permettant au Maître d'ouvrage d'opposer au sous- traitant les exceptions qu'il détient contre l'entrepreneur principal.</h4>
+				<br/>
+				<h4>Si le Maître d'ouvrage accepte le sous-traitant et qu'il en agrée les conditions de paiement figurant sur la demande d'agrément, celles-ci doivent être au moins aussi contraignantes que celles du marché principal.</h4>
+				<br/>
+				<h4>Si le Maître d'ouvrage n'a pas répondu à la demande d'acceptation et d'agrément des conditions de paiement dans un délai de 20 jours à compter de la réception de cette demande par le Maître d'ouvrage, dès lors que le dossier de présentation comprend toutes les pièces visées à l'article 6.4, la demande est réputée acquise.</h4>
+				<br/>
+				<h4>Le refus d'acceptation ou d'agrément des conditions de paiement par le Maître d'ouvrage n'est pas susceptible d'ouvrir un droit à prolongation du délai d'exécution au profit de l'Entrepreneur.</h4>
+				<h4>L'accès au chantier est interdit aux entreprises sous-traitantes n'ayant pas fait l'objet de l'acceptation du Maître d'ouvrage et de l'agrément de leur condition de paiement, quel que soit leur rang.</h4>
+				<br/>
+				<h4>Dans tous les cas, l'acceptation du sous-traitant et l'agrément de ses conditions de paiement par le Maître d'ouvrage ne peut jamais avoir pour conséquence la création d'un lien  de  droit  quelconque  entre  lui  et  le  sous-traitant, pas  plus  qu'une exonération quelconque, partielle ou totale, de la responsabilité de l'Entrepreneur qui reste seul tenu de la bonne exécution du Marché à l'égard du Maître d'ouvrage.</h4>
+				<br/>
+				<br/>
+				<br/>
+				<h4><b>6.5. Sous-traitance en chainé</b></h4>
+				<h4>Le sous-traitant qui désire sous-traiter est considéré comme entrepreneur principal à l'égard de ses propres sous-traitants. Il doit délivrer à ses sous-traitants une caution garantissant les paiements. Il doit faire accepter son sous -traitant et faire agréer ses conditions de paiement par le Maître d'ouvrage selon le processus décrit à l'article 6.4.</h4>
+				<br/>
+				<h4>Il est rappelé que toute sous-traitance, au-delà du 2 -ème rang n'est pas acceptée par le Maître d'ouvrage.</h4>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>7-ASSURANCES</b></h4>
+			    	</div>
+				<br/>
+				<h4>Il est précisé que, sans que cela n'ait pour effet de modifier les responsabilités  du Prestataire au titre du présent Contrat, ce dernier devra souscrire une police de Responsabilité civile. Cette police devra être maintenue en vigueur aussi longtemps que la responsabilité du Prestataire pourra être engagée à l'égard du Maître d'Ouvrage, elle comportera, en permanence, au minimum les montants de garanties figurant dans l'attestation remise par le Prestataire et annexée au présent Contrat, Elle prendra effet au plus tard à la mise en vigueur du Contrat.</h4>
+				<br/>
+				<h4>Le Prestataire fournira au début de chaque année civile, à la demande du Maître d'Ouvrage et au plus tard dans les 30 jours, une attestation d'assurance délivrée par une compagnie d'assurance ou un de ses agents, justifiant de la souscription de cette police conformément à la disposition ci-dessus. Cette attestation devra mentionner la période pour laquelle elle est délivrée, faire expressément référence au présent Contrat et indiquer que les primes ont bien été payées pour la période visée dans l'attestation.</h4>
+				<br/>
+				<h4>Faute pour le Prestataire de respecter les dispositions ci-dessus, le Maître d'Ouvrage se réserve la possibilité de souscrire au lieu et place du Prestataire une telle assurance, aux frais du Prestataire, le montant de la prime sera alors déduit des sommes dues au Prestataire au titre du présent Contrat.</h4>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>8-RESILIATION</b></h4>
+			    	</div>
+				<br/>
+				<h4>Le présent contrat pourra être résilié de plein droit en cas de manquement de l'une ou l'autre des Parties, après l'envoi par celui qui l'invoque, d'une mise en demeure caractérisant les manquements qui lui sont reprochés à son contractant, et si cette mise en demeure est restée sans effet et sans réaction pendant trente jours calendaires à compter de l'envoi. </h4>
+				<br/>
+				<h4>Ce délai pourra être ramené à quinze jours en cas de faute ou de manquement grave du Prestataire, tel que notamment un abandon de sa mission, une absence non justifiée de plus de cinq jours sur le Site, la dissimulation d'un fait susceptible de retarder ou compromettre l'avancement du Projet.</h4>
+				<br/>
+				<h4>A l'expiration du délai indiqué dans la mise en demeure, la résiliation deviendra effective, par l'envoi d'une lettre où la partie qui invoque le manquement notifiera à l'autre partie sa décision de résilier le présent contrat.</h4>
+				<br/>
+				<h4>La suspension dans la réalisation du Projet pour quelle que cause que ce soit entrainera la résiliation du présent contrat, sans que le Prestataire puisse prétendre au versement d'une quelconque indemnité, à l'exception du paiement des prestations déjà effectuées au jour de la résiliation.</h4>
+				<br/>
+				<h4>D'une manière générale, en cas de résiliation du présent contrat et pour quelque cause que ce soit, le Prestataire ne pourra pas prétendre au versement d'une indemnité de quelque nature que ce soit, à l'exception des honoraires correspondant aux tâches effectivement exécutées au jour de la résiliation du contrat principal. Cependant, le Maître d'ouvrage, si cette résiliation trouvait son origine dans une faute ou un fait imputable au Prestataire, le Maître d'ouvrage pourrait retenir le paiement de tout honoraires restant dû à ce dernier, sans préjudice d'une réclamation du Maître d'ouvrage contre ce dernier, pour le préjudice que lui causerait son fait ou son manquement</h4>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>9-REGLEMENT DES LITIGES</b></h4>
+			    	</div>
+				<br/>
+				<h4>Le présent contrat est soumis au droit Français.</h4>
+				<h4>En cas de désaccord sur l'interprétation ou l'exécution de la présente Convention ou de ses suites, les Parties conviennent de soumettre les différends qui pourraient survenir entre elles, préalablement à toute saisine judiciaire à une procédure de médiation, qui sera organisée alors par le Centre de Médiation et d'arbitrage de Paris, conformément aux règles édictées par cet organisme. En cas d'échec de la médiation, les parties pourront porter leur litige devant le Tribunal de Grande Instance de Paris.</h4>
+				<br/>
+				<h4 style="text-align:right"><b>A PARIS, le <t t-esc="Date" t-options="{'widget': 'date'}"/></b></h4>
+				<h4>Ont lu et accepté Le Contrat de prestation,</h4>
+				<br/>
+				<br/>
+				<br/>
+				<div>
+					<div style="display:inline-block">
+						<h4>Le Maitre d'ouvrage soussigné :</h4>
+					</div>
+					<div style="display:inline-block; float:right">
+						<h4>L'entrepreneur soussigné :</h4>
+					</div>
+				</div>
+		    </t>		   
+		 </t>
+		</template>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record model="configure.state" id="configure_state_1">
+        <field name="name">A VENIR - RÉFÉRENCEMENT</field>
+    </record>
+    <record model="configure.state" id="configure_state_2">
+        <field name="name">Nouveau</field>
+    </record>
+    <record model="configure.state" id="configure_state_3">
+        <field name="name">Contacté</field>
+    </record>
+    <record model="configure.state" id="configure_state_4">
+        <field name="name">RDV Présentationé</field>
+    </record>
+    <record model="configure.state" id="configure_state_5">
+        <field name="name">En attente DCE</field>
+    </record>
+    <record model="configure.state" id="configure_state_6">
+        <field name="name">Création Devis</field>
+    </record>
+    <record model="configure.state" id="configure_state_7">
+        <field name="name">Devis Envoyé</field>
+    </record>
+    <record model="configure.state" id="configure_state_8">
+        <field name="name">RDV Vente, Recalage Devis</field>
+    </record>
+    <record model="configure.state" id="configure_state_9">
+        <field name="name">Accord de principe</field>
+    </record>
+    <record model="configure.state" id="configure_state_10">
+        <field name="name">Suivi signature</field>
+    </record>
+    <record model="configure.state" id="configure_state_11">
+        <field name="name">Devis Signé</field>
+    </record>
+    <record model="configure.state" id="configure_state_12">
+        <field name="name">Préparation chantier</field>
+    </record>
+    <record model="configure.state" id="configure_state_13">
+        <field name="name">Production chantier</field>
+    </record>
+    <record model="configure.state" id="configure_state_14">
+        <field name="name">Clôture</field>
+    </record>
+
+</odoo>

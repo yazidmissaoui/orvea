@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<template id="orvea_sale_order_external_layout_header">
+			<div class="header" style="height: 20px;width: 10px !important;">
+			</div>
+			<div class="footer">
+				<hr style="background-color: blue; height: 1px; border: 0;"/>
+				<div>
+					<div style="color:grey;display:inline-block">
+						<h5> CCP-LOGISTICIEN DE CHANTIER</h5>
+					</div>
+					<div style="color:grey;display:inline-block; float:right">
+						<h5> <span class="page"/></h5>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<template id="report_clause_document_template">
+		    <t t-call="orvea_sale_order.orvea_sale_order_external_layout_header"/>
+		    <t t-call="web.external_layout">
+			<t t-foreach="docs" t-as="o">
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h1>CAHIER DES CLAUSES PARTICULIERES</h1>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h3>Lot LOGISTICIEN DE CHANTIER</h3>
+			    	</div>
+				<div style="text-align: center;">
+					<h3>DU MARCHE DE TRAVAUX DE CONSTRUCTION DE L'OPERATION</h3>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h3><b>Nombre de logements :</b></h3>
+			    	</div>	 
+				<div style="text-align: center;">
+					<h4><t t-esc="o.housings_count"/> logements</h4>
+			    	</div>
+
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h3><b>Adresse chantier :</b></h3>
+			    	</div>
+				<div style="text-align: center;">
+					<h4><t t-esc="o.street_construction"/>-<t t-esc="o.city_construction"/> <t t-esc="o.zip_construction"/></h4>
+			    	</div>
+				<br/>
+				<br/>
+				<div style="text-align: center;">
+					<h3><b>Nom commercial :</b></h3>
+			    	</div>
+				<div style="text-align: center;">
+					<h4>"<t t-esc="o.partner_id.name"/>"</h4>
+			    	</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<h4 style="text-align: left;"><b>ARTICLE1 -OBJET</b></h4>
+				<br/>
+				<br/>
+				<h4>1.1- Le marché de travaux concerne la construction de <t t-esc="o.housings_count"/> logements collectifs situé à : </h4>
+				<h4 style="text-align: center;"><t t-esc="o.street_construction"/>-<t t-esc="o.city_construction"/> <t t-esc="o.zip_construction"/></h4>
+				<br/>
+				<h4>1.2- Le maître d'ouvrage est : </h4>
+				<h4 style="text-align: center;">"<t t-esc="o.partner_id.name"/>"</h4>
+				<br/>
+				<h4>1.3- Le marché de travaux est traité en corps d'états séparés, </h4>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>ARTICLE2 -LE MARCHE</b></h4>
+			    	</div>
+				<br/>
+				<h4><b>2.1 – Montant de la logistique de chantier</b></h4>
+				<br/>
+				<h4 style="text-align: center;">Montant H.T :</h4>
+				<h4 style="text-align: center;">TVA 20% :</h4>
+				<h4 style="text-align: center;">Total TTC :</h4>
+				<br/>
+				<h4 style="text-align: left;">Ce montant est global et forfaitaire,</h4>
+				<br/>
+				<h4><b>2.2 – Durée de prestation</b></h4>
+				<br/>
+				<h4>Le délai global de prestation est de 12 Mois tous corps d'états à compter du départ de la prestation, la période de préparation étant de deux mois. Le départ de la prestation pourra être enclencher à la demande du Maître d’ouvrage, avant ou après, en fonction du planning travaux pour cette même période.</h4>
+				<h4>Dépassement de délai : En cas de retard inhérent aux entreprises, les frais de Prorata et de logistique de chantier, affairant à ce retard, seront répercutés aux entreprises défaillantes, en inter-entreprises.</h4>
+				<br/>
+				<h4><b>2.3 – Performances et label de l'immeuble</b></h4>
+				<br/>
+				<h4>Le Maitre d'ouvrage rappelle à l'entreprise, son engagement à livrer un immeuble :</h4>
+				<h4>- Obtenant tous les labels prescrits dans les pièces contractuelles.</h4>
+				<h4>Le Maitre d'ouvrage a confié à un bureau de contrôle désigné dans le compte rendu de chantier une mission d'assistance à Maîtrise d'ouvrage pour l'obtention des labels prescrits. L'entreprise devra donc prendre en compte toutes les exigences pour l'obtention des critères de performance et de label sus nommés.</h4>
+				<br/>
+				<br/>
+				<br/>
+				<br/>	
+				<br/>
+				<h4><b>2.4 – Documents constituant le marché</b></h4>
+				<br/>
+				<h4>a) Devis inclus l’échéancier estimatif des facturations mensuelles.</h4>
+				<h4>b) Contrat de prestation de Logistique de chantier.</h4>
+				<h4>c) CCP Marché présent, CCAP, planning.</h4>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>ARTICLE3 - MAITRE D’OEUVRE</b></h4>
+			    	</div>
+				<br/>
+				<h4>Coordonnées du maître d'œuvre désigné dans le compte rendu de chantier.</h4>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>ARTICLE4 - COORDONNATEUR DE SECURITE</b></h4>
+			    	</div>
+				<br/>
+				<h4>Coordonnées du coordonnateur de sécurité désigné dans le compte de chantier.</h4>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>ARTICLE5 - SOUS-TRAITANCE ET APPORTS</b></h4>
+			    	</div>
+				<br/>
+				<h4>Voir Article 6 du Contrat de Prestation de Logistique de chantier.</h4>
+				<br/>
+				<div style="text-align: left;">
+					<h4><b>ARTICLE6 - RESPONSABILITES ET OBLIGATIONS ASSURANCES</b></h4>
+			    	</div>
+				<br/>
+				<h4>Voir Article 7 du Contrat de Prestation de Logistique de chantier</h4>
+				<br/>
+				<div style="text-align: left;">
+					<h5><b>Pièces jointes au présent CCP :</b></h5>
+			    	</div>
+				<br/>
+				<h4>Annexe 1 au CCP : Devis + Echéancier</h4>
+				<h4 style="text-align:right"><b>A PARIS, le <t t-esc="Date" t-options="{'widget': 'date'}"/></b></h4>
+				<h4>Ont lu et accepté Le Cahier des clauses Générales,</h4>
+				<br/>
+				<div>
+					<div style="display:inline-block">
+						<h4>Le Maitre d'ouvrage soussigné :</h4>
+					</div>
+					<div style="display:inline-block; float:right">
+						<h4>L'entrepreneur soussigné :</h4>
+					</div>
+				</div>
+		    </t>		   
+		 </t>
+		</template>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+console.log('-----------  test me  --------------');
+odoo.define('test', function (require) {
+"use strict";
+
+var core = require('web.core');
+var session = require('web.session');
+var ajax = require('web.ajax');
+var ActionManager = require('web.ActionManager');
+var view_registry = require('web.view_registry');
+var Widget = require('web.Widget');
+var ControlPanelMixin = require('web.ControlPanelMixin');
+
+var AbstractRenderer = require('web.AbstractRenderer');
+var config = require('web.config');
+var dom = require('web.dom');
+var widgetRegistry = require('web.widget_registry');
+
+var QWeb = core.qweb;
+
+var _t = core._t;
+var _lt = core._lt;
+console.log('-------------------------');
+var OrveaCalendarView = Widget.extend(ControlPanelMixin, {
+
+    events: _.extend({}, Widget.prototype.events, {
+	}),
+
+    init: function(parent, context) {
+        console.log('--------------------init--OrveaContactView-------------------');
+        var self = this;
+        this._super(parent, context);
+        self.render();
+        self.href = window.location.href;
+	return self.$el.html(QWeb.render("test", {widget: self}));
+    },
+
+});
+widgetRegistry.add('test', OrveaCalendarView);
+console.log('******************************');
+return OrveaCalendarView
+});

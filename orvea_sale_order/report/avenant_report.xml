@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <report 
+            id="sale_avenant"
+            model="sale.order"
+            string="AVENANT"
+            report_type="qweb-pdf"
+            name="orvea_sale_order.report_avenant_document_template"
+            file="orvea_sale_order.report_avenant_document"
+
+        />
+
+    </data>
+</odoo>

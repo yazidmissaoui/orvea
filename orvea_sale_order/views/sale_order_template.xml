@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--  Dashboard Assests. We are making changes on assets backend -->
+        <template id="assets_backend" name="Orvea assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/orvea_sale_order/static/src/js/quotation_state.js"/>
+		<link rel="stylesheet" href="/orvea_sale_order/static/src/css/order_sheet.css" />
+            </xpath>
+        </template>
+    </data>
+</odoo>

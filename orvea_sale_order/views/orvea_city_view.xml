@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+        <!-- City Form View -->
+        <record id="orvea_city_form_view_configuration" model="ir.ui.view">
+        	<field name="name">orvea.city.form.configuration</field>
+        	<field name="model">orvea.city</field>
+        	<field name="arch" type="xml">
+            		<form string="City">
+                    		<field name="name" string="Name"/>
+                	</form>
+            	</field>
+        </record>
+
+        <!-- City Tree View -->
+        <record id="orvea_city_tree_view_configuration" model="ir.ui.view">
+            <field name="name">orvea.city.tree.configuration</field>
+            <field name="model">orvea.city</field>
+            <field name="arch" type="xml">
+                <tree string="City">
+                    <field name="name" string="Name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <!-- City Action -->
+        <record model="ir.actions.act_window" id="orvea_res_city_configuration">
+            <field name="name">VLLES</field>
+            <field name="res_model">orvea.city</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_city_tree_view_configuration')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_city_form_view_configuration')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Cities.
+                </p>
+            </field>
+        </record>
+
+        <!-- City Action -->
+        <menuitem id="orvea_city_menu_list" name="City" action="orvea_res_city_configuration" parent="menu_orvea_configuration_root" sequence="4"/>
+
+
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data> 
+	    	<record id="view_orvea_sale_order_pivot" model="ir.ui.view">
+			 <field name="name">orvea.sale.order.pivot</field>
+			 <field name="model">sale.order</field>
+			 <field name="arch" type="xml">
+			     <pivot string="Reporting">
+				 <field name="maitre_ouvrage" string="COMPTE CLIENT" type="row"/>
+				 <field name="date_order" string="DATE" type="col"/>
+				 <field name="city_construction" string="VILLE" type="measure"/>
+				 <field name="stimulation_cout" string="MONTANT OFFRE" type="measure"/>
+				 <field name="delay" string="DÉLAI" type="measure"/>
+				 <field name="housings_count" string="LOTS" type="measure"/>
+				 <field name="amount_total" string="TOTAL" type="measure"/>
+			     </pivot>
+			 </field>
+	    	</record>
+
+		<!-- Orvea Reporting Sale Order Action -->
+		<record model="ir.actions.act_window" id="action_orvea_reporting_sale_order">
+		    <field name="name">Reporting</field>
+		    <field name="res_model">sale.order</field>
+		    <field name="view_mode">pivot</field>
+		    <field name="help" type="html">
+		        <p>
+		            Click To create Your own Quotations.
+		        </p>
+		    </field>
+		</record>
+
+
+		<menuitem
+            		action="action_orvea_reporting_sale_order"
+            		id="menu_orvea_reporting_sale_order"
+            		parent="orvea_crm_order.orvea_crm_lead_menu_root"
+			name="Reporting"
+            		sequence="6"/>
+
+	</data>
+</odoo>
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="Orvea Calendar Assets" inherit_id="web.assets_backend">
+            <xpath expr=".">
+                <script type="application/javascript" src="/orvea_calendar/static/src/js/orvea_widget.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

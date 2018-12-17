@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="orvea_lead.dashboard">
+	<div class="flex-parent" style="border: 1px solid black;">
+		<div class="lead_details">
+			<div class="input-flex-container">
+				<div class="input lead_coming">
+					<t t-if="widget.state_transaction == 'coming'">
+						<div style="display: inline">
+							<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+								<div style="display: inline">
+									<span class="span coming" id="coming" t-att-data-year="state_transaction" data-info="">
+										<span class="text" t-att-data-year="state_transaction"></span>
+									</span>
+								</div>
+	    						</i>
+							<p style="color:#00347F;margin-top:8px !important">À venir | Référencement</p>
+						</div>
+					</t>
+					<t t-if="widget.state_transaction != 'coming'">
+						<div style="display: inline">
+							<span class="span coming" id="coming" t-att-data-year="state_transaction" data-info="">
+								<span class="text" t-att-data-year="state_transaction">À venir | Référencement</span>
+							</span>
+						</div>
+					</t>
+				</div>
+				<div class="input lead_new">
+					<t t-if="widget.state_transaction == 'new'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span new" id="new" data-info="">
+									<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Nouveau</p>
+					</t>
+					<t t-if="widget.state_transaction != 'new'">
+						<span class="span new" id="new" data-year="" data-info="">
+							<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;">Nouveau</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_contacted">
+					<t t-if="widget.state_transaction == 'contacted'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span contacted" id="contacted" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Contacté</p>
+					</t>
+					<t t-if="widget.state_transaction != 'contacted'">
+						<span class="span contacted" id="contacted" data-year="" data-info="">
+							<span class="text" style="white-space: nowrap;">Contacté</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_rdv">
+
+					<t t-if="widget.state_transaction == 'rdv'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span rdv" id="rdv" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">RDV Présentation</p>
+					</t>
+					<t t-if="widget.state_transaction != 'rdv'">
+						<span class="span rdv" id="rdv" data-year="" data-info="">
+							<span class="text" style="white-space: nowrap;">RDV Présentation</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_dce">
+					<t t-if="widget.state_transaction == 'waiting_dce'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span dce" id="waiting_dce" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">En attente DCE</p>
+					</t>
+					<t t-if="widget.state_transaction != 'waiting_dce'">
+						<span class="span dce" id="waiting_dce" data-year="" data-info="">
+							<span class="text" style="white-space: nowrap;">En attente DCE</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_quotation_creation">
+					<t t-if="widget.state_transaction == 'quotation_creation'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span quotation_creation" id="quotation_creation" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Création Devis</p>
+					</t>
+					<t t-if="widget.state_transaction != 'quotation_creation'">
+						<span class="span quotation_creation" id="quotation_creation" data-year="Création Devis" data-info="">
+							<span class="text" style="white-space: nowrap;">Création Devis</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_quotation_sent">
+					<t t-if="widget.state_transaction == 'quotation_sent'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span quotation_sent" id="quotation_sent" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Devis Envoyé</p>
+					</t>
+					<t t-if="widget.state_transaction != 'quotation_sent'">
+						<span class="span quotation_sent" id="quotation_sent" data-year="" data-info="">
+							<span class="text" style="white-space: nowrap;">Devis Envoyé</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_meeting_sale">
+					<t t-if="widget.state_transaction == 'meeting_sale'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span meeting_sale" id="meeting_sale" data-year="RDV Vente, Recalage Devis">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">RDV Vente, Recalage Devis</p>
+					</t>
+					<t t-if="widget.state_transaction != 'meeting_sale'">
+						<span class="span meeting_sale" id="meeting_sale" data-year="" data-info="RDV Vente, Recalage Devis">
+							<span class="text" style="white-space: nowrap;">RDV Vente, Recalage Devis</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_agreement">
+					<t t-if="widget.state_transaction == 'agreement'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span agreement" id="agreement" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Accord de principe</p>
+					</t>
+					<t t-if="widget.state_transaction != 'agreement'">
+						<span class="span agreement" id="agreement" data-year="" data-info="">
+							<span class="text" style="white-space: nowrap;">Accord de principe</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_signature">
+					<t t-if="widget.state_transaction == 'signature'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span signature" id="signature" data-info="Suivi signature">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Suivi signature</p>
+					</t>
+					<t t-if="widget.state_transaction != 'signature'">
+						<span class="span signature" id="signature" data-year="" data-info="Suivi signature">
+							<span class="text" style="white-space: nowrap;">Suivi signature</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_quotation_signed">
+					<t t-if="widget.state_transaction == 'quotation_signed'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span quotation_signed" id="quotation_signed" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Devis Signé</p>
+					</t>
+					<t t-if="widget.state_transaction != 'quotation_signed'">
+						<span class="span quotation_signed" id="quotation_signed" data-year="" data-info="">
+							<span class="text" style="white-space: nowrap;">Devis Signé</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_preparation_site">
+					<t t-if="widget.state_transaction == 'preparation_site'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span preparation_site" id="preparation_site" data-info="Préparation chantier">
+									<span class="text" style="white-space: nowrap;"></span>						
+		
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Préparation chantier</p>
+					</t>
+					<t t-if="widget.state_transaction != 'preparation_site'">
+						<span class="span preparation_site" id="preparation_site" data-year="" data-info="Préparation chantier">
+							<span class="text" style="white-space: nowrap;">Préparation chantier</span>						
+		
+						</span>
+					</t>
+				</div>
+				<div class="input lead_production_site">
+					<t t-if="widget.state_transaction == 'production_site'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<div style="display: inline">
+								<span class="span production_site" id="production_site" data-info="">
+									<span class="text" style="white-space: nowrap;"></span>						
+								</span>
+							</div>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Production chantier</p>
+					</t>
+					<t t-if="widget.state_transaction != 'production_site'">
+						<span class="span production_site" id="production_site" data-year="" data-info="">
+							<span class="text" style="white-space: nowrap;">Production chantier</span>						
+						</span>
+					</t>
+				</div>
+				<div class="input lead_fenced">
+					<t t-if="widget.state_transaction == 'fenced'">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:8px">
+							<span class="span fenced" id="fenced" data-info="Clôture">
+								<span class="text" style="white-space: nowrap;"></span>						
+							</span>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Clôture</p>
+					</t>
+					<t t-if="widget.state_transaction != 'fenced'">
+						<span class="span fenced" id="fenced" data-year="" data-info="Clôture">
+							<span class="text" style="white-space: nowrap;">Clôture</span>						
+						</span>
+					</t>
+				</div>
+			</div>
+		</div>
+	</div>
+    </t>
+</templates>

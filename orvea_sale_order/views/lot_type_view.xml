@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <!-- Lot Form View -->
+        <record id="orvea_lot_type_form_view" model="ir.ui.view">
+        	<field name="name">orvea.lot.type.form</field>
+        	<field name="model">lot.type</field>
+        	<field name="arch" type="xml">
+            		<form string="Lot">
+				<group>
+                    			<field name="name" string="Lot"/>
+				</group>	
+                	</form>
+            	</field>
+        </record>
+
+        <!-- Lot Tree View -->
+        <record id="orvea_lot_type_tree_view" model="ir.ui.view">
+        	<field name="name">orvea.lot.type.form</field>
+        	<field name="model">lot.type</field>
+            	<field name="arch" type="xml">
+		        <tree string="Lot">
+                    		<field name="name" string="Lot"/>
+		        </tree>
+            	</field>
+        </record>
+
+
+
+        <!-- Lot Action -->
+        <record model="ir.actions.act_window" id="action_orvea_lot_list">
+            <field name="name">Lots</field>
+            <field name="res_model">lot.type</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_lot_type_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_lot_type_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Lots.
+                </p>
+            </field>
+        </record>
+
+        <!-- Lot Action -->
+
+        <menuitem id="orvea_lot_list_menu" name="Liste des Lots" parent="orvea_sale_order.orvea_prestation_configuration_root" action="action_orvea_lot_list"/>
+
+</odoo>

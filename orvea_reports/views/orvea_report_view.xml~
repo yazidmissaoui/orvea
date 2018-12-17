@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data> 
+
+
+		<!-- Orvea Report Action -->
+		<record model="ir.actions.act_window" id="action_orvea_report_designer">
+		    <field name="name">Rapports</field>
+		    <field name="res_model">ir.actions.report</field>
+            	    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_ids" eval="[(5, 0, 0), 
+			(0, 0, {'view_mode': 'tree', 'view_id': ref('base.act_report_xml_view_tree')}), 
+			(0, 0, {'view_mode': 'form', 'view_id': ref('base.act_report_xml_view')})]"/>
+		    <field name="help" type="html">
+		        <p>
+		            Click To create Your own Reports.
+		        </p>
+		    </field>
+		</record>
+
+		<menuitem
+            		action="action_orvea_report_designer"
+            		id="menu_orvea_sale_order"
+            		parent="orvea_crm_order.orvea_crm_lead_menu_root"
+			name="Reports"
+            		sequence="6"/>
+
+	</data>
+</odoo>

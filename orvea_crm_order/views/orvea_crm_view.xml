@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <!-- Orvea Crm Lead Form View -->
+        <record id="orvea_crm_lead_form" model="ir.ui.view">
+        	<field name="name">orvea.crm.lead.form</field>
+        	<field name="model">crm.lead</field>
+            	<field name="priority">250</field>
+        	<field name="arch" type="xml">
+            		<form string="Transactions">
+				<sheet>
+					<widget name="orvea_lead.quotation"/>
+					<widget name="orvea_lead.dashboard"/>
+					    	<field name="flag_details" invisible="1"/>
+					    	<field name="color_state" invisible="1"/>
+						<span attrs="{'invisible': [('flag_details','=', True)]}">
+							<button type="object" name="action_hide_details" class="bouton default fa fa-chevron-right">	 <b> À propos de : </b> <field name="lead_name"/></button>
+						</span>
+						<span attrs="{'invisible': [('flag_details','=', False)]}">
+							<button type="object" name="action_hide_details" class="bouton default fa fa-chevron-down">  <b> À propos de : </b> <field name="lead_name"/></button>
+						</span>
+						<group attrs="{'invisible': [('flag_details','=', False)]}">
+						<group>
+					    		<field name="name" string="Name"/>
+					    		<field name="state_transaction" string="State CRM"/>
+					    		<field name="client_account" string="Client Account" context="{'form_view_ref': 'orvea_company.view_company_list_form','default_flag_company_autre':False}" />
+					    		<field name="transaction_type" string="Transaction Type"/>
+					    		<field name="amount" string="Amount"/>
+					    		<field name="housing_nbre" string="Housing Number"/>
+							<!--TODO/-->
+							<!--field name="nbre_quotation" string="Quotation Number"/-->
+							<field name="affected_to" string="Affecté À"/>
+						</group>
+						<group>
+					    		<field name="delay_ces" string="Delay CES"/>
+					    		<field name="forecast_start" string="Forecast Start"/>
+					    		<field name="real_start" string="Forecast Real"/>
+					    		<field name="transaction_owner" string="Transaction Owner"/>
+					    		<field name="date_creation" string="Date Creation"/>
+					    		<field name="source_origine" string="Source Origine"/>
+							<field name="mo_identification" string="Identification MO"/>
+						</group>
+					</group>
+					<field name="contact_transaction" string="Contact Transaction" invisible="1"/>
+					<field name="company_transaction" string="Company" invisible="1"/>
+					<field name="test" string="Test" invisible="1"/>
+				 	<field name="team_id" string="État" invisible="1"/>
+			    		<field name="state_crm" string="State CRM" invisible="1"/>
+					<br/>
+					<field name="flag_contact" invisible="1"/>
+					<span attrs="{'invisible': [('flag_contact','=', True)]}">
+						<button type="object" name="action_hide_contacts" class="bouton default fa fa-chevron-right">  <b> Contacts</b></button>
+					</span>
+					<span attrs="{'invisible': [('flag_contact','=', False)]}">
+						<button type="object" name="action_hide_contacts" class="bouton default fa fa-chevron-down">   <b> Contacts</b></button>
+					</span>
+					<group attrs="{'invisible': [('flag_contact','=', False)]}">
+						<field name="child_ids" nolabel="1" mode="kanban" context="{'default_crm_id': active_id, 'default_is_company': False}">
+						        <kanban>
+						            <field name="color"/>
+						            <field name="name"/>
+						            <field name="title"/>
+						            <field name="type"/>
+						            <field name="email"/>
+						            <field name="crm_id"/>
+						            <field name="parent_id"/>
+						            <field name="is_company"/>
+						            <field name="function"/>
+						            <field name="phone"/>
+						            <field name="street"/>
+						            <field name="street2"/>
+						            <field name="zip"/>
+						            <field name="city"/>
+						            <field name="country_id"/>
+						            <field name="mobile"/>
+						            <field name="state_id"/>
+						            <field name="image_small"/>
+						            <field name="lang"/>
+						            <field name="comment"/>
+						            <field name="customer"/>
+						            <field name="display_name"/>
+						            <field name="supplier"/>
+						            <templates>
+						                <t t-name="kanban-box">
+						                    <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+						                    <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+						                        <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+						                        <div class="o_kanban_image">
+						                            <img t-if="record.image_small.raw_value" t-att-src="'data:image/png;base64,'+record.image_small.raw_value"/>
+						                            <t t-if="!record.image_small.raw_value">
+						                                <img t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/src/img/truck.png"'/>
+						                                <img t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/src/img/money.png"'/>
+						                                <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
+						                                    <img t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/src/img/company_image.png"'/>
+						                                    <img t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+						                                </t>
+						                            </t>
+						                        </div>
+						                        <div class="oe_kanban_details">
+						                            <field name="name"/>
+						                            <div t-if="record.function.raw_value"><field name="function"/></div>
+						                            <div t-if="record.email.raw_value"><field name="email" widget="email"/></div>
+						                            <div t-if="record.type.raw_value != 'contact'">
+						                                <div>
+						                                    <field name="zip"/>
+						                                    <field name="city"/>
+						                                </div>
+						                                <field t-if="record.state_id.raw_value" name="state_id"/>
+						                                <field name="country_id"/>
+						                            </div>
+						                            <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
+						                            <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
+						                        </div>
+						                    </div>
+						                </t>
+						            </templates>
+						        </kanban>
+						        <form string="Contact / Address">
+						            <sheet>
+						                <!-- parent_id and type fields needed in attrs in base_address_city module which overwrites
+						                _fields_view_get() of partner. It would be better to put those fields there but the web client
+						                dosen't support when a field is displayed several times in the same view.-->
+						                <field invisible="1" name="type" required="1" widget="radio" options="{'horizontal': true}"/>
+						                <field name="parent_id" invisible="1"/>
+						                <hr/>
+						                <group>
+						                    <group attrs="{'invisible': [('type','=', 'contact')]}">
+						                        <label for="street" string="Address"/>
+						                        <div>
+						                            <div class="o_address_format" name="div_address">
+						                                <field name="street" placeholder="Street..." class="o_address_street"/>
+						                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+						                                <field name="city" placeholder="City" class="o_address_city"/>
+						                                <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}' context="{'country_id': country_id, 'zip': zip}"/>
+						                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+						                                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+						                            </div>
+						                        </div>
+						                    </group>
+						                    <group>
+						            		<field name="is_company" invisible="1"/>
+						                        <field name="name" string="Contact" attrs="{'required' : [('type', '=', 'contact')]}"/>
+						                        <field name="title" placeholder="e.g. Mr."
+						                            attrs="{'invisible': [('type','!=', 'contact')]}"/>
+						                        <field name="function" placeholder="e.g. Sales Director"
+						                            attrs="{'invisible': [('type','!=', 'contact')]}"/>
+						                        <field name="email"/>
+						                        <field name="phone" widget="phone"/>
+						                        <field name="mobile" widget="phone"/>
+						                        <field name="comment" placeholder="internal note..."/>
+						                    </group>
+						                </group>
+						                <field name="supplier" invisible="True"/>
+						                <field name="customer" invisible="True"/>
+						                <field name="lang" invisible="True"/>
+						                <field name="image" invisible="True"/>
+						            </sheet>
+						        </form>
+						    </field>
+					</group>
+					<br/>
+					<field name="order_count" invisible="1"/>
+					<field name="flag_company" invisible="1"/>
+					<!--span attrs="{'invisible': [('flag_company','=', True)]}">
+						<button type="object" name="action_hide_companies" class="bouton default fa fa-chevron-right">  <b> Entreprises</b></button>
+					</span>
+					<span attrs="{'invisible': [('flag_company','=', False)]}">
+						<button type="object" name="action_hide_companies" class="bouton default fa fa-chevron-down">  <b> Entreprises</b></button>
+					</span>
+					<group attrs="{'invisible': [('flag_company','=', False)]}">
+
+						    <field name="company_ids" nolabel="1" mode="kanban" context="{'default_lead_id': active_id, 'default_is_company': True}">
+						        <kanban>
+						            <field name="color"/>
+						            <field name="name"/>
+						            <field name="title"/>
+						            <field name="type"/>
+						            <field name="email"/>
+						            <field name="lead_id"/>
+						            <field name="parent_id"/>
+						            <field name="is_company"/>
+						            <field name="function"/>
+						            <field name="phone"/>
+						            <field name="street"/>
+						            <field name="street2"/>
+						            <field name="zip"/>
+						            <field name="city"/>
+						            <field name="country_id"/>
+						            <field name="mobile"/>
+						            <field name="state_id"/>
+						            <field name="image_small"/>
+						            <field name="lang"/>
+						            <field name="comment"/>
+						            <field name="customer"/>
+						            <field name="display_name"/>
+						            <field name="supplier"/>
+						            <templates>
+						                <t t-name="kanban-box">
+						                    <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+						                    <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+						                        <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+						                        <div class="o_kanban_image">
+						                            <img t-if="record.image_small.raw_value" t-att-src="'data:image/png;base64,'+record.image_small.raw_value"/>
+						                            <t t-if="!record.image_small.raw_value">
+						                                <img t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/src/img/truck.png"'/>
+						                                <img t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/src/img/money.png"'/>
+						                                <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
+						                                    <img t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/src/img/company_image.png"'/>
+						                                    <img t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+						                                </t>
+						                            </t>
+						                        </div>
+						                        <div class="oe_kanban_details">
+						                            <field name="name"/>
+						                            <div t-if="record.function.raw_value"><field name="function"/></div>
+						                            <div t-if="record.email.raw_value"><field name="email" widget="email"/></div>
+						                            <div t-if="record.type.raw_value != 'contact'">
+						                                <div>
+						                                    <field name="zip"/>
+						                                    <field name="city"/>
+						                                </div>
+						                                <field t-if="record.state_id.raw_value" name="state_id"/>
+						                                <field name="country_id"/>
+						                            </div>
+						                            <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
+						                            <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
+						                        </div>
+						                    </div>
+						                </t>
+						            </templates>
+						        </kanban>
+						        <form string="Contact / Address">
+						            <sheet>
+						                <parent_id and type fields needed in attrs in base_address_city module which overwrites
+						                _fields_view_get() of partner. It would be better to put those fields there but the web client
+						                dosen't support when a field is displayed several times in the same view>
+						                <field invisible="1" name="type" required="1" widget="radio" options="{'horizontal': true}"/>
+						                <field name="parent_id" invisible="1"/>
+						                <hr/>
+						                <group>
+						                    <group attrs="{'invisible': [('type','=', 'contact')]}">
+						                        <label for="street" string="Address"/>
+						                        <div>
+						                            <div class="o_address_format" name="div_address">
+						                                <field name="street" placeholder="Street..." class="o_address_street"/>
+						                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+						                                <field name="city" placeholder="City" class="o_address_city"/>
+						                                <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}' context="{'country_id': country_id, 'zip': zip}"/>
+						                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+						                                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+						                            </div>
+						                        </div>
+						                    </group>
+						                    <group>
+						            		<field name="is_company" invisible="1"/>
+						                        <field name="name" string="Contact" attrs="{'required' : [('type', '=', 'contact')]}"/>
+						                        <field name="title" placeholder="e.g. Mr."
+						                            attrs="{'invisible': [('type','!=', 'contact')]}"/>
+						                        <field name="function" placeholder="e.g. Sales Director"
+						                            attrs="{'invisible': [('type','!=', 'contact')]}"/>
+						                        <field name="email"/>
+						                        <field name="phone" widget="phone"/>
+						                        <field name="mobile" widget="phone"/>
+						                        <field name="comment" placeholder="internal note..."/>
+						                    </group>
+						                </group>
+						                <field name="supplier" invisible="True"/>
+						                <field name="customer" invisible="True"/>
+						                <field name="lang" invisible="True"/>
+						                <field name="image" invisible="True"/>
+						            </sheet>
+						        </form>
+						    </field>
+					</group-->
+				</sheet>
+                	</form>
+            	</field>
+        </record>
+
+        <!-- Orvea Crm Lead Tree View -->
+        <record id="orvea_crm_lead_tree" model="ir.ui.view">
+        	<field name="name">orvea.crm.lead.tree</field>
+            	<field name="model">crm.lead</field>
+            	<field name="limit">25</field>
+            	<field name="priority">25</field>
+            	<field name="arch" type="xml">
+		        <tree string="Opportunité">
+		            	<field name="name" string="Name"/>
+                    		<field name="client_account" string="Client Account"/>
+                    		<field name="transaction_type" string="Transaction Type"/>
+                    		<field name="state_crm" string="State CRM"/>
+                    		<field name="amount" string="Amount"/>
+                    		<field name="housing_nbre" string="Housing Number"/>
+                    		<field name="nbre_quotation" string="Quotation Number"/>
+                    		<field name="delay_ces" string="Delay CES"/>
+                    		<field name="forecast_start" string="Forecast Start"/>
+                    		<field name="real_start" string="Forecast Real"/>
+                    		<field name="transaction_owner" string="Transaction Owner"/>
+                    		<field name="company_transaction" string="Company"/>
+				<field name="mo_identification" string="Identification MO" invisible="1"/>
+				<field name="order_count"/>
+				<field name="color_state" invisible="1"/>
+				<!--button type="object" name="action_create_quotation" string=" Devis" class="fa fa-file-pdf-o"></button-->
+		        </tree>
+            	</field>
+        </record>
+
+        <!-- Orvea Crm Lead Kanban View -->
+        <record id="orvea_crm_lead_kanban" model="ir.ui.view">
+            <field name="name">orvea.crm.lead.kanban</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state_transaction" class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" on_create="quick_create">
+                    <field name="user_id" string="Project Manager"/>
+                    <field name="amount"/>
+                    <field name="color_state"/>
+                    <field name="state_transaction"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color_state.raw_value)} oe_kanban_global_click o_has_icon">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <strong><field name="name" string="Project Name"/></strong>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <field name="mo_identification" string="Maître d'ouvrage"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <!-- Orvea Crm Lead Group By -->
+
+
+        <record id="view_orvea_crm_lead_filter" model="ir.ui.view">
+            <field name="name">orvea.crm.lead.search</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <search string="Leads">
+			<field name="name" string="Name"/>
+			<field name="transaction_owner" string="Transaction Owner"/>
+			<field name="client_account" string="Client Account"/>
+			<field name="mo_identification" string="Identification MO"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Compte Client" domain="[]" context="{'group_by':'client_account'}"/>
+                        <filter string="Nom de la Transaction" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Propriétaire de la Transaction" domain="[]" context="{'group_by':'transaction_owner'}"/>
+                        <filter string="Identification MO" domain="[]" context="{'group_by':'mo_identification'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
+
+        <!-- Orvea Crm Lead Action -->
+        <record model="ir.actions.act_window" id="action_orvea_crm_lead">
+            <field name="name">Opportunities</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">kanban,tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'kanban', 'view_id': ref('orvea_crm_lead_kanban')}), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_crm_lead_tree')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_crm_lead_form')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Leads.
+                </p>
+            </field>
+        </record>
+
+        <!-- Orvea Crm Lead Menu -->
+        <menuitem id="orvea_crm_lead_menu_root" name="Vente" sequence="4"/>
+        <menuitem parent="orvea_crm_lead_menu_root" id="orvea_crm_lead_logistic_menu" name="Logistique" action="action_orvea_crm_lead" sequence="4"/>
+
+
+</odoo>

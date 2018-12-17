@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="orvea_sale_order.order">
+	<div class="flex-parent">
+		<div class="lead_details">
+			<div class="input-flex-container">
+				<t t-if="widget.state_order == 'offre'">
+					<div class="input2">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:7px">
+							<span class="span offre" id="offre" t-att-data-year="state_transaction" data-year="" data-info="">
+
+								<span class="text" t-att-data-year="state_transaction" style="white-space: nowrap;"></span>
+							</span>
+    						</i>
+						<p style="color:#00347F;margin-top:8px !important">Définition de l'offre</p>
+					</div>
+				</t>
+				<t t-if="widget.state_order != 'offre'">
+					<div class="input">
+						<span class="span offre" id="offre" t-att-data-year="state_transaction" data-info="">
+							<span class="text" t-att-data-year="state_transaction" style="white-space: nowrap;">Définition de l'offre</span>
+						</span>
+					</div>
+				</t>
+				<t t-if="widget.state_order == 'identification_client'">
+					<div class="input2">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:7px">
+							<span class="span offre" id="client" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+							</span>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Identification du client</p>
+					</div>
+				</t>
+				<t t-if="widget.state_order != 'identification_client'">
+					<div class="input">
+						<span class="span client" id="client" data-year="" data-info="">
+							<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;">Identification du client</span>						
+						</span>
+					</div>
+				</t>
+				<t t-if="widget.state_order == 'information_affaire'">
+					<div class="input2">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:7px">
+							<span class="span offre" id="affaire" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+							</span>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Identification de l'affaire</p>
+					</div>
+				</t>
+				<t t-if="widget.state_order != 'information_affaire'">
+					<div class="input">
+						<span class="span affaire" id="affaire" data-year="" data-info="">
+							<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;">Identification de l'affaire</span>						
+						</span>
+					</div>
+				</t>
+				<t t-if="widget.state_order == 'planning'">
+					<div class="input2">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:7px">
+							<span class="span offre" id="planning" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+							</span>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Planning</p>
+					</div>
+				</t>
+				<t t-if="widget.state_order != 'planning'">
+					<div class="input">
+							<span class="span planning" id="planning" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;">Planning</span>						
+							</span>
+					</div>
+				</t>
+				<t t-if="widget.state_order == 'chiffrage'">
+					<div class="input2">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:7px">
+							<span class="span offre" id="new" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+							</span>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Chiffrage</p>
+					</div>
+				</t>
+				<t t-if="widget.state_order != 'chiffrage'">
+					<div class="input">
+							<span class="span chiffrage" id="chiffrage" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;">Chiffrage</span>						
+							</span>
+					</div>
+				</t>
+				<t t-if="widget.state_order == 'avenant_ccp'">
+					<div class="input2">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:7px">
+							<span class="span avenant" id="avenant" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+							</span>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Avenant CCP</p>
+					</div>
+				</t>
+				<t t-if="widget.state_order != 'avenant_ccp'">
+					<div class="input">
+							<span class="span avenant" id="avenant" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;">Avenant CCP</span>						
+							</span>
+					</div>
+				</t>
+				<t t-if="widget.state_order == 'apercu_global'">
+					<div class="input2">
+						<i class="glyphicon glyphicon-check" style="margin-left: 11px;margin-top:7px">
+							<span class="span offre" id="apercu" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;"></span>						
+							</span>
+						</i>
+						<p style="color:#00347F;margin-top:8px !important">Aperçu Global</p>
+					</div>
+				</t>
+				<t t-if="widget.state_order != 'apercu_global'">
+					<div class="input">
+							<span class="span new" id="new" data-year="" data-info="">
+								<span class="text" t-att-data-info="state_transaction" style="white-space: nowrap;">Aperçu Global</span>						
+							</span>
+					</div>
+				</t>
+				<span style="float:right;margin-left:40px" value="test" class="icon-chevron-down" id="total_order">
+					Montant Chiffrage :<b><t t-esc="widget.montant_chiffrage"/> €</b>
+				</span>
+				<br/>
+				<span style="float:right;margin-top:50px;margin-left:-136px" value="test" class="icon-chevron-down" id="total_order">
+					Date :<b><t t-esc="widget.end_date"/></b>
+				</span>
+			</div>
+		</div>
+	</div>
+    </t>
+</templates>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+	<t t-name="Orvea_buttons">
+        	<button type="button" id="create_quotation" class="btn btn-sm btn-default open_popup o_list_button_add">Créer</button>
+    	</t>
+    	<t t-extend="ListView.buttons">
+        	<t t-jquery="button.o_list_button_add" t-operation="after">
+           		<t  t-if="widget.modelName == 'sale.order'" t-call="Orvea_buttons"/>
+        	</t>
+    	</t>
+
+
+</templates>
+
+

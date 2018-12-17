@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--  Dashboard Assests. We are making changes on assets backend -->
+        <template id="assets_backend" name="Orvea assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/orvea_crm_order/static/src/js/orvea_lead.js"/>
+                <script type="text/javascript" src="/orvea_crm_order/static/src/js/orvea_quotation.js"/>
+                <script type="text/javascript" src="/orvea_crm_order/static/src/js/orvea_details.js"/>
+                <script type="text/javascript" src="/orvea_crm_order/static/src/js/orvea_contact.js"/>
+		<link rel="stylesheet" href="/orvea_crm_order/static/src/css/orvea_lead.css" />
+            </xpath>
+        </template>
+    </data>
+</odoo>

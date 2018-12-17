@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+
+    <!-- Calendar Events : Views and Actions  -->
+    <record id="view_calendar_event_orvea_tree" model="ir.ui.view">
+        <field name="name">calendar.event.tree.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="arch" type="xml">
+            <tree string="Meetings" decoration-bf="message_needaction==True">
+                <field name="flag_widget" string="Flag" invisible="1"/>
+                <field name="name" string="Subject"/>
+                <field name="allday" invisible="True"/>
+                <field name="start" string="Start Date"/>
+                <field name="stop" string="End Date"/>
+                <field name="partner_ids"/>
+                <field name="location"/>
+                <field name="state" invisible="True"/>
+                <field name="duration" widget="float_time"/>
+                <field name="message_needaction" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_calendar_event_orvea_calendar" model="ir.ui.view">
+        <field name="name">calendar.event.calendar.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <calendar string="Meetings" date_start="start" date_stop="stop" date_delay="duration" all_day="allday"
+                readonly_form_view_id="%(calendar.view_calendar_event_form_popup)s"
+                event_open_popup="true"
+                event_limit="3"
+                color="partner_id">
+                <field name="name"/>
+                <field name="partner_ids" write_model="calendar.contacts" write_field="partner_id" avatar_field="image_small"/>
+                <field name="is_highlighted" invisible="1"/>
+            </calendar>
+        </field>
+    </record>
+
+
+        <record id="action_orvea_agenda" model="ir.actions.act_window">
+            	<field name="name">Calendar</field>
+        	<field name="res_model">calendar.event</field>
+        	<field name="view_mode">calendar,tree,form</field>
+            	<field name="context">{"default_tz": True}</field>
+        	<field name="search_view_id" ref="calendar.view_calendar_event_search"/>
+	    	<field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'calendar', 'view_id': ref('view_calendar_event_orvea_calendar')}), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('view_calendar_event_orvea_tree')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('calendar.view_calendar_event_form')})]"/>
+        	<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+			    Click to schedule a new meeting.
+			  </p><p>
+			    The calendar is shared between employees and fully integrated with
+			    other applications such as the employee leaves or the business
+			    opportunities.
+			</p>
+		</field>
+	</record>
+
+    <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//div[@class='gray-bg']" position="replace">
+            <div id="page-wrapper" class="gray-bg">
+                <div class="row border-bottom">
+		<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                        <div class="navbar-header">
+
+                        </div>
+                        <div class="user_profile">
+				<ul>
+					<li>
+						<span class="oe_title"></span>
+					</li>
+				</ul>
+				</div>
+				<div class="user-action">
+					<ul class="nav navbar-top-links navbar-right oe_user_menu_placeholder oe_systray" />
+				</div>
+                    </nav>
+                </div>
+				<div class="o_main_content"/>
+                <div class="footer">
+                    <div class="pull-right"><a href="" target="_blank"><img src="/theme_extensia/static/src/img/logo.png" /></a></div>
+                    <div class="pull-right"><a href="https://github.com/senthilnathang" target="_blank"></a></div>
+                    <div><strong></strong></div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+
+        <!-- Menu Dashbaord -->
+	<menuitem id="menu_calendar_orvea"
+                  name="Agenda"
+                  action="action_orvea_agenda"
+                  sequence="-2"/>
+
+</odoo>

@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record model="avenant.ccp" id="avenant_ccp_1">
+        <field name="name">Frais de voiries phase TCE</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_2">
+        <field name="name">Aménagements des cheminements accès chantier sis éclaire provisoire</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_3">
+        <field name="name">Mise à dispositionde la grue pendant 1 ou 2 mois aprés la fin du Gros-oeuvre</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_4">
+        <field name="name">Mise en place des panneaux de chantier</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_5">
+        <field name="name">Clôture de chantier y compris portail et déplacements nécessaires pour phase CES</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_6">
+        <field name="name">Mise en oeuvre des protections collectives nécessaires au bon fonctionnement du chantier</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_7">
+        <field name="name">Rotation des bennes de chantier phase G.O jusqu'au démontage de la grue</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_8">
+        <field name="name">Raccordements viabilisations des fluides de chantier, compris vonsommations Fluides (EDF,EAU,FT) phase TCE</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_9">
+        <field name="name">Mise à disposition des cantonnements de chantier phase TCE, compris entretien (Nettoyage) en phase G.O</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_10">
+        <field name="name">Déplacement et aménagements des cantonnements dans les locaux à l'intérieur du bâtiment (si nécessaire)</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_11">
+        <field name="name">Installation de l'armonie principale de chantier équipée des disjoncteurs et des protections différentielles</field>
+        <field name="type_avenant" eval="1"></field>
+    </record>
+
+    <record model="avenant.ccp" id="avenant_ccp_12">
+        <field name="name">Postes à prévoir au lot Electricité</field>
+        <field name="type_avenant" eval="''"></field>
+    </record>
+
+
+    <record model="avenant.ccp" id="avenant_ccp_13">
+        <field name="name">Installation de sous comptage divisonnaire dans l'armonie principale</field>
+        <field name="type_avenant" eval="2"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_14">
+        <field name="name">Installation de coffret normalisés par niveau selon préscription</field>
+        <field name="type_avenant" eval="2"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_15">
+        <field name="name">Installation des éclairages provisoires de chantier cis entretien et remplacement des ampoules si nécessaire</field>
+        <field name="type_avenant" eval="2"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_16">
+        <field name="name">Alimentation de ou des lifts de chantier EDF et FT</field>
+        <field name="type_avenant" eval="2"></field>
+    </record>
+
+
+    <record model="avenant.ccp" id="avenant_ccp_17">
+        <field name="name">Postes à prévoir au lot Ascensoriste</field>
+        <field name="type_avenant" eval="''"></field>
+    </record>
+
+    <record model="avenant.ccp" id="avenant_ccp_18">
+        <field name="name">List(s) de chantier avec la remise en état en fin de chantier</field>
+        <field name="type_avenant" eval="3"></field>
+    </record>
+
+    <record model="avenant.ccp" id="avenant_ccp_19">
+        <field name="name">Postes à prévoir au lot Menuiserie</field>
+        <field name="type_avenant" eval="''"></field>
+    </record>
+
+    <record model="avenant.ccp" id="avenant_ccp_20">
+        <field name="name">Fourniture et pose de cylindre provisoire une variure par porte palière</field>
+        <field name="type_avenant" eval="4"></field>
+    </record>
+
+    <record model="avenant.ccp" id="avenant_ccp_21">
+        <field name="name">Postes à prévoir au lot LOGISTICIEN DE CHANTIER</field>
+        <field name="type_avenant" eval="''"></field>
+    </record>
+
+
+    <record model="avenant.ccp" id="avenant_ccp_22">
+        <field name="name">Agents Qualités Hygiènes et Sécurités à TP</field>
+        <field name="type_avenant" eval="5"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_23">
+        <field name="name">Fourniture des consommables de la base vie</field>
+        <field name="type_avenant" eval="5"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_24">
+        <field name="name">Fourniture et rotation des bennes de chantier Phase CES en DIB hors plâterie</field>
+        <field name="type_avenant" eval="5"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_25">
+        <field name="name">Location d'un système de télésurveillances phase CES</field>
+        <field name="type_avenant" eval="5"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_26">
+        <field name="name">Agents Gestionnaire de clef en phase liraison, canons définitives</field>
+        <field name="type_avenant" eval="5"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_27">
+        <field name="name">Location de portes métalliques au RDC de chaque escalier d'accés aux étages</field>
+        <field name="type_avenant" eval="5"></field>
+    </record>
+
+
+
+    <record model="avenant.ccp" id="avenant_ccp_28">
+        <field name="name">Postes à prévoir EN INTER-ENTREPRISE SI BESOIN</field>
+        <field name="type_avenant" eval="''"></field>
+    </record>
+
+
+    <record model="avenant.ccp" id="avenant_ccp_29">
+        <field name="name">Agent type APS/MC- Gardiennage physique de chantier</field>
+        <field name="type_avenant" eval="6"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_30">
+        <field name="name">Mise en place d'une installation de préchauffage de chantier électrique</field>
+        <field name="type_avenant" eval="6"></field>
+    </record>
+    <record model="avenant.ccp" id="avenant_ccp_31">
+        <field name="name">Surconsommation installation préchauffage de chantier</field>
+        <field name="type_avenant" eval="6"></field>
+    </record>
+
+
+</odoo>

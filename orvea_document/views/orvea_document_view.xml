@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <!-- Folder Form View -->
+        <record id="orvea_document_form_view" model="ir.ui.view">
+        	<field name="name">orvea.document.form</field>
+        	<field name="model">orvea.document</field>
+        	<field name="arch" type="xml">
+            		<form string="Folder">
+                    		<field name="name" string="Name"/>
+                	</form>
+            	</field>
+        </record>
+
+        <!-- Folder Tree View -->
+        <record id="orvea_document_tree_view" model="ir.ui.view">
+            <field name="name">orvea.document.tree</field>
+            <field name="model">orvea.document</field>
+            <field name="arch" type="xml">
+                <tree string="Folder">
+                    <field name="name" string="Name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Folder Action -->
+        <record model="ir.actions.act_window" id="orvea_document_action">
+            <field name="name">Dossier</field>
+            <field name="res_model">orvea.document</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_document_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_document_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Folders.
+                </p>
+            </field>
+        </record>
+
+
+		<record id="view_orvea_document_list_filter" model="ir.ui.view">
+		    <field name="name">orvea.document.list.filter</field>
+		    <field name="model">orvea.document.list</field>
+		    <field name="arch" type="xml">
+		        <search string="Search Sales Order">
+                    		<field name="lead_id" string="Opportunité"/>
+                    		<field name="folder_id" string="Dossier"/>
+		            	<group expand="0" string="Group By">
+				        <filter name="opportunity" string="Opportunité" domain="[]" context="{'group_by':'lead_id'}"/>
+				        <filter string="Dossier" domain="[]" context="{'group_by':'folder_id'}"/>
+		            	</group>
+		       </search>
+		    </field>
+		</record>
+
+
+        <!-- Folder List Form View -->
+        <record id="orvea_document_list_form_view" model="ir.ui.view">
+        	<field name="name">orvea.document.list.form</field>
+        	<field name="model">orvea.document.list</field>
+        	<field name="arch" type="xml">
+            		<form string="Dossier">	
+				<group>
+                    			<field name="lead_id" string="Opportunité"/>
+                    			<field name="folder_id" string="Dossier"/>
+				</group>
+                    		<field name="file_attached" string="Télécharger"/>
+                	</form>
+            	</field>
+        </record>
+
+        <!-- Folder Tree View -->
+        <record id="orvea_document_list_tree_view" model="ir.ui.view">
+            <field name="name">orvea.document.list.tree</field>
+            <field name="model">orvea.document.list</field>
+            <field name="arch" type="xml">
+                <tree string="Dossier">
+                    		<field name="folder_id" string="Dossier"/>
+                    		<field name="lead_id" string="Opportunité"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Folder Action -->
+        <record model="ir.actions.act_window" id="orvea_document_list_action">
+            <field name="name">Dossier</field>
+            <field name="res_model">orvea.document.list</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_document_list_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_document_list_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Folders.
+                </p>
+            </field>
+        </record>
+
+        <!-- Folder Menu -->
+	<menuitem
+            		action="orvea_document_list_action"
+            		id="menu_orvea_document_management"
+            		parent="orvea_lead.orvea_crm_lead_menu_root"
+			name="Documents"
+            		sequence="5"/>
+
+</odoo>

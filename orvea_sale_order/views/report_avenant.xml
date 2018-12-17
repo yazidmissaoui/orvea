@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<template id="orvea_sale_order_external_layout_header">
+			<div class="header" style="height: 20px;width: 8px !important;">
+			</div>
+			<div class="footer">
+				<hr style="background-color: blue; height: 1px; border: 0;"/>
+				<div>
+					<div style="color:grey;display:inline-block">
+						<h5> ANNEXE-DISPOSIT DISPOSITIONS DIVERSES-COMPTE PRORATA</h5>
+					</div>
+					<div style="color:grey;display:inline-block; float:right">
+						<h5> <span class="page"/></h5>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<template id="report_avenant_document_template">
+		    <t t-call="orvea_sale_order.orvea_sale_order_external_layout_header"/>
+		    <t t-call="web.external_layout">
+			<t t-foreach="docs" t-as="o">
+				<div style="text-align: center;">
+					<h4><b>AVENANT AUX PIECES ECRITES CORRESPONDANTES</b></h4>
+			    	</div>
+				<div style="text-align: center;">
+					<h6>DISPOSITIONS DIVERSES-DETERMINATION D L'AFFECTATION DES DEPENSES D'INTERET COMMUN</h6>
+			    	</div>
+				<div style="text-align: center;">
+					<h5><b>PROJET: <t t-esc="o.city_construction"/>/<t t-esc="o.partner_id.name"/></b></h5>
+			    	</div>
+				<br/>
+				<h6>L'article <b>46 et 47 du CCAG </b>est complété comme suit pour prévaloir sur l’organisation et la gestion des dépenses communes dans la répartition des prestations par entrepreneur déterminé telles que listées ici-bas.</h6>
+				<h6>Le logisticien de chantier désigné par Maître d’Ouvrage aura pour mission d’assurer la gestion des dépenses communes n’incombant pas à un entrepreneur déterminé, telles que listées dans le tableau. Sa mission débutera à compter de la fin du démontage de la dernière grue.</h6>
+				<style>
+							table, th, td {
+							border: 0.5px solid black;
+							padding-top:2cm;
+							vertical-align:top;
+							width:20px 
+							}
+				</style>
+				<table class="table table-condensed table-bordered" >
+					<tr style="height:10px;background-color:blue">
+						<td colspan="2">
+							<p style="text-align:center;font-size:8px! important">REPARTITION PAR LOT DES DEPENSES COMMUNES</p>
+						</td>
+					</tr>
+					<tr style="height:10px;width:10px !important">
+						<td style="width:90% !important">
+							<p style="font-size:7px! important"><b>Postes à prévoir au lot gros oeuvre dans le cadre de son marché, poste INSTALLATION DE CHANTIER</b></p>
+						</td>
+						<td style="width:10% !important">
+							<p style="text-align:center;font-size:7px! important"><b>TOTAL</b></p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Charges temporaires de voirie et de police résultant des installations de chantier</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Branchements provisoires d'eau, électricité, égout ou fosse septique</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Voies de circulation dans l'emprise du chantier sis éclairage provisoire</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Clôture de chantier y compris portail et déplacements nécessaire pour phase CES</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Mise en place des panneaux de chantier et affihages réglementaires</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Mise en place des panneaux de chantier et affihages réglementaires</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Affichage des travailleurs détachés selon  décret N° 825-2017</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Mise en oeuvre des dispositif commun de sécurité et de protections collectives nécessaires à l'avancement du projet</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Mise à disposition de la grue 1 ou 2 mois aprés la fin du Gros-oeuvre selon demande entreprises</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Mise à disposition des cantonnements de chantier phase TCE, compris entretien (Nettoyage) en phase G.O</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Déplacement et aménagements des cantonnements dans les locaux à l'intérieur du bâtiment (si nécessaire)</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Raccordements et viabilisations des fluides de chantier, compris consommations FLUIDES (EDF,eau,FT) phase TCE</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Rotation des bennes de chantier phase G.O jusqu'au démontage de la grue</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Installation de l'armoire principale de chantier équipée des disjoncteurs et des protections dfférentielles</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">gros oeuvre</p>
+						</td>
+					</tr>
+					<tr style="height:10px;background-color:grey">
+						<td colspan="2">
+							<p style="font-size:7px! important"><b>Postes à prévoir au lot Electricité</b></p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Installation de sous comptage divisionnaire dans l'armoire proncipale</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">lot Electricite</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Installation de coffret normalisés par niveau selon préscription</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">lot Electricite</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Installation des éclairages provisoires de chantier cis entretien et remplacement des ampoules si nécessaire</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">lot Electricite</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Alimentation de ou des lifts de chantier EDF et FT</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">lot Electricite</p>
+						</td>
+					</tr>
+					<tr style="height:10px;background-color:grey">
+						<td colspan="2">
+							<p style="font-size:7px! important">Postes à prévoir au lot Ascensoriste</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">List(s) de chantier avec la remise en état en fin de chantier</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">lot Ascenseur</p>
+						</td>
+					</tr>
+					<tr style="height:10px;background-color:grey">
+						<td colspan="2">
+							<p style="font-size:7px! important"><b>Postes à prévoir au lot Menuiserie</b></p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Fourniture et pose de cylindre provisoire une variure par poste palière</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">lot Menuiserie</p>
+						</td>
+					</tr>
+					<tr style="height:10px;background-color:blue">
+						<td colspan="2">
+							<p style="font-size:8px! important"><b>Postes prévus au lot "LOGISTICIEN DE CHANTIER"</b></p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Fourniture et pose de cylindre provisoire une variure par poste palière</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">LOGISTICIEN</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Agents Qualités Hygiènes et Sécurité à TP</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">LOGISTICIEN</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Fourniture des consommables de la base vie</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">LOGISTICIEN</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Fourniture et rotation des bennes de chantier Phase CES en DIB hors plâterie</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">LOGISTICIEN</p>
+						</td>
+					</tr>			
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Location d'un système de télésurveillance phase CES</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">LOGISTICIEN</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Agents Gestionnaire de clef en phase livraison, canons définitives</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">LOGISTICIEN</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Location de portes métalliques au RDC de chaque escalier d'accés aux étages</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">LOGISTICIEN</p>
+						</td>
+					</tr>
+					<tr style="height:10px;background-color:grey">
+						<td colspan="2">
+							<p style="font-size:7px! important"><b>Postes à prévoir EN INTER-ENTREPRISE SI BESOIN</b></p>
+						</td>
+					</tr>
+
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Travail du samedi à la demande des entreprises concernées</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">Entreprises</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Nettoyage de chantier en cours de travaux du poste de travail aprés chaque intervention en un lieu donné</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">Entreprises</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Agent type APS/MC-Gardiennage physique de chantier</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">Entreprises</p>
+						</td>
+					</tr>
+					<tr style="height:10px">
+						<td>
+							<p style="font-size:7px! important">Mise en place d'une installation de préchauffage de chantier électrique sis surconsommation électrique</p>
+						</td>
+						<td>
+							<p style="font-size:7px! important">Entreprises</p>
+						</td>
+					</tr>
+				</table>
+				<h6>Les prestations confiées, le cas échéant, au logisticien de chantier seront prises en charge par le Maître d’Ouvrage et ne feront pas l’objet d’une retenue forfaitaire en pourcentage du montant du marché global.</h6>
+				<h6>Pour toute autre dépense afférente aux dépenses communes ou en cas de dépassement de délai contractuel, le surcoût des prestations liées à l’organisation sera répercuté aux entreprises reconnues comme étant défaillantes ou à défaut au prorata de leur marché via le compte inter-entreprise.</h6>
+				
+		    </t>		   
+		 </t>
+		</template>
+
+
+
+    </data>
+</odoo>

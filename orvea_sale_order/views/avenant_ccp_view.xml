@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<odoo>
+
+        <!-- Avenant Form View -->
+        <record id="orvea_avenant_ccp_form_view" model="ir.ui.view">
+        	<field name="name">orvea.avenant.ccp.form</field>
+        	<field name="model">avenant.ccp</field>
+        	<field name="arch" type="xml">
+            		<form string="Avenant">
+				<group>
+                    			<field name="name" string="Avenant"/>
+				</group>	
+                	</form>
+            	</field>
+        </record>
+
+        <!-- Avenant Tree View -->
+        <record id="orvea_avenant_ccp_tree_view" model="ir.ui.view">
+        	<field name="name">orvea.avenant.ccp.form</field>
+        	<field name="model">avenant.ccp</field>
+            	<field name="arch" type="xml">
+		        <tree string="Avenant">
+                    		<field name="name" string="Avenant"/>
+		        </tree>
+            	</field>
+        </record>
+
+
+
+        <!-- Avenant Action -->
+        <record model="ir.actions.act_window" id="action_orvea_avenant_list">
+            <field name="name">Avenant</field>
+            <field name="res_model">avenant.ccp</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_avenant_ccp_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_avenant_ccp_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Avenants.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- Avenant Line Form View -->
+        <record id="orvea_avenant_ccp_line_form_view" model="ir.ui.view">
+        	<field name="name">orvea.avenant.ccp.line.form</field>
+        	<field name="model">avenant.ccp.line</field>
+        	<field name="arch" type="xml">
+            		<form string="Avenant">
+				<group>
+					<group>
+                    				<field name="avenant_id" string="Avenant"/>
+					</group>
+					<group>
+                    				<field name="type_avenant" string="Lot"/>
+					</group>
+				</group>	
+                	</form>
+            	</field>
+        </record>
+
+        <!-- Avenant Line Tree View -->
+        <record id="orvea_avenant_ccp_line_tree_view" model="ir.ui.view">
+        	<field name="name">orvea.avenant.ccp.line.tree</field>
+        	<field name="model">avenant.ccp.line</field>
+            	<field name="arch" type="xml">
+		        <tree string="Avenant">
+                    		<field name="avenant_id" string="Avenant"/>
+                    		<field name="type_avenant" string="Lot"/>
+		        </tree>
+            	</field>
+        </record>
+
+        <!-- Avenant Line Action -->
+        <record model="ir.actions.act_window" id="action_orvea_avenant_ccp_line">
+            <field name="name">Prestation</field>
+            <field name="res_model">prestation.list.line</field>
+            <field name="view_mode">tree,form</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('orvea_avenant_ccp_line_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_avenant_ccp_line_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To create Your own Avenants.
+                </p>
+            </field>
+        </record>
+
+        <!-- Avenant Action -->
+        <menuitem id="orvea_avenant_line_list_menu" name="Avenants" parent="orvea_sale_order.orvea_prestation_configuration_root" action="action_orvea_avenant_ccp_line"/>
+        <menuitem id="orvea_avenant_list_menu" name="Liste des Avenants" parent="orvea_sale_order.orvea_prestation_configuration_root" action="action_orvea_avenant_list"/>
+
+</odoo>

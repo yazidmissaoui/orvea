@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record model="orvea.manage" id="orvea_manage_1">
+        <field name="state" eval="'coming'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_2">
+        <field name="state" eval="'new'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_3">
+        <field name="state" eval="'contacted'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_4">
+        <field name="state" eval="'rdv'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_5">
+        <field name="state" eval="'waiting_dce'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_6">
+        <field name="state" eval="'quotation_creation'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_7">
+        <field name="state" eval="'quotation_sent'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_8">
+        <field name="state" eval="'meeting_sale'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_9">
+        <field name="state" eval="'agreement'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_10">
+        <field name="state" eval="'signature'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_11">
+        <field name="state" eval="'quotation_signed'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_12">
+        <field name="state" eval="'preparation_site'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_13">
+        <field name="state" eval="'production_site'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+    <record model="orvea.manage" id="orvea_manage_14">
+        <field name="state" eval="'fenced'"></field>
+        <field name="activate_state" eval="0"></field>
+    </record>
+</odoo>

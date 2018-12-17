@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+	    <record model="ir.module.category" id="orvea_users_configuration">
+		    <field name="name">Orvea</field>
+		    <field name="description">The Orvea Project Parameters</field>
+		    <field name="sequence">20</field>
+	    </record>
+	    <record id="orvea_configure_agenda" model="res.groups">
+		<field name="name">Agenda</field>
+		<field name="comment">The user will be able to manage its Agenda.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	    <record id="orvea_configure_companies" model="res.groups">
+		<field name="name">Entreprises</field>
+		<field name="comment">The user will be able to manage companies.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	    <record id="orvea_configure_contacts" model="res.groups">
+		<field name="name">Contacts</field>
+		<field name="comment">The user will be able to manage contacts list.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	    <record id="orvea_configure_opportunities" model="res.groups">
+		<field name="name">Opportunités</field>
+		<field name="comment">The user will be able to manage Opportunities.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	    <record id="orvea_configure_projects" model="res.groups">
+		<field name="name">Projets</field>
+		<field name="comment">The user will be able to manage Projects list.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	    <record id="orvea_configure_invoices" model="res.groups">
+		<field name="name">Factures</field>
+		<field name="comment">The user will be able to manage Invoices list.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	    <record id="orvea_configure_products" model="res.groups">
+		<field name="name">Produits</field>
+		<field name="comment">The user will be able to manage Products list.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	    <record id="orvea_configure_settings" model="res.groups">
+		<field name="name">Orvea Settings</field>
+		<field name="comment">The user will be able to controle settings.</field>
+		<field name="category_id" ref="orvea_users_configuration"/>
+	    </record>
+	</data>
+</odoo>

@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data> 
+
+        	<record id="orvea_sale_order_form" model="ir.ui.view">
+            		<field name="name">orvea.sale.order</field>
+            		<field name="model">sale.order</field>
+            		<field name="arch" type="xml">
+				<form string="Sales Order" class="o_sale_order">
+					<header>
+						<button name="action_quotation_send" string="Send by Email" type="object" states="draft" class="btn-primary"/>
+					    	<button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice" groups="sale.group_proforma_sales" class="btn-primary" attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('invoice_count','&gt;=',1)]}" context="{'proforma': True}"/>
+					    	<button name="print_quotation" string="Print" type="object" states="draft" class="btn-primary o_sale_print"/>
+					    	<button name="action_confirm" id="action_confirm" string="Confirm Sale" class="btn-primary" type="object" attrs="{'invisible': [('state', 'not in', ['sent'])]}"/>
+					    	<button name="action_confirm" string="Confirm Sale" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+					    	<button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice" groups="sale.group_proforma_sales" attrs="{'invisible': ['|', ('state', '=', 'draft'), ('invoice_count','&gt;=',1)]}" context="{'proforma': True}"/>
+					    	<button name="print_quotation" string="Print" type="object" states="sent,sale" class="o_sale_print"/>
+					    	<button name="action_quotation_send" string="Send by Email" type="object" states="sent,sale"/>
+					    	<button name="action_cancel" states="draft,sent,sale" type="object" string="Cancel"/>
+					    	<button name="action_draft" states="cancel" type="object" string="Set to Quotation"/>
+					    	<button name="action_done" type="object" string="Lock" states="sale"
+						help="If the sale is locked, you can not modify it anymore. However, you will still be able to invoice or deliver."/>
+					    	<button name="action_unlock" type="object" string="Unlock" states="done" groups="sales_team.group_sale_manager"/>
+					    	<field name="state" widget="statusbar" invisible="1"/>
+					</header>
+					<sheet>
+					    	<field name="date_order_report" invisible="1"/>
+					    	<field name="month_start_ces" invisible="1"/>
+					    	<field name="year_start_ces" invisible="1"/>
+					    	<field name="month_end_ces" invisible="1"/>
+					    	<field name="year_end_ces" invisible="1"/>
+						<widget name="orvea_sale_order.order"/>
+					  	<div class="oe_title" attrs="{'invisible': [('state', '!=', 'apercu_global')]}">
+							<h1>
+							    	<field name="name" nolabel="1"/>
+							</h1>
+						</div>
+                				<group  name="group_top" attrs="{'invisible': [('state', 'not in', ['offre','apercu_global'])]}">
+                    					<group  name="group_left" string="Type de vente" attrs="{'invisible': [('state', 'not in', ['offre','apercu_global'])]}">
+					    			<field name="with_contract" string="Contrat"/>
+					    			<field name="additional_type" string="Additionnel"/>
+					    			<field name="ponctual_type" string="Ponctuel"/>
+                    					</group>
+                    					<group  name="group_right" string="Type de prestation" attrs="{'invisible': [('state', 'not in', ['offre','apercu_global'])]}">	
+						    		<field name="construction_site" attrs="{'invisible': [('ponctual_type', '=', True)]}" string="Logistique de chantier"/>
+						    		<field name="placed_agent" string="Agent placé" attrs="{'invisible': [('with_contract', '=', True)]}"/>
+						    		<field name="ponctual_service" string="Service ponctuel" attrs="{'invisible': [('with_contract', '=', True)]}"/>
+
+                    					</group>
+                    				</group>
+						<div style="float:right;margin-right: 230px; !important">
+                    					<button name="action_identification_client" string="Suivant" type="object" class="btn-primary fa fa-angle-double-right" attrs="{'invisible': [('state', '!=', 'offre')]}"/>
+						</div>
+					    	<div class="oe_button_box" name="button_box" attrs="{'invisible': [('state', '==', 'offre')]}">
+							<button name="action_view_invoice" type="object" class="oe_stat_button"
+						    		icon="fa-pencil-square-o"
+						    		attrs="{'invisible': [('invoice_count', '=', 0)]}">
+						    		<field name="invoice_count" widget="statinfo" string="Invoices"/>
+							</button>
+					    	</div>
+					    	<group  attrs="{'invisible': [('state', 'not in', ['identification_client','information_affaire','apercu_global'])]}">
+							<group name="group_left"> 
+						    		<field name="maitre_ouvrage" string="Maître d'ouvrage" attrs="{'invisible': [('state', 'not in', ['identification_client','apercu_global'])]}"/>
+								<label for="street" string="Adresse" attrs="{'invisible': [('state', 'not in', ['identification_client','apercu_global'])]}"/>
+								<div class="o_address_format" attrs="{'invisible': [('state', 'not in', ['identification_client','apercu_global'])]}">
+									<field name="street_ouvrage" placeholder="Rue..." class="o_address_street"/>
+									<field name="street2_ouvrage" placeholder="Rue..." class="o_address_street"/>
+									<field name="city_ouvrage" placeholder="Ville"/>
+									<field name="zip_ouvrage" placeholder="Code"/>
+								</div>
+						    		<field name="partner_id" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}' string="Nom commercial" attrs="{'invisible': [('state', 'not in', ['information_affaire','apercu_global'])]}"/>
+						    		<field name="partner_invoice_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'invoice'}" options='{"always_reload": True}'/>
+						    		<field name="partner_shipping_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'delivery'}" options='{"always_reload": True}'/>
+							    	<field name="confirmation_date" invisible="1"/>
+							</group>
+                    					<group  name="group_right">
+								<label for="street" string="Adresse Chantier"  attrs="{'invisible': [('state', 'not in', ['information_affaire','apercu_global'])]}"/>
+								<div class="o_address_format"  attrs="{'invisible': [('state', 'not in', ['information_affaire','apercu_global'])]}">
+									<field name="commercial_street" placeholder="Rue..." class="o_address_street"/>
+									<field name="commercial_city" placeholder="Ville" class="o_address_street"/>
+									<field name="commercial_zip" placeholder="Code" class="o_address_street"/>
+								</div>
+						    		<field name="client_reference" string="Référence Client" attrs="{'invisible': [('state', 'not in', ['information_affaire','apercu_global'])]}"/>
+							    	<field name="pricelist_id" groups="product.group_sale_pricelist"/>
+							    	<field name="payment_term_id" options="{'no_create': True}" invisible="1"/>
+						    		<field name="validity_date" invisible="1" string="Date"/>
+								<field name="service_sold" invisible="1"/>
+								<div style="float:right;margin-right: -230px; !important">
+				    					<button name="action_information_affaire" string="Suivant" type="object" class="btn-primary fa fa-angle-double-right" attrs="{'invisible': [('state', '!=', 'identification_client')]}"/>
+								</div>
+							</group>
+					    	</group>
+						<div style="float:right;margin-top: 15px;margin-right: 35px; !important">
+                    					<button name="action_planning_state" string="Suivant" type="object" class="btn-primary fa fa-angle-double-right" attrs="{'invisible': [('state', '!=', 'information_affaire')]}"/>
+						</div>
+		            			<field name="date_order" string="Date" invisible="1"/>
+					    	<notebook attrs="{'invisible': [('state', 'not in', ['planning','chiffrage','avenant_ccp','apercu_global'])]}">
+							<page string="Lignes Devis" attrs="{'invisible': [('state', '!=', 'apercu_global')]}">
+						    		<field name="order_line" mode="tree" attrs="{'readonly': [('state', 'in', ('done','cancel'))]}">
+						        		<form string="Sales Order Lines">
+						            			<group>
+						                			<group>
+						                    				<field name="product_id"
+						                        context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+						                        attrs="{'readonly': [('product_updatable', '=', False)]}"
+						                        force_save="1"
+						                       />
+						                    				<field name="description"/>
+						                    				<field name="product_updatable" invisible="1"/>
+						                    				<field name="layout_category_id" groups="sale.group_sale_layout"/>
+						                    				<field name="invoice_status" invisible="1"/>
+												<field name="qty_to_invoice" invisible="1"/>
+												<field name="qty_delivered_updateable" invisible="1"/>
+												<field name="price_subtotal" invisible="1"/>
+												<label for="product_uom_qty" string="Quantité"/>
+						                    				<div>
+						                        				<field
+						                            context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'uom_qty_change':True, 'company_id': parent.company_id}"
+						                            name="product_uom_qty" class="oe_inline"/>
+						                        				<field name="product_uom" groups="product.group_uom" class="oe_inline oe_no_button"
+						                            attrs="{'readonly': [('state', 'in', ('sale','done', 'cancel'))]}"/>
+						                    				</div>
+						                    				<label for="qty_delivered" string="Delivered Quantity" attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
+						                    				<div attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}">
+						                        				<field name="qty_delivered" attrs="{'readonly': [('qty_delivered_updateable', '=', False)]}"/>
+						                    				</div>
+						                    				<label for="qty_invoiced" string="Invoiced Quantity" attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
+						                    				<div attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}">
+						                        				<field name="qty_invoiced" attrs="{'invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
+						                    				</div>
+						                    				<field name="price_unit"/>
+						                    				<label for="discount" groups="sale.group_discount_per_so_line"/>
+						                    				<div name="discount" groups="sale.group_discount_per_so_line">
+						                        				<field name="discount" class="oe_inline"/> %%
+						                    				</div>
+						                			</group>
+						                			<group>
+						                    				<field name="tax_id" widget="many2many_tags" options="{'no_create': True}" domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"
+						                        attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
+						                    				<label for="customer_lead"/>
+						                    				<div>
+						                        				<field name="customer_lead" class="oe_inline"/> days
+						                    				</div>
+						                    				<label for="analytic_tag_ids" groups="analytic.group_analytic_accounting"/>
+						                   				<div>
+						                        				<field name="analytic_tag_ids" widget="many2many_tags" groups="analytic.group_analytic_accounting" options="{'color_field': 'color'}"/>
+						                    				</div>
+						                			</group>
+						            			</group>
+						            			<div groups="base.group_no_one">
+						                <label for="invoice_lines"/>
+						                <field name="invoice_lines"/>
+						            </div>
+						            <field name="state" invisible="1"/>
+						        </form>
+						        <tree string="Sales Order Lines" editable="bottom" decoration-info="invoice_status=='to invoice'">
+						            <field name="sequence" widget="handle"/>
+						            <field name="product_updatable" invisible="1"/>
+						            <field name="product_id"
+						                attrs="{'readonly': [('product_updatable', '=', False)]}"
+						                force_save="1"
+						                context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+						               />
+						            <field name="description" string="Description"/>
+						            <field name="layout_category_id" groups="sale.group_sale_layout"/>
+						            <field name="product_uom_qty"
+						                string="Quantité"
+						                context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+						            />
+						            <field name="qty_delivered"
+						                attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])], 'readonly': [('qty_delivered_updateable', '=', False)]}"/>
+						            <field name="qty_invoiced"
+						                attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
+						            <field name="qty_to_invoice" invisible="1"/>
+						            <field name="product_uom"
+						                attrs="{'readonly': [('state', 'in', ('sale','done', 'cancel'))]}"
+						                context="{'company_id': parent.company_id}"
+						                groups="product.group_uom" options='{"no_open": True}'/>
+						            <field name="analytic_tag_ids" groups="analytic.group_analytic_accounting" widget="many2many_tags" options="{'color_field': 'color'}"/>
+						            <field name="price_unit"
+						                attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
+						            <field name="tax_id" widget="many2many_tags" options="{'no_create': True}" domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"
+						                attrs="{'readonly': [('qty_invoiced', '&gt;', 0)]}"/>
+						            <field name="discount" groups="sale.group_discount_per_so_line"/>
+						            <field name="price_subtotal" widget="monetary" groups="sale.group_show_price_subtotal"/>
+						            <field name="price_total" widget="monetary" groups="sale.group_show_price_total"/>
+						            <field name="qty_delivered_updateable" invisible="1"/>
+						            <field name="state" invisible="1"/>
+						            <field name="invoice_status" invisible="1"/>
+						            <field name="customer_lead" invisible="1"/>
+						            <field name="currency_id" invisible="1"/>
+						        </tree>
+						        <kanban class="o_kanban_mobile">
+						            <field name="product_id"/>
+						            <field name="product_uom_qty"/>
+						            <field name="product_uom" groups="product.group_uom"/>
+						            <field name="price_subtotal"/>
+						            <field name="price_unit"/>
+						            <templates>
+						                <t t-name="kanban-box">
+						                    <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+						                        <div class="row">
+						                            <div class="col-xs-8">
+						                                <strong><span><t t-esc="record.product_id.value"/></span></strong>
+						                            </div>
+						                            <div class="col-xs-4">
+						                                <strong><span class="pull-right text-right">
+						                                <t t-esc="record.price_subtotal.value"/></span></strong>
+						                            </div>
+						                        </div>
+						                        <div class="row">
+						                            <div class="col-xs-12 text-muted">
+						                                <span>Quantity: <t t-esc="record.product_uom_qty.value"/> <t t-esc="record.product_uom.value"/></span>
+						                            </div>
+						                        </div>
+						                        <div class="row">
+						                            <div class="col-xs-12 text-muted">
+						                                <span>Unit Price: <t t-esc="record.price_unit.value"/></span>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <hr/>
+						                </t>
+						            </templates>
+						        </kanban>
+						    </field>
+						    <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+						        <field name="amount_untaxed" widget='monetary'/>
+						        <field name="amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+						        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+						            <label for="amount_total" string="Total TTC"/>
+						        </div>
+						        <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+						    </group>
+						    <field name="note" class="oe_inline" placeholder="Ajouter une note ..."/>
+						    <div class="oe_clear"/>
+						</page>
+						<page string="Planning" attrs="{'invisible': [('state', 'not in', ['planning','apercu_global']),'&amp;',('with_contract','=',True)]}">
+							<group  name="group_top" attrs="{'invisible': [('ponctual_service', '=', True)]}">
+				    				<group>
+							    		<field name="tce_delay" string="Délai TCE"  attrs="{'invisible': [('placed_agent', '=', True)]}"/>
+							    		<field name="housings_count" string="Nbre de logement"/>
+							    		<field name="case_type" string="Type de cas" attrs="{'invisible': [('placed_agent', '=', True)]}"/>
+							    		<field name="date_end" string="Démontage de grue" attrs="{'invisible': [('placed_agent', '=', True)]}"/>
+							    		<field name="open_days" string="Jours Ouvrés" attrs="{'invisible': [('placed_agent', '=', False)]}"/>
+				    				</group>
+				    				<group  name="group_right">
+								    	<field name="delay" string="Délai CES"/>
+								    	<field name="start_ces" string="Début CES"/>
+								    	<field name="end_ces" string="Fin CES"/>
+				    				</group>
+				    			</group>
+							<div style="float:right;margin-right: 10px; !important">
+                    						<button name="action_chiffrage_state" string="Suivant" type="object" class="btn-primary fa fa-angle-double-right" attrs="{'invisible': [('state', '!=', 'planning')]}"/>
+							</div>
+							<div style="float:right;margin-bottom: 50px; !important">
+							</div>
+							<br/>
+						</page>
+
+
+						<page string="Chiffrage" attrs="{'invisible': [('state', 'not in', ['chiffrage','apercu_global'])]}">
+							<group attrs="{'invisible': [('construction_site', '!=', True)]}">
+								<h3 style="text-align:center">CHIFFRAGE-LOT "LOGISTICIEN DE CHANTIER"</h3>
+							</group>
+							<group attrs="{'invisible': [('placed_agent', '!=', True)]}">
+								<h3 style="text-align:center">CHIFFRAGE PONCTUEL - AGENT PLACÉ</h3>
+							</group>
+							<group attrs="{'invisible': [('ponctual_service', '!=', True)]}">
+								<h3 style="text-align:center">CHIFFRAGE PONCTUEL - SERVICE PONCTUEL </h3>
+							</group>
+							<group  name="group_top" style="float:right;margin-right: 300px; !important"  
+ attrs="{'invisible': [('ponctual_service','=',True)]}">
+								<group>
+
+								</group>
+				    				<group  name="group_right">
+							    		<field name="open_days" string="Jours Ouvrés" attrs="{'invisible': [('placed_agent', '=', False)]}"/>
+								    	<field name="housings_count" string="Nbre de logement" attrs="{'invisible': [('placed_agent', '=', True)]}"/>
+									<field name="cout_logement" string="Coût par logement" attrs="{'invisible': [('placed_agent', '=', True)]}"/>
+									<field name="total_cout" string="Coût construction" attrs="{'invisible': [('placed_agent', '=', True)]}"/>
+									<field name="stimulation_cout" attrs="{'invisible': [('construction_site','=',False),('ponctual_service','=',False)]}" string="Stimulation Budget"/>
+								    	<field name="delay" string="Délai d'intervention" attrs="{'invisible': [('placed_agent', '=', True)]}"/>
+								</group>
+							</group>
+							<field name="prestation_line" attrs="{'invisible': [('construction_site','=',False)]}">
+								<tree editable="bottom" delete="false">
+									<field name="prestation_id" string="PRESTATIONS DE BASE"/>
+									<field name="activate" string="Choix" widget="boolean"/>
+									<field name="delay_product" string="Délai"/>
+									<field name="unit_product" string="Unité"/>
+									<field name="list_price" string="P.U"/>
+									<field name="total_price" string="Total" sum="Total"/>
+									<field name="order_id" invisible="1"/>
+									<field name="order_optional_id" invisible="1"/>
+									<!--field name="prestation_basic_punctual_id" invisible="1"/-->
+									<!--field name="prestation_optionnal_punctual_id" invisible="1"/-->
+									<field name="prestation_placed_agent_id" invisible="1"/>
+								</tree>
+
+							</field>
+							<group attrs="{'invisible': [('construction_site','=',False)]}">
+								<group class="group_right">
+								</group>
+								<group class="group_left">
+									<field name="total_basic_construction" string="Total" attrs="{'invisible': [('construction_site','=',False)]}"/>
+								</group>
+							</group>
+							<field name="prestation_optionnal_line"  attrs="{'invisible': [('construction_site','=',False)]}">
+								<tree editable="bottom" delete="false">
+									<field name="prestation_id" string="PRESTATIONS OPTIONNELS"/>
+									<field name="activate" string="Choix" widget="boolean"/>
+									<field name="delay_product" string="Délai"/>
+									<field name="unit_product" string="Unité"/>
+									<field name="list_price" string="P.U"/>
+									<field name="total_price" string="Total" sum="Total"/>
+									<field name="order_optional_id" invisible="1"/>
+									<!--field name="order_id" invisible="1"/-->
+									<!--field name="prestation_basic_punctual_id" invisible="1"/-->
+									<!--field name="prestation_optionnal_punctual_id" invisible="1"/-->
+									<field name="prestation_placed_agent_id" invisible="1"/>
+								</tree>
+							</field>
+							<group attrs="{'invisible': [('construction_site','=',False)]}">
+								<group class="group_right">
+								</group>
+								<group class="group_left">
+									<field name="total_optional_construction" string="Total" attrs="{'invisible': [('construction_site','=',False)]}"/>
+								</group>
+							</group>
+							<field name="prestation_basic_punctual" attrs="{'invisible': [('ponctual_service','=',False)]}">
+								<tree editable="bottom" delete="false">
+									<field name="prestation_id" string="PRESTATIONS PONCTUELLE"/>
+									<field name="activate" string="Choix" widget="boolean"/>
+									<field name="delay_product" string="Délai"/>
+									<field name="unit_product" string="Unité"/>
+									<field name="list_price" string="P.U"/>
+									<field name="total_price" string="Total" sum="Total"/>
+									<field name="prestation_basic_punctual_id" invisible="1"/>
+									<field name="order_id" invisible="1"/>
+									<field name="order_optional_id" invisible="1"/>
+									<field name="prestation_optionnal_punctual_id" invisible="1"/>
+									<field name="prestation_placed_agent_id" invisible="1"/>
+								</tree>
+							</field>
+							<group attrs="{'invisible': [('ponctual_service','=',False)]}">
+								<group class="group_right">
+								</group>
+								<group class="group_left">
+									<field name="total_basic_ponctuel" style="float:right;margin-right: -25px; !important" string="Total" attrs="{'invisible': [('ponctual_service','=',False)]}"/>
+								</group>
+							</group>
+							<field name="prestation_optionnal_punctual" attrs="{'invisible': [('ponctual_service','=',False)]}">
+								<tree editable="bottom" delete="false">
+									<field name="prestation_id" string="PRESTATIONS LOGISTICIENS"/>
+									<field name="activate" string="Choix" widget="boolean"/>
+									<field name="delay_product" string="Délai"/>
+									<field name="unit_product" string="Unité"/>
+									<field name="list_price" string="P.U"/>
+									<field name="total_price" string="Total" sum="Total"/>
+									<field name="prestation_optionnal_punctual_id" invisible="1"/>
+									<field name="order_id" invisible="1"/>
+									<field name="order_optional_id" invisible="1"/>
+									<field name="prestation_basic_punctual_id" invisible="1"/>
+									<field name="prestation_placed_agent_id" invisible="1"/>
+								</tree>
+							</field>
+							<group attrs="{'invisible': [('ponctual_service','=',False)]}">
+								<group class="group_right">
+								</group>
+								<group class="group_left">
+									<field name="total_optional_ponctuel" string="Total" attrs="{'invisible': [('ponctual_service','=',False)]}" style="float:right;margin-right: -25px; !important"/>
+								</group>
+							</group>
+							<field name="prestation_placed_agent" attrs="{'invisible': [('placed_agent','=',False)]}">
+								<tree editable="bottom" delete="false">
+									<field name="prestation_id" string="PRESTATIONS PONCTUELLE"/>
+									<field name="activate" string="Choix" widget="boolean"/>
+									<field name="delay_product" string="Délai"/>
+									<field name="unit_product" string="Unité"/>
+									<field name="list_price" string="P.U"/>
+									<field name="total_price" string="Total" sum="Total"/>
+									<field name="prestation_basic_punctual_id" invisible="1"/>
+									<field name="order_id" invisible="1"/>
+									<field name="order_optional_id" invisible="1"/>
+									<field name="prestation_optionnal_punctual_id" invisible="1"/>
+									<field name="prestation_placed_agent_id" invisible="1"/>
+								</tree>
+							</field>
+							<group>
+								<group class="group_right">
+								</group>
+								<group class="group_left">
+									<field name="total_agent_place" string="Total" attrs="{'invisible': [('placed_agent','=',False)]}" style="float:right;margin-right: -25px; !important"/>
+								</group>
+							</group>
+							<div style="float:right;margin-right: 5px; !important">
+                    						<button name="action_avenant_state" string="Suivant" type="object" class="btn-primary fa fa-angle-double-right" attrs="{'invisible': ['|',('state', '!=', 'chiffrage'),('placed_agent','=',True)]}"/>
+                    						<button name="action_agent_place" string="Suivant" type="object" class="btn-primary fa fa-angle-double-right" attrs="{'invisible': ['|',('state', '!=', 'chiffrage'),('placed_agent','=',False)]}"/>
+							</div>
+							<div style="float:right;margin-bottom: 50px; !important">
+							</div>
+						</page>
+						<page string="Avenant CCP" attrs="{'invisible': ['|',('state', 'not in', ['avenant_ccp','apercu_global']),('placed_agent','=',True)]}">
+							<br/>
+							<br/>
+							<br/>
+							<group>
+								<field name="description_avenant" attrs="{'invisible': [('ponctual_service','=',True)]}" string="Description" style="width:710px"/>	
+							</group>	
+							<field name="avenant_gros_oeuvre" attrs="{'invisible': [('ponctual_service','=',True)]}">
+								<tree editable="bottom">
+                                    					<field name="sequence" widget="handle"/>
+									<field name="avenant_id" string="Postes à prévoir au lot gros oeuvre dans le cadre de son marché, poste INSTALLATION DE CHANTIER" attrs="{'readonly': [('avenant_id', 'in', ['Postes à prévoir au lot Electricité','Postes à prévoir au lot Ascensoriste','Postes à prévoir au lot Menuiserie','Postes à prévoir au lot LOGISTICIEN DE CHANTIER','Postes à prévoir EN INTER-ENTREPRISE SI BESOIN'])]}"/>
+									<field name="type_avenant" style="text-align:center" string="Lot"/>
+									<field name="avenant_gros_oeuvre_id" invisible="1"/>
+									<field name="avenant_electricite_id" invisible="1"/>
+									<field name="avenant_ascenseur_id" invisible="1"/>
+									<field name="avenant_menuiserie_id" invisible="1"/>
+									<field name="avenant_logisticien_id" invisible="1"/>
+									<field name="avenant_entreprise_id" invisible="1"/>
+
+								</tree>
+							</field>
+							<field name="avenant_electricite" attrs="{'invisible': [('ponctual_service','=',True)]}">
+								<tree editable="bottom">
+                                    					<field name="sequence" widget="handle"/>
+									<field name="avenant_id" string="Postes à prévoir au lot Electricité"/>
+									<field name="type_avenant" style="text-align:center" string="Lot"/>
+									<field name="avenant_gros_oeuvre_id" invisible="1"/>
+									<field name="avenant_electricite_id" invisible="1"/>
+									<field name="avenant_ascenseur_id" invisible="1"/>
+									<field name="avenant_menuiserie_id" invisible="1"/>
+									<field name="avenant_logisticien_id" invisible="1"/>
+									<field name="avenant_entreprise_id" invisible="1"/>
+
+								</tree>
+							</field>
+							<field name="avenant_ascenseur" attrs="{'invisible': [('ponctual_service','=',True)]}">
+								<tree editable="bottom">
+                                    					<field name="sequence" widget="handle"/>
+									<field name="avenant_id" string="Postes à prévoir au lot Ascensoriste"/>
+									<field name="type_avenant" style="text-align:center" string="Lot"/>
+									<field name="avenant_gros_oeuvre_id" invisible="1"/>
+									<field name="avenant_electricite_id" invisible="1"/>
+									<field name="avenant_ascenseur_id" invisible="1"/>
+									<field name="avenant_menuiserie_id" invisible="1"/>
+									<field name="avenant_logisticien_id" invisible="1"/>
+									<field name="avenant_entreprise_id" invisible="1"/>
+
+								</tree>
+							</field>
+							<field name="avenant_menuiserie" attrs="{'invisible': [('ponctual_service','=',True)]}">
+								<tree editable="bottom">
+                                    					<field name="sequence" widget="handle"/>
+									<field name="avenant_id" string="Postes à prévoir au lot Menuiserie"/>
+									<field name="type_avenant" style="text-align:center" string="Lot"/>
+									<field name="avenant_gros_oeuvre_id" invisible="1"/>
+									<field name="avenant_electricite_id" invisible="1"/>
+									<field name="avenant_ascenseur_id" invisible="1"/>
+									<field name="avenant_menuiserie_id" invisible="1"/>
+									<field name="avenant_logisticien_id" invisible="1"/>
+									<field name="avenant_entreprise_id" invisible="1"/>
+
+								</tree>
+							</field>
+							<field name="avenant_logisticien" attrs="{'invisible': [('ponctual_service','=',True)]}">
+								<tree editable="bottom">
+                                    					<field name="sequence" widget="handle"/>
+									<field name="avenant_id" string="Postes à prévoir au lot 'LOGISTICIEN DE CHANTIER'"/>
+									<field name="type_avenant" style="text-align:center" string="Lot"/>
+									<field name="avenant_gros_oeuvre_id" invisible="1"/>
+									<field name="avenant_electricite_id" invisible="1"/>
+									<field name="avenant_ascenseur_id" invisible="1"/>
+									<field name="avenant_menuiserie_id" invisible="1"/>
+									<field name="avenant_logisticien_id" invisible="1"/>
+									<field name="avenant_entreprise_id" invisible="1"/>
+
+								</tree>
+							</field>
+							<field name="avenant_entreprise" attrs="{'invisible': [('ponctual_service','=',True)]}">
+								<tree editable="bottom">
+                                    					<field name="sequence" widget="handle"/>
+									<field name="avenant_id" string="Postes à prévoir EN INTER-ENTREPRISE SI BESOIN"/>
+									<field name="type_avenant" style="text-align:center" string="Lot"/>
+									<field name="avenant_gros_oeuvre_id" invisible="1"/>
+									<field name="avenant_electricite_id" invisible="1"/>
+									<field name="avenant_ascenseur_id" invisible="1"/>
+									<field name="avenant_menuiserie_id" invisible="1"/>
+									<field name="avenant_logisticien_id" invisible="1"/>
+									<field name="avenant_entreprise_id" invisible="1"/>
+
+								</tree>
+							</field>
+							<div style="float:right;margin-right: 5px; !important">
+                    						<button name="action_apercu_general" string="Valider" type="object" class="btn-success fa fa-check" attrs="{'invisible': [('state', '!=', 'avenant_ccp')]}" style="background-color:green !important"/>
+							</div>
+							<div style="float:right;margin-bottom: 50px; !important">
+							</div>
+
+						</page>
+						<!--page string="Cahier Reporting" attrs="{'invisible': [('placed_agent','=',False)]}">
+						</page-->
+		            			<field name="type_vente" string="Type de vente" invisible="1"/>
+		            			<field name="type_prestation" string="Type de prestation" invisible="1"/>
+						            <field name="company_id" options="{'no_create': True}"/>
+					    </notebook>
+					</sheet>
+					<div class="oe_chatter">
+					    <field name="message_follower_ids" widget="mail_followers"/>
+					    <field name="activity_ids" widget="mail_activity"/>
+					    <!--field name="message_ids" widget="mail_thread"/-->
+					</div>
+				</form>
+            		</field>
+        	</record>
+
+		<record id="view_orvea_sale_order_tree" model="ir.ui.view">
+		    <field name="name">sale.order.tree</field>
+		    <field name="model">sale.order</field>
+		    <field name="priority">4</field>
+		    <field name="arch" type="xml">
+		        <tree string="Devis" class="o_sale_order" decoration-bf="message_needaction==True" decoration-muted="state=='cancel'">
+		            <field name="message_needaction" invisible="1"/>
+		            <field name="name" string="Quotation Number"/>
+		            <field name="date_order" string="Quotation Date"/>
+		            <field name="partner_id"/>
+		            <field name="user_id"/>
+		            <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
+		            <field name="currency_id" invisible="1"/>
+			    <field name="date_order_report" invisible="1"/>
+		            <field name="state"/>
+			    <field name="month_start_ces" invisible="1"/>
+		            <field name="year_start_ces" invisible="1"/>
+			    <field name="month_end_ces" invisible="1"/>
+			    <field name="year_end_ces" invisible="1"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="view_orvea_sale_order_reporting_tree" model="ir.ui.view">
+		    <field name="name">sale.order.reporting.tree</field>
+		    <field name="model">sale.order</field>
+		    <field name="priority">4</field>
+		    <field name="arch" type="xml">
+		        <tree string="Devis" class="o_sale_order" decoration-bf="message_needaction==True" decoration-muted="state=='cancel'">
+		            <field name="message_needaction" invisible="1"/>
+			    <field name="date_order_report" invisible="1"/>
+		            <field name="name" string="N° Devis"/>
+		            <field name="date_order" string="Date"/>
+		            <field name="amount_untaxed" sum="Montant HT" widget="monetary"/>
+		            <field name="type_vente" string="Type de vente"/>
+		            <field name="type_prestation" string="Type de prestation"/>
+		            <field name="partner_id" invisible="1"/>
+		            <field name="user_id" invisible="1"/>
+		            <field name="currency_id" invisible="1"/>
+			    <field name="month_start_ces" invisible="1"/>
+		            <field name="year_start_ces" invisible="1"/>
+			    <field name="month_end_ces" invisible="1"/>
+			    <field name="year_end_ces" invisible="1"/>
+		            <field name="state" invisible="1"/>
+		        </tree>
+		    </field>
+		</record>
+
+
+		<record id="view_structural_article_form" model="ir.ui.view">
+            		<field name="name">structural.article.form</field>
+            		<field name="model">structural.article</field>
+            		<field name="arch" type="xml">
+                		<form string="Article">
+					    <field name="name" string="Name"/>
+				</form>
+            		</field>
+		</record>
+		<record id="view_structural_article_tree" model="ir.ui.view">
+            		<field name="name">structural.article.tree</field>
+            		<field name="model">structural.article</field>
+            		<field name="arch" type="xml">
+                		<tree string="Article">
+					    <field name="name" string="Name"/>
+				</tree>
+            		</field>
+		</record>
+
+		<record id="action_structural_article" model="ir.actions.act_window">
+            		<field name="name">Article</field>
+            		<field name="res_model">structural.article</field>
+            		<field name="view_type">form</field>
+            		<field name="view_mode">tree,form</field>
+            		<field name="view_id" ref="orvea_sale_order.view_structural_article_tree"/>
+        	</record>
+
+		<record id="view_contract_article_form" model="ir.ui.view">
+            		<field name="name">contract.article.form</field>
+            		<field name="model">contract.article</field>
+            		<field name="arch" type="xml">
+                		<form string="Article">
+					    <field name="name" string="Name"/>
+				</form>
+            		</field>
+		</record>
+		<record id="view_contract_article_tree" model="ir.ui.view">
+            		<field name="name">contract.article.tree</field>
+            		<field name="model">contract.article</field>
+            		<field name="arch" type="xml">
+                		<tree string="Article">
+					    <field name="name" string="Name"/>
+				</tree>
+            		</field>
+		</record>
+
+		<!--record id="view_orvea_sales_order_filter" model="ir.ui.view">
+		    <field name="name">sale.order.list.select.orvea</field>
+		    <field name="model">sale.order</field>
+		    <field name="arch" type="xml">
+		        <search string="Search Sales Order">
+		            <field name="name" string="Sales Order" filter_domain="['|','|',('name','ilike',self),('client_order_ref','ilike',self),('partner_id','child_of',self)]"/>
+		            <field name="partner_id" operator="child_of"/>
+		            <field name="user_id"/>
+		            <field name="team_id" string="Sales Channel"/>
+		            <field name="analytic_account_id"/>
+		            <field name="product_id"/>
+		            <group expand="0" string="Group By">
+		                <filter name="customer" string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+		                <filter string="Salesperson" domain="[]" context="{'group_by':'user_id'}"/>
+		                <filter string="Order Month" domain="[]" context="{'group_by':'date_order'}"/>
+		                <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+		            </group>
+		       </search>
+		    </field>
+		</record-->
+
+		<record id="action_contract_article" model="ir.actions.act_window">
+            		<field name="name">Article</field>
+            		<field name="res_model">contract.article</field>
+            		<field name="view_type">form</field>
+            		<field name="view_mode">tree,form</field>
+            		<field name="view_id" ref="orvea_sale_order.view_contract_article_tree"/>
+        	</record>
+
+		<!-- Orvea Sale Order Action -->
+		<record model="ir.actions.act_window" id="action_orvea_sale_order">
+		    <field name="name">Devis</field>
+		    <field name="res_model">sale.order</field>
+            	    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_ids" eval="[(5, 0, 0), 
+			(0, 0, {'view_mode': 'tree', 'view_id': ref('view_orvea_sale_order_tree')}), 
+			(0, 0, {'view_mode': 'form', 'view_id': ref('orvea_sale_order_form')})]"/>
+		    <field name="help" type="html">
+		        <p>
+		            Click To create Your own Quotations.
+		        </p>
+		    </field>
+		</record>
+
+		<menuitem
+            		action="action_orvea_sale_order"
+            		id="menu_orvea_sale_order"
+            		parent="orvea_crm_order.orvea_crm_lead_menu_root"
+			name="Ponctuel"
+            		sequence="3"/>
+
+        	<menuitem
+            		id="menu_orvea_configuration_root"
+            		name="Configuration"
+            		web_icon="orvea_sale_order,static/description/configuration.png"
+            		sequence="75"/>
+
+		<menuitem
+            		action="action_contract_article"
+            		id="menu_orvea_configuration_contract"
+            		parent="menu_orvea_configuration_root"
+			name="Contrat Articles"
+            		sequence="90"/>
+		<menuitem
+            		action="action_structural_article"
+            		id="menu_orvea_configuration_structural_article"
+            		parent="menu_orvea_configuration_root"
+			name="Structure Contrats"
+            		sequence="90"/>
+
+	</data>
+</odoo>
+
+

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+
+		<!-- mail.message tree: inherited to make invisible res_id and model fields !-->
+		<record model="ir.ui.view" id="view_orvea_list_mail_form">
+		    <field name="name">mail.mail.form.inherit</field>
+		    <field name="model">mail.mail</field>
+		    <field name="inherit_id" ref="mail.view_mail_form"/>
+		    <field name="arch" type="xml">
+			  <xpath expr="//field[@name='subject']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='email_from']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='email_to']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='recipient_ids']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='email_cc']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='reply_to']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='scheduled_date']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='subject']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+
+
+			  <xpath expr="//page[1]" position = "attributes">
+		                <attribute name="invisible">1</attribute>
+		    	  </xpath>
+			  <xpath expr="//page[2]" position = "attributes">
+		                <attribute name="invisible">1</attribute>
+		    	  </xpath>
+			  <xpath expr="//page[3]" position = "attributes">
+		                <attribute name="invisible">1</attribute>
+		    	  </xpath>
+			  <xpath expr="//field[@name='mail_message_id']" position="after">
+		          	<group col="2" name ="mail" style="background-color:#b3e0ff;">
+		                	<field name="email_from" string="De"/>
+		                	<field name="email_to" string="À"/>
+                            		<field name="recipient_ids" widget="many2many_tags"/>
+		                </group>
+		          	<group col="2" name ="mail" style="background-color:#66c2ff">
+							<field name="email_partner_cc" widget="many2many_tags" placeholder="Add Cci contacts to notify..."/>                    			<field name="email_partner_bcc" widget="many2many_tags" placeholder="Add Cc contacts to notify..."/>
+		                </group>
+				<group col="4" style="background-color:#008ae6;">    			
+		                	<field name="email_cc" string="Copie à (CC)"/>
+		                        <field name="subject"  string="Objet" style="font-weight:bold;"/>
+				</group> 
+		                <notebook>
+		                    <page string="Body">
+		                        <field name="body_html" widget="html" options="{'style-inline': true}"/>
+		                    </page>
+		                    <page string="Attachments">
+		                	<field name="attachment_ids">
+		                        	<tree editable="bottom" delete="false" create="false">
+		                                	<field name="datas" filename="name" string="Fichier"/>
+		                                        <field name="name" invisible="True"/>
+		                                        <field name="description"/>
+		                        	</tree>
+		                	</field>
+		                    </page>
+                        	</notebook>
+			  </xpath>
+			  <xpath expr="//form/sheet" position="attributes">
+		                <attribute name="invisible">1</attribute>
+			  </xpath>
+		    </field>
+		</record>
+
+
+		<!-- mail.message tree: inherited to make invisible res_id and model fields !-->
+		<record model="ir.ui.view" id="view_orvea_list_mail_tree">
+		    <field name="name">mail.mail.tree.inherit</field>
+		    <field name="model">mail.mail</field>
+		    <field name="inherit_id" ref="mail.view_mail_tree"/>
+		    <field name="arch" type="xml">
+			  <xpath expr="//field[@name='model']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+			  <xpath expr="//field[@name='res_id']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			  </xpath>
+		    </field>
+		</record>
+
+	    	<record id="action_all_mail_message_list" model="ir.actions.act_window">
+                      <field name="name">Consulter Détails List Mail</field>
+		      <field name="type">ir.actions.act_window</field>
+                      <field name="res_model">mail.mail</field>
+		      <field name="view_type">form</field>
+		      <field name="view_mode">tree,form</field>
+	              <field name="domain">[('state', '=', 'received')]</field>
+	    	</record>
+	    	<record id="action_view_mail_message_tree" model="ir.actions.act_window.view">
+		      <field name="view_mode">tree</field>
+		      <field name="view_id" ref="view_orvea_list_mail_tree"/>
+		      <field name="act_window_id" ref="action_all_mail_message_list"/>
+	        </record>
+	    	<record id="action_view_mail_message_form" model="ir.actions.act_window.view">
+		      <field name="view_mode">form</field>
+		      <field name="view_id" ref="view_orvea_list_mail_form"/>
+		      <field name="act_window_id" ref="action_all_mail_message_list"/>
+	    	</record>
+
+
+
+		<record id="orvea_list_sent_mail_action" model="ir.actions.act_window">
+		    <field name="name">Orvea Sent Mails</field>
+                    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">mail.mail</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+	            <field name="domain">[('state', '=', 'sent')]</field>
+		</record>
+
+
+		<record id="orvea_list_draft_mail_action" model="ir.actions.act_window">
+		    <field name="name">Orvea Draft Mails</field>
+                    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">mail.mail</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+	            <field name="domain">[('state', '=', 'outgoing')]</field>
+		</record>
+
+		<record id="orvea_list_trash_mail_action" model="ir.actions.act_window">
+		    <field name="name">Orvea Trash Mails</field>
+                    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">mail.mail</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+	            <field name="domain">['|',('state', '=', 'exception'),('state', '=', 'cancel')]</field>
+		</record>
+
+                <menuitem name="Messages" id="orvea_list_all_mail_menu"/>
+                <menuitem name="Boîte Réception" id="orvea_mail_list_menu"  action="action_all_mail_message_list" parent="orvea_list_all_mail_menu" sequence="1"/>
+		<menuitem name="Brouillons" id="orvea_list_draft_mail_menu"  action="orvea_list_draft_mail_action" parent="orvea_list_all_mail_menu" sequence="1"/>  
+                <menuitem name="Envoyés " id="orvea_list_sent_mail_menu"  action="orvea_list_sent_mail_action" parent="orvea_list_all_mail_menu" sequence="1"/>                
+                <menuitem name="Corbeille " id="orvea_list_trash_mail_menu"  action="orvea_list_trash_mail_action" parent="orvea_list_all_mail_menu" sequence="1"/> 
+ 
+
+    </data>
+</odoo>

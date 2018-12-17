@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<!-- Create the form view -->
+	<record id="state_configuration_form_view" model="ir.ui.view">
+	    <field name="name">configure.state.form.view</field>
+	    <field name="model">configure.state</field>
+	    <field name="type">form</field>
+	    <field name="priority" eval="1"/>
+	    <field name="arch" type="xml">
+		<form string="Configuration">
+		    <group>
+		    	<field name="name" string="État"/>
+		     </group>
+		</form>
+	     </field>
+	</record>
+
+	<!-- Create the tree view -->
+	<record id="state_configuration_tree_view" model="ir.ui.view">
+	    <field name="name">configure.state.tree.view</field>
+	    <field name="model">configure.state</field>
+	    <field name="type">tree</field>
+	    <field name="priority" eval="1"/>
+	    <field name="arch" type="xml">
+		<tree string="Configuration">
+		    	<field name="name" string="État"/>
+		</tree>
+	     </field>
+	</record>
+
+
+
+	<!-- Create an action for the menuitem -->
+	<record model="ir.actions.act_window" id="open_view_state_configuration">
+	    <field name="name">Configuration</field>
+	    <field name="res_model">configure.state</field>
+	    <field name="view_type">form</field>
+	    <field name='view_mode'>tree,form</field>
+	    <field name="view_ids" eval="[(5, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('state_configuration_tree_view')}), 
+		(0, 0, {'view_mode': 'form', 'view_id': ref('state_configuration_form_view')})]"/>
+            <field name="help" type="html">
+                <p>
+                    Click To configure.
+                </p>
+            </field>
+	</record>
+
+
+
+	<!--Add a new menuitem under project -->
+	<menuitem action="open_view_state_configuration"
+	    id="menu_orvea_configuration_state"
+	    name="Configuration États"
+	    parent="orvea_crm_order.orvea_crm_lead_menu_root"
+	    sequence="10"/>
+
+</odoo>

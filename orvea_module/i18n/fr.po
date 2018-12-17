@@ -1,0 +1,432 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale
+# 
+# Translators:
+# Martin Trigaux, 2017
+# Abdelwahed Rihene <abdelwahed_rihene@yahoo.fr>, 2018
+#. module: orvea_module
+#: model:ir.model.fields,field_description:orvea_module.field_crm_lead_responsable_id
+msgid "Responsable"
+msgstr "Responsable"
+
+#. module: orvea_module
+#: model:ir.model.fields,field_description:orvea_module.field_crm_lead_responsable_id
+msgid "Source"
+msgstr "Source"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Leads Form"
+msgstr "Opportunités"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Mark Won"
+msgstr "Marquer comme gagné"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Mark Lost"
+msgstr "Marquer comme perdu"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Mark as lost"
+msgstr "Marquer comme perdu"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Convert to Opportunity"
+msgstr "Convertir en opportunité"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Opportunity Title"
+msgstr "Titre"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Customer"
+msgstr "Client"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Source"
+msgstr "Source"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "<span class=\"o_stat_text\"> Quotation(s) </span>"
+msgstr "<span class=\"o_stat_text\"> Devis </span>"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Company Name"
+msgstr "Nom Entreprise"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Address"
+msgstr "Adresse"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Internal Notes"
+msgstr "Notes"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Extra Info"
+msgstr "Informations Supplémentaires"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Tracking"
+msgstr "Suivi"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_crm_case_form_view_leads
+msgid "Analysis"
+msgstr "Analyses"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Sale Type"
+msgstr "Type de Vente"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "With Contract"
+msgstr "Contrat"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Without Contract"
+msgstr "Hors Contrat"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Pretation Type"
+msgstr "Type de Prestation"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Logistic"
+msgstr "Logistique"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Additional"
+msgstr "Additionnel"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Placed Agent"
+msgstr "Agent placé"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Spot Cleaning"
+msgstr "Nettoyage ponctuel"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Various Benefits"
+msgstr "Prestation divers"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Done"
+msgstr "OK"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Construction Logistician"
+msgstr "Logisticien de chantier"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date Limit"
+msgstr "Delai TCE"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date Dismantling"
+msgstr "Date de démontage"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Housings count"
+msgstr "Nombre de logements"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Case Type"
+msgstr "Type de cas"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Expected Date"
+msgstr "OS prévisionnel CES"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date End"
+msgstr "Date de Fin CES"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Quotation Number"
+msgstr "N° Devis"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "City Building"
+msgstr "Ville/Chantier"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Market Amount"
+msgstr "Montant Marché"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Schedule Month"
+msgstr "Echéancier Mois"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Special Clauses"
+msgstr "Clauses particulières"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Commercial"
+msgstr "Nom commercial"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Control Office"
+msgstr "Bureau de contrôle"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Quotation Number"
+msgstr "Maître d'oeuvre"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "SPS Coordinator"
+msgstr "Coordinateur SPS"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Wholesale Articles"
+msgstr "Article Gros-oeuvre"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Article"
+msgstr "Article"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Checked"
+msgstr "Coché"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date Limit"
+msgstr "Délai"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date Start"
+msgstr "Début"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date End"
+msgstr "Fin"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Contract Articles"
+msgstr "Articles contrat"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Article TCE"
+msgstr "Répartition des dépenses communes"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date Start TCE"
+msgstr "Début TCE"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date end TCE"
+msgstr "Fin TCE"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_sale_order_orvea_form_update
+msgid "Date Dismantling"
+msgstr "Date démontage"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_structural_article_form
+msgid "	Name"
+msgstr "Nom"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_structural_article_tree
+msgid "	Name"
+msgstr "Nom"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_contract_article_form
+msgid "	Name"
+msgstr "Nom"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_contract_article_tree
+msgid "	Name"
+msgstr "Nom"
+
+#. module: orvea_module
+#: model:ir.actions.act_window,name:orvea_module.orvea_crm_lead_all_leads
+msgid "Leads"
+msgstr "Opportunités"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Name"
+msgstr "Nom"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Company"
+msgstr "Entreprise"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Address"
+msgstr "Adresse"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Street"
+msgstr "Rue"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Street2"
+msgstr "Rue2"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "City"
+msgstr "Région"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "State"
+msgstr "État"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Zip"
+msgstr "Zip"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Mobile"
+msgstr "Tél."
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Contact Name"
+msgstr "Contact"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Seller"
+msgstr "Vendeur"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Region"
+msgstr "Région"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Lang"
+msgstr "Langue"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Customer"
+msgstr "Client"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Website"
+msgstr "Site internet"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Construction site"
+msgstr "Contact Chantier"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Speaker"
+msgstr "Orateur"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Prospection"
+msgstr "Prospection"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.view_partner_form_orvea
+msgid "Active"
+msgstr "Actif"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_city_form_view_configuration
+msgid "City"
+msgstr "Ville"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_city_form_view_configuration
+msgid "Name"
+msgstr "Nom"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_city_tree_view_configuration
+msgid "City"
+msgstr "Ville"
+
+#. module: orvea_module
+#: model:ir.ui.view,arch_db:orvea_module.orvea_city_tree_view_configuration
+msgid "Name"
+msgstr "Nom"
+
+#. module: orvea_module
+#: model:ir.actions.act_window,name:orvea_module.orvea_res_city_configuration
+msgid "City"
+msgstr "Villes"
+

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+
+
+    <record model="structural.article" id="structural_article_1">
+        <field name="name">Prestation Gros-oeuvre</field>
+    </record>
+    <record model="structural.article" id="structural_article_2">
+        <field name="name">Frais de voiries phase TCE</field>
+    </record>
+    <record model="structural.article" id="structural_article_3">
+        <field name="name">Aménagements des cheminements accés chantier cis éclairage provisoire</field>
+    </record>
+    <record model="structural.article" id="structural_article_4">
+        <field name="name">Mise en place des panneaux de chantier</field>
+    </record>
+    <record model="structural.article" id="structural_article_5">
+        <field name="name">Mise à disposition de la grue pendant 1 ou 2 mois aprés la fin de G.O</field>
+    </record>
+    <record model="structural.article" id="structural_article_6">
+        <field name="name">Installation de chantier avec compteur sr palier</field>
+    </record>
+    <record model="structural.article" id="structural_article_7">
+        <field name="name">Alimentation de ou des litfs edf et FT</field>
+    </record>
+    <record model="structural.article" id="structural_article_8">
+        <field name="name">Clôture de chantier y compris portail et déplacements nécessaires pour phase CES</field>
+    </record>
+    <record model="structural.article" id="structural_article_9">
+        <field name="name">Raccordement et viabilisation des fluides de chantier cis consommation phase TCE</field>
+    </record>
+    <record model="structural.article" id="structural_article_10">
+        <field name="name">Mise à disposition cantonnement phase TCE</field>
+    </record>
+    <record model="structural.article" id="structural_article_11">
+        <field name="name">Déplacement et aménagment des cantonnements cis nécessaire</field>
+    </record>
+    <record model="structural.article" id="structural_article_12">
+        <field name="name">Entretien (Nettoyage cis consommable) de la base vie</field>
+    </record>
+    <record model="structural.article" id="structural_article_13">
+        <field name="name">Rotation des bennes phase Gros-oeuvre jusqu'au démontage de la dernière grue</field>
+    </record>
+
+</odoo>

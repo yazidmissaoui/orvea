@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Partner Form View -->
+        <record id="view_company_list_form" model="ir.ui.view">
+            <field name="name">res.partner.company.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Partners">
+                <sheet>
+                    <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                    <div class="oe_title">
+                        <field name="is_company" invisible="1"/>
+                        <field name="commercial_partner_id" invisible="1"/>
+                        <field name="company_type" widget="radio" invisible="1"
+                            class="oe_edit_only"
+                            options="{'horizontal': true}"/>
+                        <h1>
+		            <field name="website" placeholder="Nom du domaine" widget="url" required="1" context="{'gravatar_image': True}"/>
+                        </h1>
+                        <h3>
+		            <field name="name" placeholder="Nom"/>
+                        </h3>
+                    </div>
+
+                    <group>
+		                <group>
+                                    <label for="street" string="Addresse Siège"/>
+                                    <div class="o_address_format">
+                                        <field name="street" placeholder="Street..." class="o_address_street"/>
+                                        <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                        <field name="city" placeholder="City" class="o_address_city"/>
+                                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                                        <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                        <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True}'/>
+                                    </div>
+                    		    <field name="flag_company" invisible="1"/>
+                    		    <field name="type_company" string="Type"/>
+                    		  
+		                </group>
+		                <group>
+                                    <field name="phone" string="Phone"/>
+		                    <field name="company_sector" string="Activity Sector" placeholder="Activity Sector"/>
+		                    <field name="company_owner" string="Company Owner" placeholder="Company Owner"/>
+                    		    <field name="contacts_number" string="CONTACTS" invisible="1"/>
+                    		    <field name="transactions_number" string="TRANSACTIONS" invisible="1"/>
+                    		    <field name="type_partner_company" string="Type Partenaire" attrs="{'invisible': [('type_company', '!=', 'lead')]}"/>
+		                </group>
+
+                    </group>
+                    <group>
+		                <group>
+		                    <field name="company_activity" string="Activité" placeholder="Activité"/>
+		                </group>
+		                <group>
+                    		    <field name="flag_company_btp" invisible="1"/>
+		                    <field name="company_activity_btp" nolabel="1" colspan="2" attrs="{'invisible': [('flag_company_btp', '!=', True)]}"/>
+                    		    <field name="flag_company_service" invisible="1"/>
+		                    <field name="company_activity_service" nolabel="1" colspan="2" attrs="{'invisible': [('flag_company_service', '!=', True)]}"/>
+		                </group>
+                    </group>
+		    <!--label for="description_company" string="Desciption"/-->
+		    <field name="description_company" string="Desciption" colspan="2" widget="html"/>
+                    <notebook>
+		    	<page string="Autres Adresses">
+
+		                <group>
+				    	<group>
+                    		    		<field name="flag_company_site1"/>
+                    		    		<field name="flag_company_site2" string="Site 2"/>
+                    		    		<field name="flag_company_site3" string="Site 3"/>
+                    		    		<field name="flag_company_facturation" string="Adresse Facturation"/>
+                    		    		<field name="flag_company_autre" string="Autres..."/>
+
+		                	</group>
+				    	<group>
+		                            <label for="street_site1" string="Addresse Site 1" attrs="{'invisible': [('flag_company_site1', '!=', True)]}"/>
+		                            <div class="o_address_format">
+		                                <field name="street_site1" placeholder="Street..." class="o_address_street" attrs="{'invisible': [('flag_company_site1', '!=', True)]}"/>
+		                                <field name="street2_site1" placeholder="Street 2..." class="o_address_street" attrs="{'invisible': [('flag_company_site1', '!=', True)]}"/>
+		                                <field name="city_site1" placeholder="City" class="o_address_city" attrs="{'invisible': [('flag_company_site1', '!=', True)]}"/>
+		                                <field name="state_site1_id" class="o_address_state" placeholder="State" options='{"no_open": True}' attrs="{'invisible': [('flag_company_site1', '!=', True)]}"/>
+		                                <field name="zip_site1" placeholder="ZIP" class="o_address_zip" attrs="{'invisible': [('flag_company_site1', '!=', True)]}"/>
+		                                <field name="country_site1_id" placeholder="Country" class="o_address_country" attrs="{'invisible': [('flag_company_site1', '!=', True)]}" options='{"no_open": True}'/>
+		                            </div>
+
+		                            <label for="street_site2" string="Addresse Site 2" attrs="{'invisible': [('flag_company_site2', '!=', True)]}"/>
+		                            <div class="o_address_format">
+		                                <field name="street_site2" placeholder="Street..." class="o_address_street" attrs="{'invisible': [('flag_company_site2', '!=', True)]}"/>
+		                                <field name="street2_site2" placeholder="Street 2..." class="o_address_street" attrs="{'invisible': [('flag_company_site2', '!=', True)]}"/>
+		                                <field name="city_site2" placeholder="City" class="o_address_city" attrs="{'invisible': [('flag_company_site2', '!=', True)]}"/>
+		                                <field name="state_site2_id" class="o_address_state" placeholder="State" options='{"no_open": True}' attrs="{'invisible': [('flag_company_site2', '!=', True)]}"/>
+		                                <field name="zip_site2" placeholder="ZIP" class="o_address_zip" attrs="{'invisible': [('flag_company_site2', '!=', True)]}"/>
+		                                <field name="country_site2_id" placeholder="Country" class="o_address_country" attrs="{'invisible': [('flag_company_site2', '!=', True)]}" options='{"no_open": True}'/>
+		                            </div>
+
+		                            <label for="street_site3" string="Addresse Site 3" attrs="{'invisible': [('flag_company_site3', '!=', True)]}"/>
+		                            <div class="o_address_format">
+		                                <field name="street_site3" placeholder="Street..." class="o_address_street" attrs="{'invisible': [('flag_company_site3', '!=', True)]}"/>
+		                                <field name="street2_site3" placeholder="Street 2..." class="o_address_street" attrs="{'invisible': [('flag_company_site3', '!=', True)]}"/>
+		                                <field name="city_site3" placeholder="City" class="o_address_city" attrs="{'invisible': [('flag_company_site3', '!=', True)]}"/>
+		                                <field name="state_site3_id" class="o_address_state" placeholder="State" options='{"no_open": True}' attrs="{'invisible': [('flag_company_site3', '!=', True)]}"/>
+		                                <field name="zip_site3" placeholder="ZIP" class="o_address_zip" attrs="{'invisible': [('flag_company_site3', '!=', True)]}"/>
+		                                <field name="country_site3_id" placeholder="Country" class="o_address_country" attrs="{'invisible': [('flag_company_site3', '!=', True)]}" options='{"no_open": True}'/>
+		                            </div>
+
+		                          <label for="street_facturation" string="Addresse Facturation" attrs="{'invisible': [('flag_company_facturation', '!=', True)]}"/>
+		                            <div class="o_address_format">
+		                                <field name="street_facturation" placeholder="Street..." class="o_address_street" attrs="{'invisible': [('flag_company_facturation', '!=', True)]}"/>
+		                                <field name="street2_facturation" placeholder="Street 2..." class="o_address_street" attrs="{'invisible': [('flag_company_facturation', '!=', True)]}"/>
+		                                <field name="city_facturation" placeholder="City" class="o_address_city" attrs="{'invisible': [('flag_company_facturation', '!=', True)]}"/>
+		                                <field name="state_facturation_id" class="o_address_state" placeholder="State" options='{"no_open": True}' attrs="{'invisible': [('flag_company_facturation', '!=', True)]}"/>
+		                                <field name="zip_facturation" placeholder="ZIP" class="o_address_zip" attrs="{'invisible': [('flag_company_facturation', '!=', True)]}"/>
+		                                <field name="country_facturation_id" placeholder="Country" class="o_address_country" attrs="{'invisible': [('flag_company_facturation', '!=', True)]}" options='{"no_open": True}'/>
+		                            </div>
+
+		                        <label for="street_autre" string="Autre Addresse" attrs="{'invisible': [('flag_company_autre', '!=', True)]}"/>
+		                            <div class="o_address_format">
+		                                <field name="street_autre" placeholder="Street..." class="o_address_street" attrs="{'invisible': [('flag_company_autre', '!=', True)]}"/>
+		                                <field name="street2_autre" placeholder="Street 2..." class="o_address_street" attrs="{'invisible': [('flag_company_autre', '!=', True)]}"/>
+		                                <field name="city_autre" placeholder="City" class="o_address_city" attrs="{'invisible': [('flag_company_autre', '!=', True)]}"/>
+		                                <field name="state_autre_id" class="o_address_state" placeholder="State" options='{"no_open": True}' attrs="{'invisible': [('flag_company_autre', '!=', True)]}"/>
+		                                <field name="zip_autre" placeholder="ZIP" class="o_address_zip" attrs="{'invisible': [('flag_company_autre', '!=', True)]}"/>
+		                                <field name="country_autre_id" placeholder="Country" class="o_address_country" attrs="{'invisible': [('flag_company_autre', '!=', True)]}" options='{"no_open": True}'/>
+		                            </div>
+
+		                	</group>
+				</group>
+
+                    	</page>
+		    	<page string="Autres Téléphones">
+		                <group>
+				    <group>
+                    		    		<field name="flag_phone_standard"/>
+                    		    		<field name="flag_phone_comptabilite"/>
+                    		    		<field name="flag_phone_autre"/>
+				    </group>
+				    <group>
+		                            	<field name="phone_standard" placeholder="Téléphone Standard" attrs="{'invisible': [('flag_phone_standard', '!=', True)]}" string="N° Tél Standard"/>
+		                            	<field name="phone_comptabilite" placeholder="Comptabilité" attrs="{'invisible': [('flag_phone_comptabilite', '!=', True)]}" string="N° Tél Comptabilité"/>
+		                            	<field name="phone_autre" placeholder="Autres..." attrs="{'invisible': [('flag_phone_autre', '!=', True)]}" string="Autre N° Téléphone"/>
+				    </group>
+		                </group>
+                    	</page>
+                    </notebook>
+                </sheet>
+                    <div class="oe_chatter" attrs="{'invisible': [('flag_company', '==', False)]}">>
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Company Tree View -->
+        <record id="view_company_list_tree" model="ir.ui.view">
+            <field name="name">res.partner.company.view.tree</field>
+            <field name="model">res.partner</field>
+            <field eval="8" name="priority"/>
+    	    <field name="limit">25</field>
+            <field name="arch" type="xml">
+                <tree string="Entreprises">
+                    <field name="image" string="Logo" widget="image" class="logo_style"/>
+                    <field name="name" string="NOM"/>
+                    <field name="type_company" string="TYPE"/>
+		    <field name="company_activity" string="Activité"/>
+                    <field name="street" string="POST STREET"/>
+                    <field name="zip" string="ZIP" class="o_address_zip"/>
+                    <field name="country_id" string="Country" class="o_address_country" options='{"no_open": True}'/>
+                    <field name="street2" string="ADRESSE POSTALE 2"/>
+                    <field name="phone" string="PHONE NUMBER"/>
+                    <field name="contacts_number" string="CONTACTS"/>
+                    <field name="transactions_number" string="TRANSACTIONS"/>
+                    <field name="description_company" string="DESCRIPTION"/>
+                    <field name="function" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="country_id" invisible="1"/>
+                    <field name="parent_id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <field name="flag_company" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_company_list_filter" model="ir.ui.view">
+            <field name="name">res.partner.company.search</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Contacts">
+                    <field name="display_name" string="NOM"/>
+                    <field name="email" string="E-MAIL"/>
+                    <field name="phone" string="NUMÉRO DE TÉLÉPHONE"/>
+                    <field name="create_date" string="Date DE CRÉATION"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_name" string="NOM" domain="[]" context="{'group_by':'name'}"/>
+                        <filter name="group_function" string="INTITULÉ DU POSTE" domain="[]" context="{'group_by':'function'}"/>
+                        <filter name="group_phone" string="TÉLÉPHONE" domain="[]" context="{'group_by':'phone'}"/>
+                        <filter name="group_mobile" string="MOBILE" domain="[]" context="{'group_by':'mobile'}"/>
+                        <filter name="group_second_mobile" string="TÉLÉPHONE 2" domain="[]" context="{'group_by':'second_mobile'}"/>
+                        <filter name="group_email" string="E-MAIL" domain="[]" context="{'group_by':'email'}"/>
+                        <filter name="group_city" string="VILLE" domain="[]" context="{'group_by':'city'}"/>
+                        <filter name="group_company_owner" string="PROPRIÉTAIRE DU COMPTE" domain="[]" context="{'group_by':'company_owner'}"/>
+                        <filter name="group_company_name" string="NOM DE ENTREPRISE" domain="[]" context="{'group_by':'company_name'}"/>
+                        <filter name="group_type_contact" string="TYPE" domain="[]" context="{'group_by':'type_contact'}"/>
+                        <filter name="group_company_activity" string="SECTEUR D'ACTIVITÉ" domain="[]" context="{'group_by':'company_activity'}"/>
+                    </group>
+                </search>
+             </field>
+         </record>
+
+
+
+        <!-- Contact Menu -->
+        <record model="ir.actions.act_window" id="orvea_company_list_action">
+            <field name="name">Entreprises</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"default_is_company": True,"default_flag_company": False,"company_type": 'company'}</field>
+	    <field name="view_ids" eval="[(5, 0, 0), 
+		(0, 0, {'view_mode': 'tree', 'view_id': ref('view_company_list_tree')}),
+		(0, 0, {'view_mode': 'form', 'view_id': ref('view_company_list_form')}),
+		]"/>
+            <field name="domain">[('is_company','=',True)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a company in your address book.
+              </p><p>
+                Odoo helps you easily track all activities related to
+                a company: discussions, history of business opportunities,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+
+
+        <menuitem id="orvea_company_main_menu"
+            name="Entreprises"
+            web_icon="orvea_company,static/description/company.png"
+	    action="orvea_company_list_action"
+            sequence="4"/>
+
+
+
+
+    </data>
+</odoo>

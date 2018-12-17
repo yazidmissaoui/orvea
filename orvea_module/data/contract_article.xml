@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+
+
+    <record model="contract.article" id="contract_article_1">
+        <field name="name">Agent-AQHS Temps, entretien ampoules et Fermeture.</field>
+    </record>
+    <record model="contract.article" id="contract_article_2">
+        <field name="name">Fourniture de consommable pour l'entretien des Bungaloxs</field>
+    </record>
+    <record model="contract.article" id="contract_article_3">
+        <field name="name">Gestion des bennes DIB phase CES</field>
+    </record>
+    <record model="contract.article" id="contract_article_4">
+        <field name="name">Mise en place d'un système de Télésurveillance -1  &lt; X &lt; 100lots -Cas1</field>
+    </record>
+    <record model="contract.article" id="contract_article_5">
+        <field name="name">Mise en place d'un système de Télésurveillance -100  &lt; X &lt; 150lots -Cas2</field>
+    </record>
+    <record model="contract.article" id="contract_article_6">
+        <field name="name">Mise en place d'un système de Télésurveillance -Opération  &gt; 150lots -Cas2</field>
+    </record>
+    <record model="contract.article" id="contract_article_7">
+        <field name="name">F et Pose de portes métallique sur les accés escalliers d'étage ou Halls cis panneau</field>
+    </record>
+    <record model="contract.article" id="contract_article_8">
+        <field name="name">Agent - Gestionnaire de clefs</field>
+    </record>
+    <record model="contract.article" id="contract_article_9">
+        <field name="name">Agent - Gardiennage de chantier type APS Weekend du Vend à Lundi</field>
+    </record>
+    <record model="contract.article" id="contract_article_10">
+        <field name="name">Agent - Liftier de contrôle accés ascenseurs</field>
+    </record>
+    <record model="contract.article" id="contract_article_11">
+        <field name="name">Agent - Homme trafic</field>
+    </record>
+    <record model="contract.article" id="contract_article_12">
+        <field name="name">Nettoyage général de chantier 1fois/mois -3mois avant livraison</field>
+    </record>
+    <record model="contract.article" id="contract_article_13">
+        <field name="name">Nettoyage de la voirie avec balayeuse aprés sortie camion - passage 48h</field>
+    </record>
+    <record model="contract.article" id="contract_article_14">
+        <field name="name">Nettoyage à auto-laveuse thermique avant livraison (sous-sol) - au m²</field>
+    </record>
+    <record model="contract.article" id="contract_article_15">
+        <field name="name">Consommation Fluides phase CES</field>
+    </record>
+    <record model="contract.article" id="contract_article_16">
+        <field name="name">Surconsommation installation préchauffage de chantier</field>
+    </record>
+    <record model="contract.article" id="contract_article_17">
+        <field name="name">Installation de cantonnement de chantier cis location</field>
+    </record>
+    <record model="contract.article" id="contract_article_18">
+        <field name="name">Installation provisoire électrique de chantier</field>
+    </record>
+    <record model="contract.article" id="contract_article_19">
+        <field name="name">Frais de voirie divers</field>
+    </record>
+    <record model="contract.article" id="contract_article_20">
+        <field name="name">Installation de préchauffage éléctrique, air chaud ou type fioul</field>
+    </record>
+    <record model="contract.article" id="contract_article_21">
+        <field name="name">Installation Lifte de chantier type simple ou Bi-Mat (SKY)</field>
+    </record>
+    <record model="contract.article" id="contract_article_22">
+        <field name="name">Plateforme de lutte contre le travail illégal -contrôle accés personnel</field>
+    </record>
+    <record model="contract.article" id="contract_article_23">
+        <field name="name">Mise en place d'une plateforme de lutte contre le travail illégal - X  &lt; 50lots</field>
+    </record>
+    <record model="contract.article" id="contract_article_24">
+        <field name="name">Mise en place d'une plateforme de lutte contre le travail illégal - 50 &lt; X &lt; 100lots</field>
+    </record>
+    <record model="contract.article" id="contract_article_25">
+        <field name="name">Mise en place d'une plateforme de lutte contre le travail illégal - 100 &lt; X &lt; 150lots</field>
+    </record>
+    <record model="contract.article" id="contract_article_26">
+        <field name="name">Mise en place d'une plateforme de lutte contre le travail illégal -  X &gt; 150lots</field>
+    </record>
+    <record model="contract.article" id="contract_article_27">
+        <field name="name">Gestion et entretien des afficahges obligatoires suivant decret N° 2017 - 825</field>
+    </record>
+    <record model="contract.article" id="contract_article_28">
+        <field name="name">Divers</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="res_partner_activity_1" model="res.partner.activity">
+            <field name="name">Promoteur Immobilier</field>
+        </record>
+
+        <record id="res_partner_activity_2" model="res.partner.activity">
+            <field name="name">Architecte</field>
+        </record>
+
+        <record id="res_partner_activity_3" model="res.partner.activity">
+            <field name="name">Assistance à maîtrise d'ouvrage</field>
+        </record>
+
+        <record id="res_partner_activity_4" model="res.partner.activity">
+            <field name="name">Maître d'oeuvre</field>
+        </record>
+
+        <record id="res_partner_activity_5" model="res.partner.activity">
+            <field name="name">Pilote de Chantier</field>
+        </record>
+
+        <record id="res_partner_activity_6" model="res.partner.activity">
+            <field name="name">Économiste de la construction</field>
+        </record>
+
+        <record id="res_partner_activity_7" model="res.partner.activity">
+            <field name="name">Bureau d'étude</field>
+        </record>
+
+        <record id="res_partner_activity_8" model="res.partner.activity">
+            <field name="name">Bureau de Contôle</field>
+        </record>
+
+        <record id="res_partner_activity_9" model="res.partner.activity">
+            <field name="name">CSPS"</field>
+        </record>
+
+        <record id="res_partner_activity_10" model="res.partner.activity">
+            <field name="name">Entreprise du BTP</field>
+        </record>
+
+        <record id="res_partner_activity_11" model="res.partner.activity">
+            <field name="name">Entreprise de Service</field>
+        </record>
+
+    </data>
+</odoo>

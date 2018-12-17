@@ -1,0 +1,658 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record model="product.template" id="product_template_1">
+        <field name="name">Logistique de chantier</field>
+        <field name="description">
+		- Agent Logisticien - AQHS Temps Plein, horaire chantier.
+		- Fourniture des consommables pour l'entretien de la base vie.
+		- Pilotage, gestion des rotations des bennes de chantier type DIB phase CES.
+		- Benne via prestataire agrée (Hors plâtrerie, après dépose de la dernière grue).
+		- Pilotage, Location d'un système de détecteur radar via prestataire agrée.
+		- Location de portes métallique pour fermeture d'accès escaliers d'étage.
+		- Agent - Gestionnaire de clefs en phase chantier, horaire chantier.
+		- Etablissement de rapport photo de l'état du chantier (Propreté) sur demande.
+		- Frais de gestion divers encadrement.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_2">
+        <field name="name">Agent AQHS</field>
+        <field name="description">
+		Agent Logisticien - AQHS Temps Plein, Horaire chantier :
+		 - Ouverture de chantier.
+		 - Entretien journalier global de la base vie.
+		 - Pilotage de la rotation des bennes.
+		 - Petites tâches ponctuelles de nettoyage ou manutention sur demande.
+		 - Alerter de la Maîtrise d'œuvre de l'état de propreté du chantier via un support photo.
+		 - Veille à la fermeture globale du chantier selon l'état d'avancement.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="list_price">5000</field>
+    </record>
+    <record model="product.template" id="product_template_3">
+        <field name="name">Consommable</field>
+        <field name="description">
+		Fourniture des consommables pour assurer l'entretien de la base vie.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+        <field name="list_price">400</field>
+    </record>
+    <record model="product.template" id="product_template_4">
+        <field name="name">Benne</field>
+        <field name="description">
+		Pilotage, gestion des rotations de bennes de chantier type DIB phase CES via prestataire agrée.
+		- Benne Hors plâtrerie, hors Gros-œuvre après dépose de la dernière grue.
+		- Veille à déterminer au fur et à mesure de l'évolution des travaux CES, 
+		  le nombre de rotation ainsi que de superviser le traitement et recyclage adaptés des déchets 
+		  via un partenaire agrée désignée.
+
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="list_price">420</field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_5">
+        <field name="name">Radar</field>
+        <field name="description">
+		Pilotage, Location d'un système de détecteur radar via prestataire agrée selon délai prévu.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="list_price">28</field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_6">
+        <field name="name">Porte</field>
+        <field name="description">
+		Location de portes métallique pour fermeture des accès escaliers d'étage.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+        <field name="list_price">1200</field>
+    </record>
+    <record model="product.template" id="product_template_7">
+        <field name="name">Gestionnaire de clef</field>
+        <field name="description">
+		Agent - Gestionnaire de clefs en phase chantier, horaire chantier :
+		  - Ouverture des portes le matin.
+		  - Coordination des accès aux logements.
+		  - Fermeture réalisable des portes et fenêtres avant départ.
+		  - Assure un reporting d'activité.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="list_price">5000</field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_8">
+        <field name="name">Panneau de chantier Logisticien</field>
+        <field name="description">
+		Fourniture et pose d'un panneau de chantier « Présentation Qualité Logisticien » en phase CES.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="list_price">1000</field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_9">
+        <field name="name">Plateforme de Gestion des appels d'offre</field>
+        <field name="description">
+		Mise en œuvre d'une plateforme de gestion et d'analyse d'appel d'offre.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="list_price">1500</field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_10">
+        <field name="name">Gardiennage WE</field>
+        <field name="description">
+		Agent type APS - weekend du Vend. À Lundi
+		  - Pilotage d'une présence physique sur chantier via un prestataire agrée en heures creuses.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_11">
+        <field name="name">Gardiennage Soir/WE</field>
+        <field name="description">
+		Agent type APS de chantier type APS - Soir et weekend:
+		  - Pilotage d'une présence physique sur chantier via un prestataire agrée en heures creuses.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_12">
+        <field name="name">Agent Liftier</field>
+        <field name="description">
+		Agent - Liftier de contrôle accès ascenseurs, horaire chantier :
+		  - Pilotage et organisation des flux de matériel, matériaux aux étages pour tout type d'appareil d'élévation. 
+		  - Assure un reporting d'activité.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_13">
+        <field name="name">Agent Trafic</field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="description">
+		Agent - Homme trafic, horaire chantier :
+		 - Pilotage et organisation des flux de transport sur chantier de matériel, matériaux, déchets.
+		 - Pilotage et gestion des flux véhicule léger sis stationnement.
+		 - Assure un reporting d'activité . 
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_14">
+        <field name="name">Nettoyage Voirie</field>
+        <field name="description">
+		Nettoyage de la voirie avec balayeuse aspiratrice haute pression après sortie camion - passage 4h.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_15">
+        <field name="name">Nettoyage Autolaveuse</field>
+        <field name="description">
+		Nettoyage des sols à l'autolaveuse thermique auto-portée sis machiniste avant livraison.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_16">
+        <field name="name">Plateforme de lutte contre le travail illégal</field>
+        <field name="description">
+		Mise en place d'une plateforme de lutte contre le travail illégal via partenaire agrée.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_17">
+        <field name="name">Plateforme OnsiteControl de contrôle de présence illégal</field>
+        <field name="description">
+		Mise en œuvre d'une prestation de contrôle de présence via un partenaire agrée.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_18">
+        <field name="name">Affichage travailleur détaché</field>
+        <field name="description">
+		Affichages des fiches de travailleur détaché dans base vie suivant décret N° 2017 – 825.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_19">
+        <field name="name">Installation de préchauffage</field>
+        <field name="description">
+		Mise en œuvre d'une installation provisoire de préchauffage chantier via prestataire agrée.
+		Type électrique, air chaud ou type Fioul.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_20">
+        <field name="name">Installation Lifte de chantier type Simple ou Bi-Mat</field>
+        <field name="description">
+		Mise en œuvre d'une installation provisoire de LIFT chantier via prestataire agrée.
+		Mise en place d'un LIFT de chantier.
+		Plate-forme de transports type MBC 2000.
+		Support de fixation, Façade.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_21">
+        <field name="name">Installation de base vie</field>
+        <field name="description">
+		Pilotage, mise en œuvre et location d'une installation de base vie sis repli.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_22">
+        <field name="name">Installation provisoire électrique de chantier</field>
+        <field name="description">
+		Location d'une installation électrique provisoire de chantier via prestataire agrée.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_23">
+        <field name="name">Consommation Fluides</field>
+        <field name="description">
+		Gestion des consommations fluides Electricité, EAU provisoire de chantier
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_24">
+        <field name="name">Palissade de chantier </field>
+        <field name="description">
+		Entretien et le déplacement éventuel des palissades existante de chantier suivant plan fourni.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_25">
+        <field name="name">Clôture de chantier</field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="description">
+		Fourniture et pose de clôture de chantier type bardage sis scellement ou clôture Héras selon plan.
+		Fourniture et pose de chemin de protection type GBA sis clôture de 1 m.
+		Fourniture et pose de portail coulissant, portail 2 ventaux, portillon accès piéton.
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_26">
+        <field name="name">Frais de voirie divers</field>
+        <field name="description">
+		-Gestion des charges temporaires de voirie et de police résultant des installations de chantier 
+	</field>
+        <field name="product_type" eval="'logistique'"></field>
+	<field name="type_prestation" eval="'optional'"></field>
+	<field name="type_offre" eval="'logistic'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_27">
+        <field name="name">Agent d'accueil</field>
+        <field name="description">
+		Agent d'accueil client, horaire chantier.
+		Accueil les acquéreurs et les oriente vers le lieu d'accueil du promoteur pour livraison.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_28">
+        <field name="name">Intervention Samedi</field>
+        <field name="description">
+		Intervention le samedi à la demande des entreprises hors contrat :
+		  - Ouverture de chantier 
+		  - Présence physique 
+		  - Pointage des effectifs
+		  - Fermeture 
+		  - Inclus rapport d'activité 
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_29">
+        <field name="name">Agent de nettoyage</field>
+        <field name="description">
+		Agent d'entretien, horaire chantier 
+		Nettoyage journalier du chantier selon besoin MOA : 
+		 - Nettoyage des logements au balai fin
+		 - Nettoyage des parties-communes
+		 - Nettoyage des extérieurs de chantier
+		 - Ramassage de déchets divers
+		 - Mise en benne de déchets divers
+		 - Nettoyage divers
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_30">
+        <field name="name">Nettoyage Ponctuel</field>
+        <field name="description">
+		Nettoyage du chantier selon demande MOA :  
+		  - Nettoyage des logements au balai fin
+		  - Nettoyage des parties-communes
+		  - Nettoyage des extérieurs de chantier
+		  - Ramassage de déchets divers
+		  - Mise en benne des déchets.
+		  - Inclus rapport photo
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_31">
+        <field name="name">Nettoyage Déchets en camion</field>
+        <field name="description">
+		Nettoyage du chantier selon demande MOA : 
+		  - Évacuation en camion de 12 m3 de déchets divers 
+		  - Ramassage de déchets divers 
+		  - Mise en camion des déchets 
+		  - Évacuation en centre de déchetterie
+		  - Tri-sélectif des déchets 
+		  - Inclus rapport photo
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_32">
+        <field name="name">Rotation de camion</field>
+        <field name="description">
+		Nombre de passage :  
+		  - X passages en camion de 12 m3.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_33">
+        <field name="name">Rotation de benne</field>
+        <field name="description">
+		Nombre de rotation :  
+		  - X passages en camion de 8 m3.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+
+    <record model="product.template" id="product_template_34">
+        <field name="name">Main d'œuvre</field>
+        <field name="description">
+		- X personnes.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_35">
+        <field name="name">Evacuation d'eau</field>
+        <field name="description">
+		Location et Mise en place d'une pompe à eau pour évacuation d'eau selon localisation.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+
+    <record model="product.template" id="product_template_36">
+        <field name="name">Location diverse</field>
+        <field name="description">
+		Location de matériel divers.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_37">
+        <field name="name">Nettoyage Haute pression</field>
+        <field name="description">
+		Nettoyage du sous-sol avant livraison :
+		  - Nettoyage des sols au balai fin.
+		  - Ramassage de déchets divers et stockage.
+		  - Évacuation des déchets en camion ou benne de chantier. 
+		  - Nettoyage des sols au lavage haute pression type Karcher.
+		  - Passage à la raclette des sols.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_38">
+        <field name="name">Nettoyage terrasse Haute pression</field>
+        <field name="description">
+		Nettoyage des terrasses avant livraison :
+		  - Nettoyage des sols au balai fin.
+		  - Ramassage de déchets divers et stockage.
+		  - Évacuation des déchets en camion ou benne de chantier. 
+		  - Nettoyage des dalles au lavage haute pression type Karcher.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_39">
+        <field name="name">Curage réseau sous-sol</field>
+        <field name="description">
+		Dégorgement et curage de la totalité du réseau au sous-sol selon éléments fourni : 
+		Curage du réseau principal, réseau de drainage et les siphons jusqu'à la pompe de relevage. 
+		Curage à partir de tous les siphons de sol situé au niveau des puits de jour si accessibles. 
+		Le but de l'opération étant de rendre les écoulements normaux jusqu'à la fosse de relevage.
+		Nettoyage des regards, exceptés si les détritus sont colmatés au fond des regards. 
+		L'évacuation des déchets (fosse et regard) et ceux drainés au niveau de la fosse vous appartienne.
+		Transmission d'information relative à certains tronçons non traitable en raison de ciment solidifié.
+		Tests d'eau afin de s'assurer que l'eau arrive bien au niveau des fosses de relevage .
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_40">
+        <field name="name">Nettoyage DÉGROSSIS</field>
+        <field name="description">
+			Nettoyage des logements neufs en phase "Dégrossis", après intervention peintre : 
+			  - Nettoyage des menuiseries extérieurs (fonds de feuillures, montant PVC, vitrage).
+			  - Nettoyage des sols et faïences pièces humides.
+			  - Nettoyage au balai fin des pièces sèches.
+			  - Évacuation des déchets divers pour mise en benne.
+			  - Nettoyage des parties-communes au balai fin.
+			Forfait par LOT du T1 au T5
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_41">
+        <field name="name">Nettoyage DÉGROSSIS/ FINITION :</field>
+        <field name="description">
+		Nettoyage de logements neuf en deux phases "Dégrossis et Finitions", comprenant : 
+		 Dégrossis : 
+		  - Nettoyage des menuiseries extérieurs.
+		  - Nettoyage des sols et faïence pièces humides.
+		  - Nettoyage au balai fin des pièces sèches.
+		  - Ramassage et évacuation des déchets pour mise en benne. 
+		 Finition : 
+		  - Nettoyage de finition de l'ensemble du logement pour livraison clients. 
+		  - Produits de couleur pour WC, produit sent-bon et fourniture de chausson).
+		 Parties-communes :
+		  - Nettoyage des parties-communes pour les deux phases. 
+		Forfait par LOT du T1 au T5 pour les deux phases.
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+
+    <record model="product.template" id="product_template_42">
+        <field name="name">Nettoyage DÉGROSSIS/ OPR/ FINITION</field>
+        <field name="description">
+		Nettoyage de logements neuf en trois phases "Dégrossis/ OPR/ Finitions", comprenant : 
+		  Dégrossis : 
+		    - Nettoyage des menuiseries extérieurs. 
+		    - Nettoyage des sols et faïence pièces humides. 
+		    - Nettoyage au balai fin des pièces sèches.
+		    - Ramassage et évacuation des déchets pour mise en benne. 
+		  OPR : 
+		    - Aspiration des protections.
+		    - Nettoyage des pièces humides et pièces sèches (sols et appareillages).
+		    - Ramassage et évacuation des déchets pour mise en benne.
+		  Finition : 
+		    - Nettoyage de finition de l'ensemble du logement pour livraison clients.
+		    - Produits de couleur pour WC, produit sent-bon et fourniture de chausson). 
+		  Parties-communes : 
+		    - Nettoyage des parties-communes pour les trois phases. 
+		Forfait par LOT du T1 au T5 pour les trois phases 
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+    <record model="product.template" id="product_template_43">
+        <field name="name">Nettoyage de FINITION</field>
+        <field name="description">
+		Nettoyage de logements neuf en phase "FINITION-FIN" avant réception client :
+		  Logement :
+		     - Nettoyage des sols
+		     - Dépoussiérage des appareillages, portes, tablettes placard, rechampi de plinthe, convecteur.
+		     - Nettoyage des grilles de Ventilation (Bouche VMC).
+		     - Nettoyage des fonds de feuillures fenêtre, châssis PVC et vitrage.
+		     - Nettoyage des garde-corps.
+		     - Nettoyage des balcons et terrasses (voir étanchéité si besoin).
+		     - Nettoyage des appareilles sanitaires (Baignoires, douches, Meuble vasque, WC).
+		     - Nettoyage des tableaux électriques.
+		  Parties-communes :
+		     - Nettoyage des halls, palier d'étage, escalier, ...
+		  Prestation Complémentaire :
+		     - Chausson pour visite client.
+		     - Sent-Bon plusieurs parfums avant fermeture logement.
+		     - Produit de couleur bleu ou vert pour WC.
+		  Suivi et vérification avant livraison :
+		     - Détachement de personne de suivi de livraison selon planning jour N.
+		Forfait par lot du T1 au T5 :
+	</field>
+        <field name="product_type" eval="'ponctuelle'"></field>
+	<field name="type_prestation" eval="'basic'"></field>
+	<field name="type_offre" eval="'punctual'"></field>
+        <field name="sale_ok" eval="1"></field>
+        <field name="purchase_ok" eval="0"></field>
+        <field name="type" eval="'service'"></field>
+    </record>
+</odoo>

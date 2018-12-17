@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+	    <record model="ir.module.category" id="orvea_group_configuration">
+		    <field name="name">Orvea</field>
+		    <field name="description">The Orvea Configuration</field>
+		    <field name="sequence">20</field>
+	    </record>
+	    <record id="office_orvea_group" model="res.groups">
+		<field name="name">User Quotation</field>
+		<field name="comment">The user will be able to create new opportunities and quotations.</field>
+		<field name="category_id" ref="orvea_module.orvea_group_configuration"/>
+	    </record>
+	    <record id="member_orvea_group" model="res.groups">
+		<field name="name">User Configuration</field>
+		<field name="comment">The user will be able to configure data.</field>
+		<field name="category_id" ref="orvea_module.orvea_group_configuration"/>
+	    </record>
+	</data>
+</odoo>
